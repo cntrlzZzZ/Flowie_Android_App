@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "538091900018",
+    "project_id": "flowie-04201",
+    "storage_bucket": "flowie-04201.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538091900018:android:7d90e4bd27b7175c7146eb",
+        "android_client_info": {
+          "package_name": "fr.eurecom.flowie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEV6giwKK6-fhYgBnCQQqvTsYAuSHippg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
