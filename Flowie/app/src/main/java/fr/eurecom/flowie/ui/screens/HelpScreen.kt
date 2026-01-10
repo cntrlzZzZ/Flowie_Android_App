@@ -8,9 +8,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
+/*
+ * Help / FAQ screen placeholder.
+ * Intended to provide usage guidance and common questions.
+ */
 @Composable
 fun HelpScreen() {
     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("Help / FAQ (to implement)", color = Color.White)
+        Text("Help / FAQ (to implement)", color = Color.Black)
     }
 }

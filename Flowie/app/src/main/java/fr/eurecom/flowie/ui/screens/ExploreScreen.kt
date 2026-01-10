@@ -22,6 +22,10 @@ import fr.eurecom.flowie.ui.components.MapTilerMap
 import com.mapbox.mapboxsdk.geometry.LatLng
 import fr.eurecom.flowie.ui.weather.WeatherViewModel
 
+/*
+ * Main exploration screen displaying the interactive map,
+ * filters, weather information, and user location.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ExploreScreen() {
@@ -29,7 +33,10 @@ fun ExploreScreen() {
     val vienna = LatLng(48.2082, 16.3738)
     var mapboxMap by remember { mutableStateOf<com.mapbox.mapboxsdk.maps.MapboxMap?>(null) }
     val weatherViewModel = androidx.lifecycle.viewmodel.compose.viewModel<WeatherViewModel>()
-    val temperature by weatherViewModel.temperature.collectAsState()
+    val weatherState by weatherViewModel.uiState.collectAsState()
+    val location = mapboxMap
+        ?.locationComponent
+        ?.lastKnownLocation
 
     Box(modifier = Modifier.fillMaxSize()) {
 
@@ -40,16 +47,15 @@ fun ExploreScreen() {
             onMapReady = { mapboxMap = it }
         )
 
-        LaunchedEffect(mapboxMap) {
-            val location = mapboxMap
-                ?.locationComponent
-                ?.lastKnownLocation
+        LaunchedEffect(location) {
+            location ?: return@LaunchedEffect
 
-            location?.let {
+            while (true) {
                 weatherViewModel.loadWeather(
-                    lat = it.latitude,
-                    lon = it.longitude
+                    lat = location.latitude,
+                    lon = location.longitude
                 )
+                kotlinx.coroutines.delay(2 * 60 * 1000L) // 2 minutes
             }
         }
 
@@ -77,7 +83,10 @@ fun ExploreScreen() {
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            WeatherCard(temperature)
+            WeatherCard(
+                icon = weatherState.icon,
+                temperature = weatherState.temperature
+            )
         }
         FloatingActionButton(
             onClick = {
@@ -103,20 +112,28 @@ fun ExploreScreen() {
     }
 }
 
+/*
+ * Small card displaying current weather icon and temperature.
+ */
 @Composable
-fun WeatherCard(temperature: String = "11°C") {
+fun WeatherCard(
+    icon: String,
+    temperature: String
+) {
     Surface(
         shape = RoundedCornerShape(16.dp),
         color = Color.Black.copy(alpha = 0.7f),
-        modifier = Modifier
-            .width(80.dp)
-            .height(80.dp)
+        modifier = Modifier.size(80.dp)
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
-            modifier = Modifier.fillMaxSize()
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Text(icon, fontSize = MaterialTheme.typography.headlineMedium.fontSize)
+            Spacer(modifier = Modifier.height(4.dp))
             Text(temperature, color = Color.White)
         }
     }
 }
+

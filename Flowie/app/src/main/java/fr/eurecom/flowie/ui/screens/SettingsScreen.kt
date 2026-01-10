@@ -8,9 +8,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
+/*
+ * Settings screen placeholder.
+ * Intended for user preferences and application configuration.
+ */
 @Composable
 fun SettingsScreen() {
     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text("Settings (to implement)", color = Color.White)
+        Text("Settings (to implement)", color = Color.Black)
     }
 }

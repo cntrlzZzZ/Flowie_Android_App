@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -24,6 +23,10 @@ import fr.eurecom.flowie.model.WaterSpot
 import fr.eurecom.flowie.ui.components.FilterChipSelectable
 import fr.eurecom.flowie.ui.components.SpotBottomSheet
 
+/*
+ * Screen displaying the list of saved water spots.
+ * Includes filters and a bottom sheet with detailed information.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SavedScreen() {
@@ -109,6 +112,10 @@ fun SavedScreen() {
     }
 }
 
+/*
+ * Card representing a saved water spot in the list.
+ * Clicking the card opens the bottom sheet.
+ */
 @Composable
 fun SavedPlaceCard(spot: WaterSpot, onClick: () -> Unit) {
     Surface(

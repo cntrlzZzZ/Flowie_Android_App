@@ -17,6 +17,10 @@ import fr.eurecom.flowie.ui.screens.AboutScreen
 import fr.eurecom.flowie.ui.screens.HelpScreen
 import fr.eurecom.flowie.ui.screens.SettingsScreen
 
+/*
+ * Main navigation graph of the application.
+ * Defines all composable destinations and handles bottom navigation.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavGraph() {

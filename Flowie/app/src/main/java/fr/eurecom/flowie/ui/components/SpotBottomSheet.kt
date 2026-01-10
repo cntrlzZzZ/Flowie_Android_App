@@ -8,6 +8,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import fr.eurecom.flowie.model.WaterSpot
 
+/*
+ * Bottom sheet displaying detailed information about a water spot.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SpotBottomSheet(spot: WaterSpot) {

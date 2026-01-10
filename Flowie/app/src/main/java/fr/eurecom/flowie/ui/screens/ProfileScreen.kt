@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
@@ -25,6 +24,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import fr.eurecom.flowie.model.StepRepository
 
+/*
+ * User profile screen displaying personal information,
+ * activity statistics, and navigation shortcuts.
+ */
 @Composable
 fun ProfileScreen(navController: NavController) {
 
@@ -79,6 +82,9 @@ fun ProfileScreen(navController: NavController) {
     }
 }
 
+/*
+ * Small card displaying a user statistic (steps, saved spots, etc.).
+ */
 @Composable
 fun StatCard(label: String, value: String) {
     Surface(
@@ -102,6 +108,10 @@ fun StatCard(label: String, value: String) {
     }
 }
 
+/*
+ * Reusable clickable button used in the profile screen
+ * for navigation and actions.
+ */
 @Composable
 fun ProfileButton(
     text: String,

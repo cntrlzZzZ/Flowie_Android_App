@@ -7,7 +7,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.geometry.LatLng
-import com.mapbox.mapboxsdk.maps.MapView
 import com.mapbox.mapboxsdk.Mapbox
 import fr.eurecom.flowie.BuildConfig
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions
@@ -16,7 +15,10 @@ import com.mapbox.mapboxsdk.location.modes.RenderMode
 import androidx.core.content.ContextCompat
 import android.content.pm.PackageManager
 
-
+/*
+ * Composable wrapping a MapLibre (Mapbox namespace) MapView.
+ * Displays a MapTiler map and optionally exposes the MapboxMap instance.
+ */
 @Composable
 fun MapTilerMap(
     modifier: Modifier = Modifier,

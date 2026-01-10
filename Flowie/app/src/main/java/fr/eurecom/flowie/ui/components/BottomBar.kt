@@ -10,6 +10,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import fr.eurecom.flowie.navigation.Screen
 import androidx.compose.material3.Icon
 
+/*
+ * Bottom navigation bar used for main app navigation.
+ */
 @Composable
 fun BottomBar(navController: NavController, modifier: Modifier = Modifier) {
     val items = listOf(

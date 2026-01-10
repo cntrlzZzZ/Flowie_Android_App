@@ -30,6 +30,11 @@ import java.io.File
 import fr.eurecom.flowie.ui.components.MapTilerMap
 import com.mapbox.mapboxsdk.geometry.LatLng
 
+/*
+ * Screen allowing users to contribute a new water spot.
+ * Includes a map preview, form inputs, image upload (camera/gallery),
+ * and accessibility information.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContributeScreen() {
@@ -76,8 +81,6 @@ fun ContributeScreen() {
         }
     }
 
-    var mapboxMap by remember { mutableStateOf<com.mapbox.mapboxsdk.maps.MapboxMap?>(null) }
-
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -104,7 +107,7 @@ fun ContributeScreen() {
                 modifier = Modifier.matchParentSize(),
                 center = markerPosition,
                 zoom = 15.0,
-                onMapReady = { mapboxMap = it }
+                onMapReady = { /* no op for now */ }
             )
 
         }
@@ -247,6 +250,9 @@ fun ContributeScreen() {
     }
 }
 
+/*
+ * Creates a temporary image URI used to store a photo taken by the camera.
+ */
 fun createImageUri(context: Context): Uri {
     val imagesDir = File(context.cacheDir, "images")
     imagesDir.mkdirs()

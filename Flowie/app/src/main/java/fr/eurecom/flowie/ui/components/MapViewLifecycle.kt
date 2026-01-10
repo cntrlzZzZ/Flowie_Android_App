@@ -6,6 +6,10 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.mapbox.mapboxsdk.maps.MapView
 
+/*
+ * Remembers a MapView and correctly binds it to the Compose lifecycle.
+ * Prevents crashes and memory leaks.
+ */
 @Composable
 fun rememberMapViewWithLifecycle(): MapView {
     val context = androidx.compose.ui.platform.LocalContext.current

@@ -16,6 +16,10 @@ import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.WellKnownTileServer
 import android.Manifest
 
+/*
+ * Main entry point of the application.
+ * Handles permissions, step counting, map initialization, and UI setup.
+ */
 class MainActivity : ComponentActivity() {
 
     private val activityPermissionLauncher =
@@ -54,11 +58,11 @@ class MainActivity : ComponentActivity() {
             }
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            if (checkSelfPermission(android.Manifest.permission.ACTIVITY_RECOGNITION)
+            if (checkSelfPermission(Manifest.permission.ACTIVITY_RECOGNITION)
                 != PackageManager.PERMISSION_GRANTED
             ) {
                 activityPermissionLauncher.launch(
-                    android.Manifest.permission.ACTIVITY_RECOGNITION
+                    Manifest.permission.ACTIVITY_RECOGNITION
                 )
             }
         }
