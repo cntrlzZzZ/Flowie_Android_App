@@ -1,671 +1,672 @@
-source,source_id,name,type_label,type_num,has_trough,lat,lon,city,country
-vienna,2255748,Trinkbrunnen,drinking_fountain,4,False,48.2129137905,16.3259277159,Vienna,AT
-vienna,2255749,Trinkbrunnen,drinking_fountain,4,False,48.239938381,16.4737957678,Vienna,AT
-vienna,2255750,Trinkbrunnen,drinking_fountain,4,False,48.2399678244,16.4737193109,Vienna,AT
-vienna,2255751,Trinkbrunnen,drinking_fountain,4,False,48.2399071762,16.4737208285,Vienna,AT
-vienna,2255752,Trinkbrunnen,drinking_fountain,4,False,48.2406648822,16.4742176938,Vienna,AT
-vienna,2255753,Trinkbrunnen,drinking_fountain,4,False,48.1989423332,16.3385926843,Vienna,AT
-vienna,2255754,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1964478658,16.2858579385,Vienna,AT
-vienna,2255755,Trinkbrunnen,drinking_fountain,4,False,48.2093112848,16.3587058627,Vienna,AT
-vienna,2255756,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1321407473,16.2557532851,Vienna,AT
-vienna,2255758,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.195074485,16.2854775669,Vienna,AT
-vienna,2255759,Trinkbrunnen,drinking_fountain,4,False,48.2167418511,16.3723434759,Vienna,AT
-vienna,2255763,Trinkbrunnen,drinking_fountain,4,False,48.2164176097,16.3292709092,Vienna,AT
-vienna,2255764,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1955459025,16.2611212171,Vienna,AT
-vienna,2255765,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1802582813,16.2898646289,Vienna,AT
-vienna,2255766,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1592233247,16.2910575342,Vienna,AT
-vienna,2255767,Trinkbrunnen,drinking_fountain,4,False,48.2633833628,16.4432126562,Vienna,AT
-vienna,2255777,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1393410001,16.2778988626,Vienna,AT
-vienna,2255792,Trinkbrunnen,drinking_fountain,4,False,48.1666381883,16.4183687023,Vienna,AT
-vienna,2255793,Trinkbrunnen,drinking_fountain,4,False,48.1542951653,16.2898930926,Vienna,AT
-vienna,2255818,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1689478053,16.308030724,Vienna,AT
-vienna,2255827,Trinkbrunnen,drinking_fountain,4,False,48.159433872,16.475835954,Vienna,AT
-vienna,2255829,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1764406106,16.332391678,Vienna,AT
-vienna,2255838,Trinkbrunnen,drinking_fountain,4,False,48.2250665157,16.3858220372,Vienna,AT
-vienna,2255415,Trinkbrunnen,drinking_fountain,4,False,48.2064266898,16.3143083835,Vienna,AT
-vienna,2255416,Trinkbrunnen,drinking_fountain,4,False,48.2063828172,16.3151682245,Vienna,AT
-vienna,2255417,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2159348476,16.3596818513,Vienna,AT
-vienna,2255418,Trinkbrunnen,drinking_fountain,4,False,48.212735407,16.488845228,Vienna,AT
-vienna,2255419,Trinkbrunnen,drinking_fountain,4,False,48.2242519884,16.4516214393,Vienna,AT
-vienna,2255420,Trinkbrunnen,drinking_fountain,4,False,48.213298934,16.3356021933,Vienna,AT
-vienna,2255421,Trinkbrunnen,drinking_fountain,4,False,48.2136346207,16.3351613006,Vienna,AT
-vienna,2255422,Trinkbrunnen,drinking_fountain,4,False,48.2135649044,16.3349615903,Vienna,AT
-vienna,2255423,Trinkbrunnen,drinking_fountain,4,False,48.2446929133,16.3258242167,Vienna,AT
-vienna,2255424,Trinkbrunnen,drinking_fountain,4,False,48.2213621422,16.3169318089,Vienna,AT
-vienna,2255425,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2001187872,16.3135108086,Vienna,AT
-vienna,2255427,Trinkbrunnen,drinking_fountain,4,False,48.1694007959,16.3520725085,Vienna,AT
-vienna,2255429,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2045689699,16.3465166254,Vienna,AT
-vienna,2255430,Trinkbrunnen,drinking_fountain,4,False,48.2014319093,16.338537466,Vienna,AT
-vienna,2255431,Trinkbrunnen,drinking_fountain,4,False,48.2076211691,16.3406693166,Vienna,AT
-vienna,2255432,Trinkbrunnen,drinking_fountain,4,False,48.1989014063,16.3473425169,Vienna,AT
-vienna,2255433,Trinkbrunnen,drinking_fountain,4,False,48.2088438344,16.3453550482,Vienna,AT
-vienna,2255434,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2234671112,16.358717653,Vienna,AT
-vienna,2255436,Trinkbrunnen,drinking_fountain,4,False,48.2297306399,16.3525298864,Vienna,AT
-vienna,2255437,Trinkbrunnen,drinking_fountain,4,False,48.2914398911,16.4151738521,Vienna,AT
-vienna,2255438,Trinkbrunnen,drinking_fountain,4,False,48.1587730321,16.3193854493,Vienna,AT
-vienna,2255439,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2801449554,16.4216665868,Vienna,AT
-vienna,2255440,Trinkbrunnen,drinking_fountain,4,False,48.2692585334,16.4487849177,Vienna,AT
-vienna,2255441,Trinkbrunnen,drinking_fountain,4,False,48.2704241086,16.4500359945,Vienna,AT
-vienna,2255442,Trinkbrunnen,drinking_fountain,4,False,48.2701988038,16.454875076,Vienna,AT
-vienna,2255443,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2775064426,16.4124448176,Vienna,AT
-vienna,2255444,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2292685598,16.5347851295,Vienna,AT
-vienna,2255445,Trinkbrunnen,drinking_fountain,4,False,48.295378764,16.3891581742,Vienna,AT
-vienna,2255446,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2455547431,16.3185177629,Vienna,AT
-vienna,2255447,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2499930657,16.3129124695,Vienna,AT
-vienna,2255448,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2432709064,16.3577219058,Vienna,AT
-vienna,2255449,Trinkbrunnen,drinking_fountain,4,False,48.2456182553,16.3440191134,Vienna,AT
-vienna,2255450,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2534035396,16.3413962684,Vienna,AT
-vienna,2255451,Trinkbrunnen,drinking_fountain,4,False,48.2506823933,16.3372110618,Vienna,AT
-vienna,2255452,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2410151914,16.3205036115,Vienna,AT
-vienna,2255453,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2049000791,16.4058581028,Vienna,AT
-vienna,2255454,Trinkbrunnen,drinking_fountain,4,False,48.2061681077,16.4058683295,Vienna,AT
-vienna,2255455,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2566226481,16.3621081615,Vienna,AT
-vienna,2255456,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2583573062,16.3533360483,Vienna,AT
-vienna,2255457,Trinkbrunnen,drinking_fountain,4,False,48.253918542,16.3667157712,Vienna,AT
-vienna,2255458,Trinkbrunnen,drinking_fountain,4,False,48.25523423,16.4075571461,Vienna,AT
-vienna,2255460,Trinkbrunnen,drinking_fountain,4,False,48.2615442734,16.3993594803,Vienna,AT
-vienna,2255462,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2207984368,16.3426337576,Vienna,AT
-vienna,2255463,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2346347345,16.3313915012,Vienna,AT
-vienna,2255464,Trinkbrunnen,drinking_fountain,4,False,48.2342310686,16.3337040534,Vienna,AT
-vienna,2255465,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2346850828,16.3364778672,Vienna,AT
-vienna,2255466,Trinkbrunnen,drinking_fountain,4,False,48.2361686047,16.3342889348,Vienna,AT
-vienna,2255467,Trinkbrunnen,drinking_fountain,4,False,48.2508815358,16.4026058711,Vienna,AT
-vienna,2255468,Trinkbrunnen,drinking_fountain,4,False,48.2131427858,16.4010089391,Vienna,AT
-vienna,2255470,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2187513021,16.3221146346,Vienna,AT
-vienna,2255471,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.254441466,16.4216061681,Vienna,AT
-vienna,2255472,Trinkbrunnen,drinking_fountain,4,False,48.210643378,16.3318049684,Vienna,AT
-vienna,2255473,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2079230038,16.2860629282,Vienna,AT
-vienna,2255474,Trinkbrunnen,drinking_fountain,4,False,48.2135778276,16.3328335228,Vienna,AT
-vienna,2255475,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2059901475,16.3341190953,Vienna,AT
-vienna,2255476,Trinkbrunnen,drinking_fountain,4,False,48.2057322029,16.334168645,Vienna,AT
-vienna,2255477,Trinkbrunnen,drinking_fountain,4,False,48.2087746837,16.3334241928,Vienna,AT
-vienna,2255478,Trinkbrunnen,drinking_fountain,4,False,48.1925694488,16.4416931729,Vienna,AT
-vienna,2255479,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1888888975,16.3183807819,Vienna,AT
-vienna,2255481,Trinkbrunnen,drinking_fountain,4,False,48.2141651603,16.4766974477,Vienna,AT
-vienna,2255482,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2127151655,16.3096562681,Vienna,AT
-vienna,2255483,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2127668151,16.3093484977,Vienna,AT
-vienna,2255484,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2091694794,16.313151186,Vienna,AT
-vienna,2255485,Trinkbrunnen,drinking_fountain,4,False,48.2156216428,16.3125753531,Vienna,AT
-vienna,2255486,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2158335658,16.307549171,Vienna,AT
-vienna,2255487,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.235442924,16.3727353798,Vienna,AT
-vienna,2255488,Trinkbrunnen,drinking_fountain,4,False,48.1870427844,16.3258442956,Vienna,AT
-vienna,2255489,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1964276375,16.3632903406,Vienna,AT
-vienna,2255490,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2005769565,16.345730371,Vienna,AT
-vienna,2255491,Trinkbrunnen,drinking_fountain,4,False,48.1469038789,16.3983491872,Vienna,AT
-vienna,2255492,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1479909986,16.4008948566,Vienna,AT
-vienna,2255493,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1502618228,16.3990076773,Vienna,AT
-vienna,2255494,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.15086291,16.3990085916,Vienna,AT
-vienna,2255495,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1506209447,16.4014620495,Vienna,AT
-vienna,2255496,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1455836817,16.4068789997,Vienna,AT
-vienna,2255498,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1886827674,16.3260946104,Vienna,AT
-vienna,2255499,Trinkbrunnen,drinking_fountain,4,False,48.1935253585,16.3376476459,Vienna,AT
-vienna,2255500,Trinkbrunnen,drinking_fountain,4,False,48.2203170778,16.313045374,Vienna,AT
-vienna,2255501,Trinkbrunnen,drinking_fountain,4,False,48.2104104061,16.3192416727,Vienna,AT
-vienna,2255502,Trinkbrunnen,drinking_fountain,4,False,48.2041497347,16.3154261921,Vienna,AT
-vienna,2255503,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.21452052,16.5261100292,Vienna,AT
-vienna,2255504,Trinkbrunnen,drinking_fountain,4,False,48.1678317854,16.2875140225,Vienna,AT
-vienna,2255505,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.156097082,16.4416198124,Vienna,AT
-vienna,2255506,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2416018613,16.4799822103,Vienna,AT
-vienna,2255507,Trinkbrunnen,drinking_fountain,4,False,48.1983533159,16.3059712941,Vienna,AT
-vienna,2255508,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1912902794,16.3152609078,Vienna,AT
-vienna,2255509,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2630589972,16.3921806767,Vienna,AT
-vienna,2255510,Trinkbrunnen,drinking_fountain,4,False,48.1633690265,16.2919704111,Vienna,AT
-vienna,2255511,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2765528759,16.4056541352,Vienna,AT
-vienna,2255513,Trinkbrunnen,drinking_fountain,4,False,48.2359835997,16.3902080485,Vienna,AT
-vienna,2255514,Trinkbrunnen,drinking_fountain,4,False,48.2139448123,16.3439822245,Vienna,AT
-vienna,2255515,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2189414535,16.3940681716,Vienna,AT
-vienna,2255517,Trinkbrunnen,drinking_fountain,4,False,48.2197236185,16.3961939271,Vienna,AT
-vienna,2255518,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1574049241,16.424770791,Vienna,AT
-vienna,2255520,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1424784817,16.3905084972,Vienna,AT
-vienna,2255521,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2147881868,16.4146400051,Vienna,AT
-vienna,2255522,Trinkbrunnen,drinking_fountain,4,False,48.2412249383,16.3093274595,Vienna,AT
-vienna,2255523,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2571675562,16.3884648806,Vienna,AT
-vienna,2255524,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2006748385,16.337890145,Vienna,AT
-vienna,2255525,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2233875268,16.3672706061,Vienna,AT
-vienna,2255526,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2236589239,16.3675335275,Vienna,AT
-vienna,2255527,Trinkbrunnen,drinking_fountain,4,False,48.2074680229,16.3512223057,Vienna,AT
-vienna,2255528,Trinkbrunnen,drinking_fountain,4,False,48.2075258161,16.3429561944,Vienna,AT
-vienna,2255529,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1887543795,16.3169178867,Vienna,AT
-vienna,2255531,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.18885584,16.3188763865,Vienna,AT
-vienna,2255532,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1823739804,16.2683806189,Vienna,AT
-vienna,2255533,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.257054478,16.3396013312,Vienna,AT
-vienna,2255534,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2282988903,16.3358295684,Vienna,AT
-vienna,2255535,Trinkbrunnen,drinking_fountain,4,False,48.2496856188,16.3477857153,Vienna,AT
-vienna,2255536,Trinkbrunnen,drinking_fountain,4,False,48.1659948122,16.2575442812,Vienna,AT
-vienna,2255537,Trinkbrunnen,drinking_fountain,4,False,48.18772553,16.4033260733,Vienna,AT
-vienna,2255538,Trinkbrunnen,drinking_fountain,4,False,48.2237372897,16.3460257973,Vienna,AT
-vienna,2255539,Trinkbrunnen,drinking_fountain,4,False,48.2024499341,16.3889178216,Vienna,AT
-vienna,2255540,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2141258439,16.3047176468,Vienna,AT
-vienna,2255541,Trinkbrunnen,drinking_fountain,4,False,48.2626167967,16.3873909987,Vienna,AT
-vienna,2255542,Trinkbrunnen,drinking_fountain,4,False,48.2124769046,16.4755408171,Vienna,AT
-vienna,2255543,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2260224704,16.4912176259,Vienna,AT
-vienna,2255544,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.217371161,16.4821431538,Vienna,AT
-vienna,2255545,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2777896502,16.4908551802,Vienna,AT
-vienna,2255546,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.218838069,16.4769948627,Vienna,AT
-vienna,2255547,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.246029275,16.4723925535,Vienna,AT
-vienna,2255548,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2145386803,16.4905327333,Vienna,AT
-vienna,2255549,Trinkbrunnen,drinking_fountain,4,False,48.2212692352,16.4845417811,Vienna,AT
-vienna,2255550,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2131246368,16.5244868568,Vienna,AT
-vienna,2255552,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2179528462,16.5252660404,Vienna,AT
-vienna,2255553,Trinkbrunnen,drinking_fountain,4,False,48.2141646349,16.4753182586,Vienna,AT
-vienna,2255555,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2974068151,16.4203835677,Vienna,AT
-vienna,2255556,Trinkbrunnen,drinking_fountain,4,False,48.2947171487,16.4166846211,Vienna,AT
-vienna,2255557,Trinkbrunnen,drinking_fountain,4,False,48.2946352478,16.4172232945,Vienna,AT
-vienna,2255558,Trinkbrunnen,drinking_fountain,4,False,48.2590639046,16.4236020233,Vienna,AT
-vienna,2255559,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.219453548,16.3943052267,Vienna,AT
-vienna,2255560,Trinkbrunnen,drinking_fountain,4,False,48.2531829034,16.442711057,Vienna,AT
-vienna,2255563,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1456233355,16.4041426809,Vienna,AT
-vienna,2255564,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1468185244,16.4014880126,Vienna,AT
-vienna,2255565,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1484913968,16.405443393,Vienna,AT
-vienna,2255566,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.145179757,16.4020355097,Vienna,AT
-vienna,2255567,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1765284595,16.4256682148,Vienna,AT
-vienna,2255568,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2340693963,16.3247831895,Vienna,AT
-vienna,2255571,Trinkbrunnen,drinking_fountain,4,False,48.1900792942,16.3936349192,Vienna,AT
-vienna,2255572,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1692911855,16.4110578235,Vienna,AT
-vienna,2255573,Trinkbrunnen,drinking_fountain,4,False,48.2168203305,16.3489047916,Vienna,AT
-vienna,2255574,Trinkbrunnen,drinking_fountain,4,False,48.2375729723,16.4531725882,Vienna,AT
-vienna,2255575,Trinkbrunnen,drinking_fountain,4,False,48.2128655292,16.3195371266,Vienna,AT
-vienna,2255576,Trinkbrunnen,drinking_fountain,4,False,48.259171172,16.3922622541,Vienna,AT
-vienna,2255577,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2235522494,16.3907038856,Vienna,AT
-vienna,2255578,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2206175871,16.3679648555,Vienna,AT
-vienna,2255579,Trinkbrunnen,drinking_fountain,4,False,48.2378946614,16.385758299,Vienna,AT
-vienna,2255580,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1908771677,16.3755844171,Vienna,AT
-vienna,2255581,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2235110681,16.3907427664,Vienna,AT
-vienna,2255582,Trinkbrunnen,drinking_fountain,4,False,48.1665187842,16.3259594434,Vienna,AT
-vienna,2255583,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2699282706,16.4380320439,Vienna,AT
-vienna,2255584,Trinkbrunnen,drinking_fountain,4,False,48.2524857046,16.398782678,Vienna,AT
-vienna,2255585,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2513978035,16.3930588829,Vienna,AT
-vienna,2255587,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1610424492,16.4437316248,Vienna,AT
-vienna,2255589,Trinkbrunnen,drinking_fountain,4,False,48.2316562154,16.3479863691,Vienna,AT
-vienna,2255590,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2582866707,16.3376528522,Vienna,AT
-vienna,2255591,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2775788609,16.3825672712,Vienna,AT
-vienna,2255592,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1360046565,16.2805018542,Vienna,AT
-vienna,2255593,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1353278876,16.2824154162,Vienna,AT
-vienna,2255594,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1355386845,16.2818535384,Vienna,AT
-vienna,2255595,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2022793161,16.2499261876,Vienna,AT
-vienna,2255596,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.15272643,16.3868906503,Vienna,AT
-vienna,2255597,Trinkbrunnen,drinking_fountain,4,False,48.2377417048,16.4157010127,Vienna,AT
-vienna,2255598,Trinkbrunnen,drinking_fountain,4,False,48.1683726994,16.2969848132,Vienna,AT
-vienna,2255600,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2353286555,16.3708098852,Vienna,AT
-vienna,2255601,Trinkbrunnen,drinking_fountain,4,False,48.211919141,16.3594549507,Vienna,AT
-vienna,2255603,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2225413228,16.3908314929,Vienna,AT
-vienna,2255604,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2259470595,16.3963226834,Vienna,AT
-vienna,2255605,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1695011697,16.3823570015,Vienna,AT
-vienna,2255606,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1738901708,16.4194004436,Vienna,AT
-vienna,2255609,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1696066009,16.4290588628,Vienna,AT
-vienna,2255610,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2743494697,16.4057856576,Vienna,AT
-vienna,2255611,Trinkbrunnen,drinking_fountain,4,False,48.2608133318,16.3921441497,Vienna,AT
-vienna,2255612,Trinkbrunnen,drinking_fountain,4,False,48.1917904311,16.3920638923,Vienna,AT
-vienna,2255613,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2459272549,16.3306537508,Vienna,AT
-vienna,2255614,Trinkbrunnen,drinking_fountain,4,False,48.2518338032,16.457488021,Vienna,AT
-vienna,2255615,Trinkbrunnen,drinking_fountain,4,False,48.2160260654,16.3533244708,Vienna,AT
-vienna,2255617,Trinkbrunnen,drinking_fountain,4,False,48.2482966415,16.4919744912,Vienna,AT
-vienna,2255618,Trinkbrunnen,drinking_fountain,4,False,48.2881909319,16.4318239319,Vienna,AT
-vienna,2255622,Trinkbrunnen,drinking_fountain,4,False,48.2181926192,16.2498044441,Vienna,AT
-vienna,2255623,Trinkbrunnen,drinking_fountain,4,False,48.1844760498,16.3346885423,Vienna,AT
-vienna,2255624,Trinkbrunnen,drinking_fountain,4,False,48.2477001907,16.307099298,Vienna,AT
-vienna,2255625,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2243441553,16.5035894615,Vienna,AT
-vienna,2255626,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2430244255,16.3017954195,Vienna,AT
-vienna,2255627,Trinkbrunnen,drinking_fountain,4,False,48.143499484,16.2946718901,Vienna,AT
-vienna,2255628,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1973116815,16.4020511011,Vienna,AT
-vienna,2255629,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1938085791,16.2741121609,Vienna,AT
-vienna,2255630,Trinkbrunnen,drinking_fountain,4,False,48.2760356332,16.4223280134,Vienna,AT
-vienna,2255631,Trinkbrunnen,drinking_fountain,4,False,48.2776364441,16.4237443048,Vienna,AT
-vienna,2255632,Trinkbrunnen,drinking_fountain,4,False,48.2573579885,16.4559412274,Vienna,AT
-vienna,2255633,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1823914373,16.4180744227,Vienna,AT
-vienna,2255634,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.183192785,16.4176030415,Vienna,AT
-vienna,2255635,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2895001383,16.3917113385,Vienna,AT
-vienna,2255638,Trinkbrunnen,drinking_fountain,4,False,48.2527394037,16.4773043753,Vienna,AT
-vienna,2255639,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1783579535,16.3811703093,Vienna,AT
-vienna,2255640,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1791307479,16.383110999,Vienna,AT
-vienna,2255642,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1800234988,16.3837442985,Vienna,AT
-vienna,2255643,Trinkbrunnen,drinking_fountain,4,False,48.1818717037,16.3819509054,Vienna,AT
-vienna,2255646,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1530866005,16.2916610064,Vienna,AT
-vienna,2255647,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2100888609,16.2480461138,Vienna,AT
-vienna,2255648,Trinkbrunnen,drinking_fountain,4,False,48.237932904,16.4496559717,Vienna,AT
-vienna,2255649,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1769516033,16.3886400912,Vienna,AT
-vienna,2255650,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1781881267,16.3863262977,Vienna,AT
-vienna,2255651,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1783407889,16.3860896383,Vienna,AT
-vienna,2255652,Trinkbrunnen,drinking_fountain,4,False,48.194160103,16.3524101698,Vienna,AT
-vienna,2255653,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.269708205,16.4450984479,Vienna,AT
-vienna,2255654,Trinkbrunnen,drinking_fountain,4,False,48.2860322131,16.4437606471,Vienna,AT
-vienna,2255657,Trinkbrunnen,drinking_fountain,4,False,48.237084231,16.3192924701,Vienna,AT
-vienna,2255658,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1461124973,16.3857823496,Vienna,AT
-vienna,2255659,Trinkbrunnen,drinking_fountain,4,False,48.1450014422,16.3934891574,Vienna,AT
-vienna,2255660,Trinkbrunnen,drinking_fountain,4,False,48.2041827125,16.3797072149,Vienna,AT
-vienna,2255661,Trinkbrunnen,drinking_fountain,4,False,48.2038272839,16.381743163,Vienna,AT
-vienna,2255662,Trinkbrunnen,drinking_fountain,4,False,48.1692639304,16.3063574631,Vienna,AT
-vienna,2255663,Trinkbrunnen,drinking_fountain,4,False,48.2467556436,16.4073493535,Vienna,AT
-vienna,2255664,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2915343004,16.3864320078,Vienna,AT
-vienna,2255665,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2108645056,16.3596279972,Vienna,AT
-vienna,2255666,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2102218336,16.359410088,Vienna,AT
-vienna,2255667,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2305859241,16.2949010812,Vienna,AT
-vienna,2255669,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2037585851,16.3542998896,Vienna,AT
-vienna,2255670,Trinkbrunnen,drinking_fountain,4,False,48.2145218384,16.3601290301,Vienna,AT
-vienna,2255671,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2456749016,16.3482371775,Vienna,AT
-vienna,2255672,Trinkbrunnen,drinking_fountain,4,False,48.188320491,16.3433749792,Vienna,AT
-vienna,2255673,Trinkbrunnen,drinking_fountain,4,False,48.226898214,16.3121186048,Vienna,AT
-vienna,2255674,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1373433341,16.2889424805,Vienna,AT
-vienna,2255676,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1521384583,16.2867064022,Vienna,AT
-vienna,2255656,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.190645892,16.331715703,Vienna,AT
-vienna,2255730,Trinkbrunnen,drinking_fountain,4,False,48.1987790797,16.2940564581,Vienna,AT
-vienna,2255734,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1985717997,16.3764415443,Vienna,AT
-vienna,2255735,Trinkbrunnen,drinking_fountain,4,False,48.2074569444,16.3411749757,Vienna,AT
-vienna,2255740,Trinkbrunnen,drinking_fountain,4,False,48.2698978996,16.3835505667,Vienna,AT
-vienna,2255742,Trinkbrunnen,drinking_fountain,4,False,48.2055223816,16.215206604,Vienna,AT
-vienna,2255743,Trinkbrunnen,drinking_fountain,4,False,48.1959875538,16.4038293632,Vienna,AT
-vienna,2255744,Trinkbrunnen,drinking_fountain,4,False,48.1824541655,16.4014383982,Vienna,AT
-vienna,2255745,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1888763077,16.3396870906,Vienna,AT
-vienna,2255746,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1597934208,16.4685635099,Vienna,AT
-vienna,2255747,Trinkbrunnen,drinking_fountain,4,False,48.2144043928,16.3179669745,Vienna,AT
-vienna,2255374,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1532848074,16.3564325446,Vienna,AT
-vienna,2255376,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1400823847,16.3922834834,Vienna,AT
-vienna,2255378,Trinkbrunnen,drinking_fountain,4,False,48.1941141543,16.3565190074,Vienna,AT
-vienna,2255379,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1938579005,16.3563219595,Vienna,AT
-vienna,2255380,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.154407879,16.380966138,Vienna,AT
-vienna,2255381,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1543887365,16.394213604,Vienna,AT
-vienna,2255382,Trinkbrunnen,drinking_fountain,4,False,48.1792842067,16.4153044115,Vienna,AT
-vienna,2255383,Trinkbrunnen,drinking_fountain,4,False,48.1558642534,16.3845560767,Vienna,AT
-vienna,2255384,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1795068199,16.4207830012,Vienna,AT
-vienna,2255385,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1578375066,16.3878456608,Vienna,AT
-vienna,2255386,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2348663334,16.3648141637,Vienna,AT
-vienna,2255387,Trinkbrunnen,drinking_fountain,4,False,48.1963462921,16.2760670808,Vienna,AT
-vienna,2255388,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1968639194,16.2753447319,Vienna,AT
-vienna,2255389,Trinkbrunnen,drinking_fountain,4,False,48.1973114222,16.2742042977,Vienna,AT
-vienna,2255390,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2389025529,16.384256936,Vienna,AT
-vienna,2255391,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1517657902,16.4662453644,Vienna,AT
-vienna,2255393,Trinkbrunnen,drinking_fountain,4,False,48.1651968006,16.4290684336,Vienna,AT
-vienna,2255394,Trinkbrunnen,drinking_fountain,4,False,48.167256177,16.4258006749,Vienna,AT
-vienna,2255395,Trinkbrunnen,drinking_fountain,4,False,48.2342273263,16.3735309251,Vienna,AT
-vienna,2255397,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2400121507,16.3786448935,Vienna,AT
-vienna,2255398,Trinkbrunnen,drinking_fountain,4,False,48.2264605852,16.3693354969,Vienna,AT
-vienna,2255400,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.235580311,16.3676471903,Vienna,AT
-vienna,2255401,Trinkbrunnen,drinking_fountain,4,False,48.1486552847,16.3172686601,Vienna,AT
-vienna,2255402,Trinkbrunnen,drinking_fountain,4,False,48.2319080178,16.3765943163,Vienna,AT
-vienna,2255404,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1321843389,16.4201264092,Vienna,AT
-vienna,2255406,Trinkbrunnen,drinking_fountain,4,False,48.230713754,16.3633089184,Vienna,AT
-vienna,2255407,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1309101979,16.3138545013,Vienna,AT
-vienna,2255408,Trinkbrunnen,drinking_fountain,4,False,48.1512763886,16.2698820823,Vienna,AT
-vienna,2255409,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1481554693,16.2920205749,Vienna,AT
-vienna,2255410,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2127566084,16.3210690918,Vienna,AT
-vienna,2255411,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2337206447,16.2915306123,Vienna,AT
-vienna,2255412,Trinkbrunnen,drinking_fountain,4,False,48.2077341882,16.2447718154,Vienna,AT
-vienna,2255413,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2177838193,16.364424841,Vienna,AT
-vienna,2255414,Trinkbrunnen,drinking_fountain,4,False,48.2067070893,16.3146897296,Vienna,AT
-vienna,2254994,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1678796481,16.3840039705,Vienna,AT
-vienna,2254995,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1748157851,16.3541563029,Vienna,AT
-vienna,2254996,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1745483393,16.3686611976,Vienna,AT
-vienna,2254997,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1746842132,16.3686391143,Vienna,AT
-vienna,2254998,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1756361208,16.3547320096,Vienna,AT
-vienna,2254999,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1648468053,16.4029990476,Vienna,AT
-vienna,2255000,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2040234361,16.3323626692,Vienna,AT
-vienna,2255001,Trinkbrunnen,drinking_fountain,4,False,48.2035023133,16.3320103411,Vienna,AT
-vienna,2255002,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2270541465,16.3580086597,Vienna,AT
-vienna,2255003,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1978802678,16.3518487699,Vienna,AT
-vienna,2255004,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1979105264,16.3532411043,Vienna,AT
-vienna,2255005,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1979706143,16.3523762584,Vienna,AT
-vienna,2255006,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2098953822,16.3271987831,Vienna,AT
-vienna,2255008,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1753549711,16.3681194398,Vienna,AT
-vienna,2255009,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2383126897,16.3847382143,Vienna,AT
-vienna,2255010,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2448934973,16.3387423092,Vienna,AT
-vienna,2255011,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2448648933,16.3377260939,Vienna,AT
-vienna,2255012,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2538365551,16.3571442188,Vienna,AT
-vienna,2255013,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2526070404,16.3581443956,Vienna,AT
-vienna,2255014,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.252010736,16.3575300746,Vienna,AT
-vienna,2255015,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2522983743,16.3618675608,Vienna,AT
-vienna,2255016,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.167942504,16.416750172,Vienna,AT
-vienna,2255017,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1675075012,16.4163200055,Vienna,AT
-vienna,2255018,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1690130534,16.4186190492,Vienna,AT
-vienna,2255019,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1569747902,16.4248274419,Vienna,AT
-vienna,2255020,Trinkbrunnen,drinking_fountain,4,False,48.1735852732,16.4110183662,Vienna,AT
-vienna,2255022,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1680658021,16.4305284564,Vienna,AT
-vienna,2255023,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1539554491,16.4602081984,Vienna,AT
-vienna,2255024,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.153318404,16.4616104834,Vienna,AT
-vienna,2255025,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2685945245,16.3829817636,Vienna,AT
-vienna,2255026,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2731404634,16.3940123195,Vienna,AT
-vienna,2255027,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.172210453,16.3592447755,Vienna,AT
-vienna,2255028,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2721599961,16.4479246151,Vienna,AT
-vienna,2255029,Trinkbrunnen,drinking_fountain,4,False,48.271840567,16.4490692235,Vienna,AT
-vienna,2255030,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1547238379,16.4697926976,Vienna,AT
-vienna,2255031,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.154573943,16.4693719756,Vienna,AT
-vienna,2255032,Trinkbrunnen,drinking_fountain,4,False,48.2488473178,16.3780538705,Vienna,AT
-vienna,2255034,Trinkbrunnen,drinking_fountain,4,False,48.1708398335,16.3683094564,Vienna,AT
-vienna,2255036,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.258231947,16.4430998391,Vienna,AT
-vienna,2255037,Trinkbrunnen,drinking_fountain,4,False,48.2585887019,16.4437556002,Vienna,AT
-vienna,2255039,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1813784228,16.3662693895,Vienna,AT
-vienna,2255040,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.180310032,16.3653785777,Vienna,AT
-vienna,2255041,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2202553918,16.4806405492,Vienna,AT
-vienna,2255042,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2073687428,16.337986701,Vienna,AT
-vienna,2255043,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2342495388,16.3299536854,Vienna,AT
-vienna,2255044,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2345849396,16.3375897472,Vienna,AT
-vienna,2255046,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1878727447,16.3109746641,Vienna,AT
-vienna,2255047,Trinkbrunnen,drinking_fountain,4,False,48.2020312996,16.2516314556,Vienna,AT
-vienna,2255048,Trinkbrunnen,drinking_fountain,4,False,48.1897687495,16.3544786847,Vienna,AT
-vienna,2255049,Trinkbrunnen,drinking_fountain,4,False,48.2516042313,16.3996786172,Vienna,AT
-vienna,2255050,Trinkbrunnen,drinking_fountain,4,False,48.2563649063,16.3899152861,Vienna,AT
-vienna,2255051,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2526699208,16.3950282776,Vienna,AT
-vienna,2255053,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2526870085,16.4151422899,Vienna,AT
-vienna,2255054,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2644242588,16.3983691507,Vienna,AT
-vienna,2255056,Trinkbrunnen,drinking_fountain,4,False,48.2698889987,16.3838817512,Vienna,AT
-vienna,2255058,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2549593344,16.3998036465,Vienna,AT
-vienna,2255059,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2729402446,16.3936981661,Vienna,AT
-vienna,2255060,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1812426908,16.3480754334,Vienna,AT
-vienna,2255061,Trinkbrunnen,drinking_fountain,4,False,48.1817008961,16.347002342,Vienna,AT
-vienna,2255062,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1818694725,16.3458312405,Vienna,AT
-vienna,2255063,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1815086009,16.3330891269,Vienna,AT
-vienna,2255064,Trinkbrunnen,drinking_fountain,4,False,48.1649293731,16.3061188227,Vienna,AT
-vienna,2255065,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.186671119,16.3370760245,Vienna,AT
-vienna,2255067,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.17585124,16.3312367807,Vienna,AT
-vienna,2255068,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1812864881,16.33917136,Vienna,AT
-vienna,2255069,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1814869897,16.3395734329,Vienna,AT
-vienna,2255070,Trinkbrunnen,drinking_fountain,4,False,48.1730435416,16.328629795,Vienna,AT
-vienna,2255071,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1823099159,16.3273785972,Vienna,AT
-vienna,2255072,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1822484237,16.3278041032,Vienna,AT
-vienna,2255074,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1789036502,16.3346685973,Vienna,AT
-vienna,2255075,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1592445131,16.3268656903,Vienna,AT
-vienna,2255076,Trinkbrunnen,drinking_fountain,4,False,48.160755844,16.3240599964,Vienna,AT
-vienna,2255077,Trinkbrunnen,drinking_fountain,4,False,48.1603030653,16.323577135,Vienna,AT
-vienna,2255078,Trinkbrunnen,drinking_fountain,4,False,48.1805754908,16.328355282,Vienna,AT
-vienna,2255079,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1709204437,16.320757119,Vienna,AT
-vienna,2255080,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1823672232,16.3473282917,Vienna,AT
-vienna,2255081,Trinkbrunnen,drinking_fountain,4,False,48.1782171603,16.3394124158,Vienna,AT
-vienna,2255082,Trinkbrunnen,drinking_fountain,4,False,48.1787195657,16.3386609308,Vienna,AT
-vienna,2255083,Trinkbrunnen,drinking_fountain,4,False,48.1657331865,16.2809912449,Vienna,AT
-vienna,2255085,Trinkbrunnen,drinking_fountain,4,False,48.1645079513,16.2727532971,Vienna,AT
-vienna,2255086,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1936426401,16.2600958522,Vienna,AT
-vienna,2255087,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.192422534,16.2613078055,Vienna,AT
-vienna,2255088,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1855355007,16.2871541496,Vienna,AT
-vienna,2255089,Trinkbrunnen,drinking_fountain,4,False,48.1684277453,16.2821405743,Vienna,AT
-vienna,2255090,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1812153181,16.2743655182,Vienna,AT
-vienna,2255092,Trinkbrunnen,drinking_fountain,4,False,48.1903502797,16.2716736619,Vienna,AT
-vienna,2255093,Trinkbrunnen,drinking_fountain,4,False,48.1737417929,16.2759250984,Vienna,AT
-vienna,2255095,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1398336521,16.3149564102,Vienna,AT
-vienna,2255096,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1402440451,16.3152044745,Vienna,AT
-vienna,2255097,Trinkbrunnen,drinking_fountain,4,False,48.139429376,16.2800623117,Vienna,AT
-vienna,2255098,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1517213926,16.3447990451,Vienna,AT
-vienna,2255099,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1506044727,16.3409795123,Vienna,AT
-vienna,2255100,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.145262625,16.2822260684,Vienna,AT
-vienna,2255101,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1523346504,16.3054480002,Vienna,AT
-vienna,2255102,Trinkbrunnen,drinking_fountain,4,False,48.147732402,16.3530198597,Vienna,AT
-vienna,2255103,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1375568793,16.2747607037,Vienna,AT
-vienna,2255104,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1488689898,16.3133003308,Vienna,AT
-vienna,2255105,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1480468343,16.3131278173,Vienna,AT
-vienna,2255106,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1500635945,16.3330403483,Vienna,AT
-vienna,2255107,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1494229409,16.3037811499,Vienna,AT
-vienna,2255108,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1492552982,16.2672385524,Vienna,AT
-vienna,2255109,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.140496692,16.2882743658,Vienna,AT
-vienna,2255110,Trinkbrunnen,drinking_fountain,4,False,48.1304464434,16.3125593875,Vienna,AT
-vienna,2255111,Trinkbrunnen,drinking_fountain,4,False,48.1960839731,16.3111537593,Vienna,AT
-vienna,2255112,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2305994573,16.4351775217,Vienna,AT
-vienna,2255113,Trinkbrunnen,drinking_fountain,4,False,48.2317446922,16.4390477061,Vienna,AT
-vienna,2255114,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2318175295,16.4180201391,Vienna,AT
-vienna,2255115,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2317278722,16.4189152405,Vienna,AT
-vienna,2255116,Trinkbrunnen,drinking_fountain,4,False,48.2311630096,16.4172188425,Vienna,AT
-vienna,2255117,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2317512904,16.4498593472,Vienna,AT
-vienna,2255118,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2368024822,16.4494447731,Vienna,AT
-vienna,2255119,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2387606077,16.4440689751,Vienna,AT
-vienna,2255120,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2408193474,16.4412103773,Vienna,AT
-vienna,2255122,Trinkbrunnen,drinking_fountain,4,False,48.2490040636,16.39982887,Vienna,AT
-vienna,2255123,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2407797584,16.4053199825,Vienna,AT
-vienna,2255124,Trinkbrunnen,drinking_fountain,4,False,48.238408903,16.4052632242,Vienna,AT
-vienna,2255125,Trinkbrunnen,drinking_fountain,4,False,48.2368374154,16.410491555,Vienna,AT
-vienna,2255127,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2390070147,16.4192562704,Vienna,AT
-vienna,2255128,Trinkbrunnen,drinking_fountain,4,False,48.2413714077,16.4160504808,Vienna,AT
-vienna,2255130,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2216841783,16.3691809975,Vienna,AT
-vienna,2255131,Trinkbrunnen,drinking_fountain,4,False,48.2247197861,16.3878484973,Vienna,AT
-vienna,2255132,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.218076833,16.3725661271,Vienna,AT
-vienna,2255134,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.220283297,16.4003631197,Vienna,AT
-vienna,2255135,Trinkbrunnen,drinking_fountain,4,False,48.215122445,16.3823171053,Vienna,AT
-vienna,2255136,Trinkbrunnen,drinking_fountain,4,False,48.2168092392,16.4051808623,Vienna,AT
-vienna,2255137,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2171870217,16.3860719654,Vienna,AT
-vienna,2255138,Trinkbrunnen,drinking_fountain,4,False,48.2132399989,16.3849123086,Vienna,AT
-vienna,2255139,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2242848673,16.4045308532,Vienna,AT
-vienna,2255140,Trinkbrunnen,drinking_fountain,4,False,48.1991864572,16.4172188394,Vienna,AT
-vienna,2255141,Trinkbrunnen,drinking_fountain,4,False,48.2264342543,16.4031653,Vienna,AT
-vienna,2255142,Trinkbrunnen,drinking_fountain,4,False,48.2256893121,16.4023975723,Vienna,AT
-vienna,2255144,Trinkbrunnen,drinking_fountain,4,False,48.1774063391,16.4176685747,Vienna,AT
-vienna,2255146,Trinkbrunnen,drinking_fountain,4,False,48.2164020526,16.3945592157,Vienna,AT
-vienna,2255147,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2048132454,16.4083630223,Vienna,AT
-vienna,2255148,Trinkbrunnen,drinking_fountain,4,False,48.2039166642,16.4065578459,Vienna,AT
-vienna,2255149,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2142690821,16.3781779817,Vienna,AT
-vienna,2255150,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1987919745,16.2838079643,Vienna,AT
-vienna,2255151,Trinkbrunnen,drinking_fountain,4,False,48.1988328048,16.2827595437,Vienna,AT
-vienna,2255152,Trinkbrunnen,drinking_fountain,4,False,48.2537340101,16.4773675221,Vienna,AT
-vienna,2255153,Trinkbrunnen,drinking_fountain,4,False,48.2750691708,16.4131120011,Vienna,AT
-vienna,2255154,Trinkbrunnen,drinking_fountain,4,False,48.2145950905,16.3677259564,Vienna,AT
-vienna,2255155,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2144087087,16.371538423,Vienna,AT
-vienna,2255156,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2074177551,16.3561787674,Vienna,AT
-vienna,2255157,Trinkbrunnen,drinking_fountain,4,False,48.2808885387,16.483676304,Vienna,AT
-vienna,2255158,Trinkbrunnen,drinking_fountain,4,False,48.2384078765,16.4391647382,Vienna,AT
-vienna,2255159,Trinkbrunnen,drinking_fountain,4,False,48.2172665066,16.3306863715,Vienna,AT
-vienna,2255160,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2687922007,16.3833179779,Vienna,AT
-vienna,2255161,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2146669327,16.3259196546,Vienna,AT
-vienna,2255162,Trinkbrunnen,drinking_fountain,4,False,48.2250499121,16.3144139961,Vienna,AT
-vienna,2255163,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2232100021,16.3303637955,Vienna,AT
-vienna,2255164,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2320878484,16.3150931943,Vienna,AT
-vienna,2255165,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2290345232,16.3045440276,Vienna,AT
-vienna,2255166,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2189079713,16.3348836198,Vienna,AT
-vienna,2255167,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.224575641,16.3239952326,Vienna,AT
-vienna,2255168,Trinkbrunnen,drinking_fountain,4,False,48.223489115,16.3145800256,Vienna,AT
-vienna,2255169,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2086900115,16.5185152735,Vienna,AT
-vienna,2255170,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2471166192,16.4321095257,Vienna,AT
-vienna,2255171,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2486512544,16.4483111523,Vienna,AT
-vienna,2255172,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2452289046,16.4415298644,Vienna,AT
-vienna,2255173,Trinkbrunnen,drinking_fountain,4,False,48.236794752,16.3340819607,Vienna,AT
-vienna,2255174,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1897547639,16.3269241449,Vienna,AT
-vienna,2255175,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2255392564,16.3247884668,Vienna,AT
-vienna,2255176,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2521693514,16.4335113622,Vienna,AT
-vienna,2255177,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2544716385,16.4336268332,Vienna,AT
-vienna,2255178,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2092446801,16.3083871345,Vienna,AT
-vienna,2255179,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2010739895,16.3072857619,Vienna,AT
-vienna,2255180,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2012848783,16.3075530157,Vienna,AT
-vienna,2255181,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1802089423,16.3446486789,Vienna,AT
-vienna,2255182,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2087201481,16.3044684994,Vienna,AT
-vienna,2255183,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1719777987,16.4088003854,Vienna,AT
-vienna,2255184,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2258167173,16.3389635083,Vienna,AT
-vienna,2255185,Trinkbrunnen,drinking_fountain,4,False,48.2265818092,16.3390472105,Vienna,AT
-vienna,2255186,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2324113797,16.3498055097,Vienna,AT
-vienna,2255187,Trinkbrunnen,drinking_fountain,4,False,48.2219468303,16.3082138612,Vienna,AT
-vienna,2255188,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2227389499,16.3109624709,Vienna,AT
-vienna,2255189,Trinkbrunnen,drinking_fountain,4,False,48.2021539609,16.3355617801,Vienna,AT
-vienna,2255190,Trinkbrunnen,drinking_fountain,4,False,48.201906555,16.3356908933,Vienna,AT
-vienna,2255191,Trinkbrunnen,drinking_fountain,4,False,48.1672500328,16.3008110006,Vienna,AT
-vienna,2255192,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1987501107,16.3613379924,Vienna,AT
-vienna,2255193,Trinkbrunnen,drinking_fountain,4,False,48.2211480068,16.3537002544,Vienna,AT
-vienna,2255194,Trinkbrunnen,drinking_fountain,4,False,48.2475215404,16.4383641374,Vienna,AT
-vienna,2255195,Trinkbrunnen,drinking_fountain,4,False,48.2471534402,16.4384383184,Vienna,AT
-vienna,2255196,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1712124511,16.4141859516,Vienna,AT
-vienna,2255197,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1704855116,16.4148823109,Vienna,AT
-vienna,2255198,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2154013667,16.3728513182,Vienna,AT
-vienna,2255199,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.189881657,16.3289733845,Vienna,AT
-vienna,2255200,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1899621577,16.3286258354,Vienna,AT
-vienna,2255201,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1765213123,16.3800685345,Vienna,AT
-vienna,2255202,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1903114806,16.3211430822,Vienna,AT
-vienna,2255203,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1966594472,16.319288811,Vienna,AT
-vienna,2255204,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1964611601,16.3190834252,Vienna,AT
-vienna,2255205,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.181450928,16.3557372297,Vienna,AT
-vienna,2255206,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1859575386,16.3499326214,Vienna,AT
-vienna,2255207,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1871373179,16.3474442987,Vienna,AT
-vienna,2255208,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2404405508,16.3344800003,Vienna,AT
-vienna,2255209,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1965247454,16.2679983059,Vienna,AT
-vienna,2255210,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1802819736,16.3504980115,Vienna,AT
-vienna,2255211,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1572451268,16.4627134412,Vienna,AT
-vienna,2255213,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1554190695,16.4628728743,Vienna,AT
-vienna,2255214,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1480942159,16.3090247433,Vienna,AT
-vienna,2255215,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1829468421,16.3509546629,Vienna,AT
-vienna,2255217,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2445352453,16.3803115219,Vienna,AT
-vienna,2255218,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2265754459,16.3349439786,Vienna,AT
-vienna,2255219,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.196217941,16.3025859289,Vienna,AT
-vienna,2255220,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1961578603,16.3034585999,Vienna,AT
-vienna,2255221,Trinkbrunnen,drinking_fountain,4,False,48.1649231135,16.32654636,Vienna,AT
-vienna,2255222,Trinkbrunnen,drinking_fountain,4,False,48.1648803116,16.3274854399,Vienna,AT
-vienna,2255223,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2122330797,16.342492514,Vienna,AT
-vienna,2255224,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2270753607,16.3971246405,Vienna,AT
-vienna,2255226,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1667195575,16.3777397718,Vienna,AT
-vienna,2255227,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2260272748,16.3979940392,Vienna,AT
-vienna,2255228,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2263358474,16.3965257633,Vienna,AT
-vienna,2255229,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2253283939,16.3971358905,Vienna,AT
-vienna,2255230,Trinkbrunnen,drinking_fountain,4,False,48.179281157,16.3783118099,Vienna,AT
-vienna,2255231,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1894217038,16.3331285188,Vienna,AT
-vienna,2255232,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2340916947,16.3872619847,Vienna,AT
-vienna,2255234,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.194115497,16.3189185009,Vienna,AT
-vienna,2255235,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1869557111,16.343258637,Vienna,AT
-vienna,2255236,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.187859911,16.355340386,Vienna,AT
-vienna,2255237,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1878443965,16.3628084335,Vienna,AT
-vienna,2255238,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1897056624,16.3608267479,Vienna,AT
-vienna,2255239,Trinkbrunnen,drinking_fountain,4,False,48.2031499902,16.3811185068,Vienna,AT
-vienna,2255241,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1982864265,16.3909675811,Vienna,AT
-vienna,2255242,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1984583149,16.3923145846,Vienna,AT
-vienna,2255243,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1976048338,16.4010844386,Vienna,AT
-vienna,2255244,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1976501306,16.4013218425,Vienna,AT
-vienna,2255245,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.186604745,16.3867873372,Vienna,AT
-vienna,2255247,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.18498993,16.3849339728,Vienna,AT
-vienna,2255248,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2389835204,16.3338868784,Vienna,AT
-vienna,2255249,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1985145663,16.3306304485,Vienna,AT
-vienna,2255250,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.198407511,16.3310655648,Vienna,AT
-vienna,2255251,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1980001389,16.3309011733,Vienna,AT
-vienna,2255252,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2056629912,16.3563791909,Vienna,AT
-vienna,2255253,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2064245808,16.35543617,Vienna,AT
-vienna,2255255,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1981971966,16.3619063132,Vienna,AT
-vienna,2255256,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1972612331,16.3524213457,Vienna,AT
-vienna,2255257,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1975914664,16.3526305484,Vienna,AT
-vienna,2255259,Trinkbrunnen,drinking_fountain,4,False,48.1924453787,16.3470567772,Vienna,AT
-vienna,2255260,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2121947414,16.351178145,Vienna,AT
-vienna,2255261,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2112942137,16.3448340733,Vienna,AT
-vienna,2255262,Trinkbrunnen,drinking_fountain,4,False,48.2112503048,16.3455799164,Vienna,AT
-vienna,2255263,Trinkbrunnen,drinking_fountain,4,False,48.2215561198,16.3090593773,Vienna,AT
-vienna,2255264,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2263804023,16.3583624854,Vienna,AT
-vienna,2255265,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2264139744,16.3583505455,Vienna,AT
-vienna,2255267,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1733447392,16.3716471515,Vienna,AT
-vienna,2255268,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2235162765,16.3368466796,Vienna,AT
-vienna,2255270,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2767513115,16.4559341195,Vienna,AT
-vienna,2255272,Trinkbrunnen,drinking_fountain,4,False,48.2133464004,16.522268186,Vienna,AT
-vienna,2255273,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2251062832,16.4973797366,Vienna,AT
-vienna,2255275,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2270314471,16.5004059628,Vienna,AT
-vienna,2255276,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2270226977,16.5047280599,Vienna,AT
-vienna,2255277,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2263183398,16.5062623552,Vienna,AT
-vienna,2255278,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2256384209,16.5089679135,Vienna,AT
-vienna,2255279,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2226870139,16.4989730437,Vienna,AT
-vienna,2255280,Trinkbrunnen,drinking_fountain,4,False,48.2234095229,16.5021624562,Vienna,AT
-vienna,2255282,Trinkbrunnen,drinking_fountain,4,False,48.2239389576,16.5006870425,Vienna,AT
-vienna,2255283,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.206370731,16.2790437319,Vienna,AT
-vienna,2255284,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2496363005,16.3945496775,Vienna,AT
-vienna,2255287,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1902041587,16.3322315096,Vienna,AT
-vienna,2255288,Trinkbrunnen,drinking_fountain,4,False,48.1895367409,16.3393995418,Vienna,AT
-vienna,2255290,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1995734042,16.3730094934,Vienna,AT
-vienna,2255291,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1708087845,16.3783206026,Vienna,AT
-vienna,2255292,Trinkbrunnen,drinking_fountain,4,False,48.1670832096,16.3846761943,Vienna,AT
-vienna,2255293,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.194763536,16.34856492,Vienna,AT
-vienna,2255294,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1946666414,16.348784216,Vienna,AT
-vienna,2255295,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1911505876,16.3987811046,Vienna,AT
-vienna,2255296,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1873482517,16.3861605338,Vienna,AT
-vienna,2255297,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2080194651,16.3961620675,Vienna,AT
-vienna,2255298,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2049347329,16.3968352169,Vienna,AT
-vienna,2255299,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1992292073,16.4079413578,Vienna,AT
-vienna,2255300,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2205409889,16.4001684055,Vienna,AT
-vienna,2255303,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2214576455,16.3539908439,Vienna,AT
-vienna,2255304,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2462075533,16.4790663023,Vienna,AT
-vienna,2255305,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1916630747,16.3653681763,Vienna,AT
-vienna,2255306,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1899908732,16.3615497077,Vienna,AT
-vienna,2255307,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1812992327,16.355271182,Vienna,AT
-vienna,2255308,Trinkbrunnen,drinking_fountain,4,False,48.1846466847,16.3628553884,Vienna,AT
-vienna,2255309,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1877343398,16.3351665776,Vienna,AT
-vienna,2255310,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1864742745,16.333622291,Vienna,AT
-vienna,2255311,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1878857341,16.3423735437,Vienna,AT
-vienna,2255312,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1807000527,16.3489196688,Vienna,AT
-vienna,2255313,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2060978498,16.3546822691,Vienna,AT
-vienna,2255314,Trinkbrunnen,drinking_fountain,4,False,48.203704915,16.3557309798,Vienna,AT
-vienna,2255315,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.189270701,16.332717455,Vienna,AT
-vienna,2255316,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1719663046,16.410472385,Vienna,AT
-vienna,2255317,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1571623608,16.462224693,Vienna,AT
-vienna,2255318,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1819999739,16.4129309714,Vienna,AT
-vienna,2255319,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1812987145,16.4107888123,Vienna,AT
-vienna,2255321,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2338940724,16.3870367641,Vienna,AT
-vienna,2255322,Trinkbrunnen,drinking_fountain,4,False,48.1611841825,16.4432097035,Vienna,AT
-vienna,2255323,Trinkbrunnen,drinking_fountain,4,False,48.161396656,16.4420501019,Vienna,AT
-vienna,2255324,Trinkbrunnen,drinking_fountain,4,False,48.1800876593,16.2894442076,Vienna,AT
-vienna,2255326,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1814732605,16.4129331283,Vienna,AT
-vienna,2255327,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2101162225,16.3274722567,Vienna,AT
-vienna,2255328,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1997207034,16.382649884,Vienna,AT
-vienna,2255329,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2060529812,16.3875124015,Vienna,AT
-vienna,2255330,Trinkbrunnen,drinking_fountain,4,False,48.2045313109,16.3907272515,Vienna,AT
-vienna,2255331,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2017667449,16.3932482421,Vienna,AT
-vienna,2255332,Trinkbrunnen,drinking_fountain,4,False,48.1942323145,16.3990412236,Vienna,AT
-vienna,2255333,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1930227289,16.3678946733,Vienna,AT
-vienna,2255334,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1936691445,16.3689131228,Vienna,AT
-vienna,2255335,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.2028452972,16.2486337627,Vienna,AT
-vienna,2255336,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1862099157,16.3679135214,Vienna,AT
-vienna,2255337,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1869874992,16.3677021285,Vienna,AT
-vienna,2255338,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1896951976,16.3632960258,Vienna,AT
-vienna,2255339,Trinkbrunnen,drinking_fountain,4,False,48.2522220267,16.3620327366,Vienna,AT
-vienna,2255340,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.202495971,16.2561473394,Vienna,AT
-vienna,2255341,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1745944207,16.3611733453,Vienna,AT
-vienna,2255342,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1990599757,16.370460415,Vienna,AT
-vienna,2255343,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1879422429,16.3445749556,Vienna,AT
-vienna,2255344,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1865807825,16.3601357858,Vienna,AT
-vienna,2255345,Trinkbrunnen,drinking_fountain,4,False,48.1936963887,16.3436974235,Vienna,AT
-vienna,2255346,Trinkbrunnen,drinking_fountain,4,False,48.193823918,16.3439305962,Vienna,AT
-vienna,2255347,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1934736887,16.3420976824,Vienna,AT
-vienna,2255348,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1941108728,16.3423966185,Vienna,AT
-vienna,2255350,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1717340636,16.3941537399,Vienna,AT
-vienna,2255351,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1674436696,16.4178093524,Vienna,AT
-vienna,2255352,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.192425063,16.3022801102,Vienna,AT
-vienna,2255353,Trinkbrunnen,drinking_fountain,4,False,48.1721438007,16.3863879799,Vienna,AT
-vienna,2255354,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1759373177,16.3844127691,Vienna,AT
-vienna,2255355,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1766314432,16.3794734472,Vienna,AT
-vienna,2255356,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1784511869,16.3753564739,Vienna,AT
-vienna,2255357,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1804773814,16.4171788936,Vienna,AT
-vienna,2255358,Trinkbrunnen,drinking_fountain,4,False,48.1810281779,16.4152742585,Vienna,AT
-vienna,2255359,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1739856957,16.3776800494,Vienna,AT
-vienna,2255360,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1737478872,16.3790372262,Vienna,AT
-vienna,2255362,Trinkbrunnen,drinking_fountain,4,False,48.1643201349,16.3817032343,Vienna,AT
-vienna,2255363,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1656320553,16.3795915132,Vienna,AT
-vienna,2255364,Trinkbrunnen,drinking_fountain,4,False,48.1768307884,16.3601828195,Vienna,AT
-vienna,2255366,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1601457574,16.471808586,Vienna,AT
-vienna,2255367,Trinkbrunnen,drinking_fountain,4,False,48.1656045451,16.351694947,Vienna,AT
-vienna,2255368,Trinkbrunnen,drinking_fountain,4,False,48.1658443779,16.3519792013,Vienna,AT
-vienna,2255369,Trinkbrunnen,drinking_fountain,4,False,48.1700955099,16.3734152926,Vienna,AT
-vienna,2255370,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1664382122,16.3676001244,Vienna,AT
-vienna,2255371,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1781046615,16.3687244704,Vienna,AT
-vienna,2255372,Trinkbrunnen mit Tränke,drinking_fountain_with_trough,5,True,48.1533690325,16.3516386923,Vienna,AT
-vienna,2254401,Trinkbrunnen,drinking_fountain,4,False,48.1620391305,16.5123768584,Vienna,AT
-vienna,2254402,Trinkbrunnen,drinking_fountain,4,False,48.1649448564,16.5060786685,Vienna,AT
-vienna,2254403,Trinkbrunnen,drinking_fountain,4,False,48.1895025905,16.4662340555,Vienna,AT
-vienna,2254404,Trinkbrunnen,drinking_fountain,4,False,48.1918336813,16.4643070509,Vienna,AT
-vienna,2254405,Trinkbrunnen,drinking_fountain,4,False,48.2133175537,16.4326154272,Vienna,AT
-vienna,2254406,Trinkbrunnen,drinking_fountain,4,False,48.219760074,16.4212300488,Vienna,AT
-vienna,2254407,Trinkbrunnen,drinking_fountain,4,False,48.2282219068,16.409347259,Vienna,AT
-vienna,2254408,Trinkbrunnen,drinking_fountain,4,False,48.2338546886,16.4022128543,Vienna,AT
-vienna,2254409,Trinkbrunnen,drinking_fountain,4,False,48.2382904624,16.3972558346,Vienna,AT
-vienna,2254410,Trinkbrunnen,drinking_fountain,4,False,48.2400436164,16.394527116,Vienna,AT
-vienna,2254411,Trinkbrunnen,drinking_fountain,4,False,48.2413534473,16.3934168877,Vienna,AT
-vienna,2254412,Trinkbrunnen,drinking_fountain,4,False,48.247263586,16.3883223891,Vienna,AT
-vienna,2254413,Trinkbrunnen,drinking_fountain,4,False,48.2472621932,16.3895923761,Vienna,AT
-vienna,2254414,Trinkbrunnen,drinking_fountain,4,False,48.2432404842,16.3910487187,Vienna,AT
-vienna,2254415,Trinkbrunnen,drinking_fountain,4,False,48.2432219465,16.3931223585,Vienna,AT
-vienna,2254416,Trinkbrunnen,drinking_fountain,4,False,48.2452711315,16.3912443173,Vienna,AT
-vienna,2254417,Trinkbrunnen,drinking_fountain,4,False,48.2498678853,16.3865738688,Vienna,AT
-vienna,2254418,Trinkbrunnen,drinking_fountain,4,False,48.2519535501,16.3829621265,Vienna,AT
-vienna,2254419,Trinkbrunnen,drinking_fountain,4,False,48.297745489,16.3471319686,Vienna,AT
-vienna,2254420,Trinkbrunnen,drinking_fountain,4,False,48.2254090269,16.418675921,Vienna,AT
-vienna,2254421,Trinkbrunnen,drinking_fountain,4,False,48.2001281206,16.4564087787,Vienna,AT
-vienna,2254422,Trinkbrunnen,drinking_fountain,4,False,48.1667036104,16.5084238626,Vienna,AT
-vienna,2254423,Trinkbrunnen,drinking_fountain,4,False,48.2025612506,16.4528150234,Vienna,AT
-vienna,2254424,Trinkbrunnen,drinking_fountain,4,False,48.2055099425,16.448398934,Vienna,AT
-vienna,2254425,Trinkbrunnen,drinking_fountain,4,False,48.1688517921,16.5048734116,Vienna,AT
-vienna,2254426,Trinkbrunnen,drinking_fountain,4,False,48.1723849191,16.4991193988,Vienna,AT
-vienna,2254427,Trinkbrunnen,drinking_fountain,4,False,48.1757625943,16.4937491349,Vienna,AT
-vienna,2254428,Trinkbrunnen,drinking_fountain,4,False,48.1774939117,16.4908142281,Vienna,AT
-vienna,2254429,Trinkbrunnen,drinking_fountain,4,False,48.1830085874,16.4822980967,Vienna,AT
-vienna,2254430,Trinkbrunnen,drinking_fountain,4,False,48.1885208767,16.4738403069,Vienna,AT
-vienna,2254431,Trinkbrunnen,drinking_fountain,4,False,48.1909689093,16.4701199824,Vienna,AT
-vienna,2254432,Trinkbrunnen,drinking_fountain,4,False,48.1955996787,16.4630760725,Vienna,AT
-vienna,2254433,Trinkbrunnen,drinking_fountain,4,False,48.2118340183,16.4388033273,Vienna,AT
-vienna,2254434,Trinkbrunnen,drinking_fountain,4,False,48.2231348625,16.4221890954,Vienna,AT
-vienna,2254435,Trinkbrunnen,drinking_fountain,4,False,48.2341505759,16.4077602345,Vienna,AT
-vienna,2254436,Trinkbrunnen,drinking_fountain,4,False,48.2390377088,16.4024593236,Vienna,AT
-vienna,2254437,Trinkbrunnen,drinking_fountain,4,False,48.2367992644,16.4044777582,Vienna,AT
-vienna,2254438,Trinkbrunnen,drinking_fountain,4,False,48.2416111846,16.3986849642,Vienna,AT
-vienna,2254439,Trinkbrunnen,drinking_fountain,4,False,48.2454832477,16.3957265845,Vienna,AT
-vienna,2254440,Trinkbrunnen,drinking_fountain,4,False,48.247016449,16.3937960375,Vienna,AT
-vienna,2254441,Trinkbrunnen,drinking_fountain,4,False,48.2677795729,16.3754574155,Vienna,AT
+name,type_label,description,lat,lng,origin,external_id,status
+Trinkbrunnen,drinking_fountain,,48.2129137905,16.3259277159,verified,vienna:2255748,verified
+Trinkbrunnen,drinking_fountain,,48.239938381,16.4737957678,verified,vienna:2255749,verified
+Trinkbrunnen,drinking_fountain,,48.2399678244,16.4737193109,verified,vienna:2255750,verified
+Trinkbrunnen,drinking_fountain,,48.2399071762,16.4737208285,verified,vienna:2255751,verified
+Trinkbrunnen,drinking_fountain,,48.2406648822,16.4742176938,verified,vienna:2255752,verified
+Trinkbrunnen,drinking_fountain,,48.1989423332,16.3385926843,verified,vienna:2255753,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1964478658,16.2858579385,verified,vienna:2255754,verified
+Trinkbrunnen,drinking_fountain,,48.2093112848,16.3587058627,verified,vienna:2255755,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1321407473,16.2557532851,verified,vienna:2255756,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.195074485,16.2854775669,verified,vienna:2255758,verified
+Trinkbrunnen,drinking_fountain,,48.2167418511,16.3723434759,verified,vienna:2255759,verified
+Trinkbrunnen,drinking_fountain,,48.2164176097,16.3292709092,verified,vienna:2255763,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1955459025,16.2611212171,verified,vienna:2255764,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1802582813,16.2898646289,verified,vienna:2255765,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1592233247,16.2910575342,verified,vienna:2255766,verified
+Trinkbrunnen,drinking_fountain,,48.2633833628,16.4432126562,verified,vienna:2255767,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1393410001,16.2778988626,verified,vienna:2255777,verified
+Trinkbrunnen,drinking_fountain,,48.1666381883,16.4183687023,verified,vienna:2255792,verified
+Trinkbrunnen,drinking_fountain,,48.1542951653,16.2898930926,verified,vienna:2255793,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1689478053,16.308030724,verified,vienna:2255818,verified
+Trinkbrunnen,drinking_fountain,,48.159433872,16.475835954,verified,vienna:2255827,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1764406106,16.332391678,verified,vienna:2255829,verified
+Trinkbrunnen,drinking_fountain,,48.2250665157,16.3858220372,verified,vienna:2255838,verified
+Trinkbrunnen,drinking_fountain,,48.2064266898,16.3143083835,verified,vienna:2255415,verified
+Trinkbrunnen,drinking_fountain,,48.2063828172,16.3151682245,verified,vienna:2255416,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2159348476,16.3596818513,verified,vienna:2255417,verified
+Trinkbrunnen,drinking_fountain,,48.212735407,16.488845228,verified,vienna:2255418,verified
+Trinkbrunnen,drinking_fountain,,48.2242519884,16.4516214393,verified,vienna:2255419,verified
+Trinkbrunnen,drinking_fountain,,48.213298934,16.3356021933,verified,vienna:2255420,verified
+Trinkbrunnen,drinking_fountain,,48.2136346207,16.3351613006,verified,vienna:2255421,verified
+Trinkbrunnen,drinking_fountain,,48.2135649044,16.3349615903,verified,vienna:2255422,verified
+Trinkbrunnen,drinking_fountain,,48.2446929133,16.3258242167,verified,vienna:2255423,verified
+Trinkbrunnen,drinking_fountain,,48.2213621422,16.3169318089,verified,vienna:2255424,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2001187872,16.3135108086,verified,vienna:2255425,verified
+Trinkbrunnen,drinking_fountain,,48.1694007959,16.3520725085,verified,vienna:2255427,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2045689699,16.3465166254,verified,vienna:2255429,verified
+Trinkbrunnen,drinking_fountain,,48.2014319093,16.338537466,verified,vienna:2255430,verified
+Trinkbrunnen,drinking_fountain,,48.2076211691,16.3406693166,verified,vienna:2255431,verified
+Trinkbrunnen,drinking_fountain,,48.1989014063,16.3473425169,verified,vienna:2255432,verified
+Trinkbrunnen,drinking_fountain,,48.2088438344,16.3453550482,verified,vienna:2255433,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2234671112,16.358717653,verified,vienna:2255434,verified
+Trinkbrunnen,drinking_fountain,,48.2297306399,16.3525298864,verified,vienna:2255436,verified
+Trinkbrunnen,drinking_fountain,,48.2914398911,16.4151738521,verified,vienna:2255437,verified
+Trinkbrunnen,drinking_fountain,,48.1587730321,16.3193854493,verified,vienna:2255438,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2801449554,16.4216665868,verified,vienna:2255439,verified
+Trinkbrunnen,drinking_fountain,,48.2692585334,16.4487849177,verified,vienna:2255440,verified
+Trinkbrunnen,drinking_fountain,,48.2704241086,16.4500359945,verified,vienna:2255441,verified
+Trinkbrunnen,drinking_fountain,,48.2701988038,16.454875076,verified,vienna:2255442,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2775064426,16.4124448176,verified,vienna:2255443,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2292685598,16.5347851295,verified,vienna:2255444,verified
+Trinkbrunnen,drinking_fountain,,48.295378764,16.3891581742,verified,vienna:2255445,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2455547431,16.3185177629,verified,vienna:2255446,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2499930657,16.3129124695,verified,vienna:2255447,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2432709064,16.3577219058,verified,vienna:2255448,verified
+Trinkbrunnen,drinking_fountain,,48.2456182553,16.3440191134,verified,vienna:2255449,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2534035396,16.3413962684,verified,vienna:2255450,verified
+Trinkbrunnen,drinking_fountain,,48.2506823933,16.3372110618,verified,vienna:2255451,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2410151914,16.3205036115,verified,vienna:2255452,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2049000791,16.4058581028,verified,vienna:2255453,verified
+Trinkbrunnen,drinking_fountain,,48.2061681077,16.4058683295,verified,vienna:2255454,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2566226481,16.3621081615,verified,vienna:2255455,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2583573062,16.3533360483,verified,vienna:2255456,verified
+Trinkbrunnen,drinking_fountain,,48.253918542,16.3667157712,verified,vienna:2255457,verified
+Trinkbrunnen,drinking_fountain,,48.25523423,16.4075571461,verified,vienna:2255458,verified
+Trinkbrunnen,drinking_fountain,,48.2615442734,16.3993594803,verified,vienna:2255460,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2207984368,16.3426337576,verified,vienna:2255462,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2346347345,16.3313915012,verified,vienna:2255463,verified
+Trinkbrunnen,drinking_fountain,,48.2342310686,16.3337040534,verified,vienna:2255464,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2346850828,16.3364778672,verified,vienna:2255465,verified
+Trinkbrunnen,drinking_fountain,,48.2361686047,16.3342889348,verified,vienna:2255466,verified
+Trinkbrunnen,drinking_fountain,,48.2508815358,16.4026058711,verified,vienna:2255467,verified
+Trinkbrunnen,drinking_fountain,,48.2131427858,16.4010089391,verified,vienna:2255468,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2187513021,16.3221146346,verified,vienna:2255470,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.254441466,16.4216061681,verified,vienna:2255471,verified
+Trinkbrunnen,drinking_fountain,,48.210643378,16.3318049684,verified,vienna:2255472,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2079230038,16.2860629282,verified,vienna:2255473,verified
+Trinkbrunnen,drinking_fountain,,48.2135778276,16.3328335228,verified,vienna:2255474,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2059901475,16.3341190953,verified,vienna:2255475,verified
+Trinkbrunnen,drinking_fountain,,48.2057322029,16.334168645,verified,vienna:2255476,verified
+Trinkbrunnen,drinking_fountain,,48.2087746837,16.3334241928,verified,vienna:2255477,verified
+Trinkbrunnen,drinking_fountain,,48.1925694488,16.4416931729,verified,vienna:2255478,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1888888975,16.3183807819,verified,vienna:2255479,verified
+Trinkbrunnen,drinking_fountain,,48.2141651603,16.4766974477,verified,vienna:2255481,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2127151655,16.3096562681,verified,vienna:2255482,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2127668151,16.3093484977,verified,vienna:2255483,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2091694794,16.313151186,verified,vienna:2255484,verified
+Trinkbrunnen,drinking_fountain,,48.2156216428,16.3125753531,verified,vienna:2255485,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2158335658,16.307549171,verified,vienna:2255486,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.235442924,16.3727353798,verified,vienna:2255487,verified
+Trinkbrunnen,drinking_fountain,,48.1870427844,16.3258442956,verified,vienna:2255488,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1964276375,16.3632903406,verified,vienna:2255489,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2005769565,16.345730371,verified,vienna:2255490,verified
+Trinkbrunnen,drinking_fountain,,48.1469038789,16.3983491872,verified,vienna:2255491,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1479909986,16.4008948566,verified,vienna:2255492,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1502618228,16.3990076773,verified,vienna:2255493,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.15086291,16.3990085916,verified,vienna:2255494,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1506209447,16.4014620495,verified,vienna:2255495,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1455836817,16.4068789997,verified,vienna:2255496,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1886827674,16.3260946104,verified,vienna:2255498,verified
+Trinkbrunnen,drinking_fountain,,48.1935253585,16.3376476459,verified,vienna:2255499,verified
+Trinkbrunnen,drinking_fountain,,48.2203170778,16.313045374,verified,vienna:2255500,verified
+Trinkbrunnen,drinking_fountain,,48.2104104061,16.3192416727,verified,vienna:2255501,verified
+Trinkbrunnen,drinking_fountain,,48.2041497347,16.3154261921,verified,vienna:2255502,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.21452052,16.5261100292,verified,vienna:2255503,verified
+Trinkbrunnen,drinking_fountain,,48.1678317854,16.2875140225,verified,vienna:2255504,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.156097082,16.4416198124,verified,vienna:2255505,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2416018613,16.4799822103,verified,vienna:2255506,verified
+Trinkbrunnen,drinking_fountain,,48.1983533159,16.3059712941,verified,vienna:2255507,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1912902794,16.3152609078,verified,vienna:2255508,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2630589972,16.3921806767,verified,vienna:2255509,verified
+Trinkbrunnen,drinking_fountain,,48.1633690265,16.2919704111,verified,vienna:2255510,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2765528759,16.4056541352,verified,vienna:2255511,verified
+Trinkbrunnen,drinking_fountain,,48.2359835997,16.3902080485,verified,vienna:2255513,verified
+Trinkbrunnen,drinking_fountain,,48.2139448123,16.3439822245,verified,vienna:2255514,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2189414535,16.3940681716,verified,vienna:2255515,verified
+Trinkbrunnen,drinking_fountain,,48.2197236185,16.3961939271,verified,vienna:2255517,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1574049241,16.424770791,verified,vienna:2255518,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1424784817,16.3905084972,verified,vienna:2255520,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2147881868,16.4146400051,verified,vienna:2255521,verified
+Trinkbrunnen,drinking_fountain,,48.2412249383,16.3093274595,verified,vienna:2255522,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2571675562,16.3884648806,verified,vienna:2255523,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2006748385,16.337890145,verified,vienna:2255524,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2233875268,16.3672706061,verified,vienna:2255525,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2236589239,16.3675335275,verified,vienna:2255526,verified
+Trinkbrunnen,drinking_fountain,,48.2074680229,16.3512223057,verified,vienna:2255527,verified
+Trinkbrunnen,drinking_fountain,,48.2075258161,16.3429561944,verified,vienna:2255528,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1887543795,16.3169178867,verified,vienna:2255529,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.18885584,16.3188763865,verified,vienna:2255531,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1823739804,16.2683806189,verified,vienna:2255532,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.257054478,16.3396013312,verified,vienna:2255533,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2282988903,16.3358295684,verified,vienna:2255534,verified
+Trinkbrunnen,drinking_fountain,,48.2496856188,16.3477857153,verified,vienna:2255535,verified
+Trinkbrunnen,drinking_fountain,,48.1659948122,16.2575442812,verified,vienna:2255536,verified
+Trinkbrunnen,drinking_fountain,,48.18772553,16.4033260733,verified,vienna:2255537,verified
+Trinkbrunnen,drinking_fountain,,48.2237372897,16.3460257973,verified,vienna:2255538,verified
+Trinkbrunnen,drinking_fountain,,48.2024499341,16.3889178216,verified,vienna:2255539,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2141258439,16.3047176468,verified,vienna:2255540,verified
+Trinkbrunnen,drinking_fountain,,48.2626167967,16.3873909987,verified,vienna:2255541,verified
+Trinkbrunnen,drinking_fountain,,48.2124769046,16.4755408171,verified,vienna:2255542,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2260224704,16.4912176259,verified,vienna:2255543,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.217371161,16.4821431538,verified,vienna:2255544,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2777896502,16.4908551802,verified,vienna:2255545,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.218838069,16.4769948627,verified,vienna:2255546,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.246029275,16.4723925535,verified,vienna:2255547,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2145386803,16.4905327333,verified,vienna:2255548,verified
+Trinkbrunnen,drinking_fountain,,48.2212692352,16.4845417811,verified,vienna:2255549,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2131246368,16.5244868568,verified,vienna:2255550,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2179528462,16.5252660404,verified,vienna:2255552,verified
+Trinkbrunnen,drinking_fountain,,48.2141646349,16.4753182586,verified,vienna:2255553,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2974068151,16.4203835677,verified,vienna:2255555,verified
+Trinkbrunnen,drinking_fountain,,48.2947171487,16.4166846211,verified,vienna:2255556,verified
+Trinkbrunnen,drinking_fountain,,48.2946352478,16.4172232945,verified,vienna:2255557,verified
+Trinkbrunnen,drinking_fountain,,48.2590639046,16.4236020233,verified,vienna:2255558,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.219453548,16.3943052267,verified,vienna:2255559,verified
+Trinkbrunnen,drinking_fountain,,48.2531829034,16.442711057,verified,vienna:2255560,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1456233355,16.4041426809,verified,vienna:2255563,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1468185244,16.4014880126,verified,vienna:2255564,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1484913968,16.405443393,verified,vienna:2255565,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.145179757,16.4020355097,verified,vienna:2255566,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1765284595,16.4256682148,verified,vienna:2255567,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2340693963,16.3247831895,verified,vienna:2255568,verified
+Trinkbrunnen,drinking_fountain,,48.1900792942,16.3936349192,verified,vienna:2255571,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1692911855,16.4110578235,verified,vienna:2255572,verified
+Trinkbrunnen,drinking_fountain,,48.2168203305,16.3489047916,verified,vienna:2255573,verified
+Trinkbrunnen,drinking_fountain,,48.2375729723,16.4531725882,verified,vienna:2255574,verified
+Trinkbrunnen,drinking_fountain,,48.2128655292,16.3195371266,verified,vienna:2255575,verified
+Trinkbrunnen,drinking_fountain,,48.259171172,16.3922622541,verified,vienna:2255576,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2235522494,16.3907038856,verified,vienna:2255577,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2206175871,16.3679648555,verified,vienna:2255578,verified
+Trinkbrunnen,drinking_fountain,,48.2378946614,16.385758299,verified,vienna:2255579,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1908771677,16.3755844171,verified,vienna:2255580,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2235110681,16.3907427664,verified,vienna:2255581,verified
+Trinkbrunnen,drinking_fountain,,48.1665187842,16.3259594434,verified,vienna:2255582,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2699282706,16.4380320439,verified,vienna:2255583,verified
+Trinkbrunnen,drinking_fountain,,48.2524857046,16.398782678,verified,vienna:2255584,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2513978035,16.3930588829,verified,vienna:2255585,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1610424492,16.4437316248,verified,vienna:2255587,verified
+Trinkbrunnen,drinking_fountain,,48.2316562154,16.3479863691,verified,vienna:2255589,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2582866707,16.3376528522,verified,vienna:2255590,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2775788609,16.3825672712,verified,vienna:2255591,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1360046565,16.2805018542,verified,vienna:2255592,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1353278876,16.2824154162,verified,vienna:2255593,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1355386845,16.2818535384,verified,vienna:2255594,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2022793161,16.2499261876,verified,vienna:2255595,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.15272643,16.3868906503,verified,vienna:2255596,verified
+Trinkbrunnen,drinking_fountain,,48.2377417048,16.4157010127,verified,vienna:2255597,verified
+Trinkbrunnen,drinking_fountain,,48.1683726994,16.2969848132,verified,vienna:2255598,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2353286555,16.3708098852,verified,vienna:2255600,verified
+Trinkbrunnen,drinking_fountain,,48.211919141,16.3594549507,verified,vienna:2255601,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2225413228,16.3908314929,verified,vienna:2255603,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2259470595,16.3963226834,verified,vienna:2255604,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1695011697,16.3823570015,verified,vienna:2255605,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1738901708,16.4194004436,verified,vienna:2255606,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1696066009,16.4290588628,verified,vienna:2255609,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2743494697,16.4057856576,verified,vienna:2255610,verified
+Trinkbrunnen,drinking_fountain,,48.2608133318,16.3921441497,verified,vienna:2255611,verified
+Trinkbrunnen,drinking_fountain,,48.1917904311,16.3920638923,verified,vienna:2255612,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2459272549,16.3306537508,verified,vienna:2255613,verified
+Trinkbrunnen,drinking_fountain,,48.2518338032,16.457488021,verified,vienna:2255614,verified
+Trinkbrunnen,drinking_fountain,,48.2160260654,16.3533244708,verified,vienna:2255615,verified
+Trinkbrunnen,drinking_fountain,,48.2482966415,16.4919744912,verified,vienna:2255617,verified
+Trinkbrunnen,drinking_fountain,,48.2881909319,16.4318239319,verified,vienna:2255618,verified
+Trinkbrunnen,drinking_fountain,,48.2181926192,16.2498044441,verified,vienna:2255622,verified
+Trinkbrunnen,drinking_fountain,,48.1844760498,16.3346885423,verified,vienna:2255623,verified
+Trinkbrunnen,drinking_fountain,,48.2477001907,16.307099298,verified,vienna:2255624,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2243441553,16.5035894615,verified,vienna:2255625,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2430244255,16.3017954195,verified,vienna:2255626,verified
+Trinkbrunnen,drinking_fountain,,48.143499484,16.2946718901,verified,vienna:2255627,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1973116815,16.4020511011,verified,vienna:2255628,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1938085791,16.2741121609,verified,vienna:2255629,verified
+Trinkbrunnen,drinking_fountain,,48.2760356332,16.4223280134,verified,vienna:2255630,verified
+Trinkbrunnen,drinking_fountain,,48.2776364441,16.4237443048,verified,vienna:2255631,verified
+Trinkbrunnen,drinking_fountain,,48.2573579885,16.4559412274,verified,vienna:2255632,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1823914373,16.4180744227,verified,vienna:2255633,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.183192785,16.4176030415,verified,vienna:2255634,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2895001383,16.3917113385,verified,vienna:2255635,verified
+Trinkbrunnen,drinking_fountain,,48.2527394037,16.4773043753,verified,vienna:2255638,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1783579535,16.3811703093,verified,vienna:2255639,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1791307479,16.383110999,verified,vienna:2255640,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1800234988,16.3837442985,verified,vienna:2255642,verified
+Trinkbrunnen,drinking_fountain,,48.1818717037,16.3819509054,verified,vienna:2255643,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1530866005,16.2916610064,verified,vienna:2255646,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2100888609,16.2480461138,verified,vienna:2255647,verified
+Trinkbrunnen,drinking_fountain,,48.237932904,16.4496559717,verified,vienna:2255648,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1769516033,16.3886400912,verified,vienna:2255649,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1781881267,16.3863262977,verified,vienna:2255650,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1783407889,16.3860896383,verified,vienna:2255651,verified
+Trinkbrunnen,drinking_fountain,,48.194160103,16.3524101698,verified,vienna:2255652,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.269708205,16.4450984479,verified,vienna:2255653,verified
+Trinkbrunnen,drinking_fountain,,48.2860322131,16.4437606471,verified,vienna:2255654,verified
+Trinkbrunnen,drinking_fountain,,48.237084231,16.3192924701,verified,vienna:2255657,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1461124973,16.3857823496,verified,vienna:2255658,verified
+Trinkbrunnen,drinking_fountain,,48.1450014422,16.3934891574,verified,vienna:2255659,verified
+Trinkbrunnen,drinking_fountain,,48.2041827125,16.3797072149,verified,vienna:2255660,verified
+Trinkbrunnen,drinking_fountain,,48.2038272839,16.381743163,verified,vienna:2255661,verified
+Trinkbrunnen,drinking_fountain,,48.1692639304,16.3063574631,verified,vienna:2255662,verified
+Trinkbrunnen,drinking_fountain,,48.2467556436,16.4073493535,verified,vienna:2255663,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2915343004,16.3864320078,verified,vienna:2255664,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2108645056,16.3596279972,verified,vienna:2255665,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2102218336,16.359410088,verified,vienna:2255666,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2305859241,16.2949010812,verified,vienna:2255667,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2037585851,16.3542998896,verified,vienna:2255669,verified
+Trinkbrunnen,drinking_fountain,,48.2145218384,16.3601290301,verified,vienna:2255670,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2456749016,16.3482371775,verified,vienna:2255671,verified
+Trinkbrunnen,drinking_fountain,,48.188320491,16.3433749792,verified,vienna:2255672,verified
+Trinkbrunnen,drinking_fountain,,48.226898214,16.3121186048,verified,vienna:2255673,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1373433341,16.2889424805,verified,vienna:2255674,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1521384583,16.2867064022,verified,vienna:2255676,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.190645892,16.331715703,verified,vienna:2255656,verified
+Trinkbrunnen,drinking_fountain,,48.1987790797,16.2940564581,verified,vienna:2255730,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1985717997,16.3764415443,verified,vienna:2255734,verified
+Trinkbrunnen,drinking_fountain,,48.2074569444,16.3411749757,verified,vienna:2255735,verified
+Trinkbrunnen,drinking_fountain,,48.2698978996,16.3835505667,verified,vienna:2255740,verified
+Trinkbrunnen,drinking_fountain,,48.2055223816,16.215206604,verified,vienna:2255742,verified
+Trinkbrunnen,drinking_fountain,,48.1959875538,16.4038293632,verified,vienna:2255743,verified
+Trinkbrunnen,drinking_fountain,,48.1824541655,16.4014383982,verified,vienna:2255744,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1888763077,16.3396870906,verified,vienna:2255745,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1597934208,16.4685635099,verified,vienna:2255746,verified
+Trinkbrunnen,drinking_fountain,,48.2144043928,16.3179669745,verified,vienna:2255747,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1532848074,16.3564325446,verified,vienna:2255374,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1400823847,16.3922834834,verified,vienna:2255376,verified
+Trinkbrunnen,drinking_fountain,,48.1941141543,16.3565190074,verified,vienna:2255378,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1938579005,16.3563219595,verified,vienna:2255379,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.154407879,16.380966138,verified,vienna:2255380,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1543887365,16.394213604,verified,vienna:2255381,verified
+Trinkbrunnen,drinking_fountain,,48.1792842067,16.4153044115,verified,vienna:2255382,verified
+Trinkbrunnen,drinking_fountain,,48.1558642534,16.3845560767,verified,vienna:2255383,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1795068199,16.4207830012,verified,vienna:2255384,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1578375066,16.3878456608,verified,vienna:2255385,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2348663334,16.3648141637,verified,vienna:2255386,verified
+Trinkbrunnen,drinking_fountain,,48.1963462921,16.2760670808,verified,vienna:2255387,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1968639194,16.2753447319,verified,vienna:2255388,verified
+Trinkbrunnen,drinking_fountain,,48.1973114222,16.2742042977,verified,vienna:2255389,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2389025529,16.384256936,verified,vienna:2255390,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1517657902,16.4662453644,verified,vienna:2255391,verified
+Trinkbrunnen,drinking_fountain,,48.1651968006,16.4290684336,verified,vienna:2255393,verified
+Trinkbrunnen,drinking_fountain,,48.167256177,16.4258006749,verified,vienna:2255394,verified
+Trinkbrunnen,drinking_fountain,,48.2342273263,16.3735309251,verified,vienna:2255395,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2400121507,16.3786448935,verified,vienna:2255397,verified
+Trinkbrunnen,drinking_fountain,,48.2264605852,16.3693354969,verified,vienna:2255398,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.235580311,16.3676471903,verified,vienna:2255400,verified
+Trinkbrunnen,drinking_fountain,,48.1486552847,16.3172686601,verified,vienna:2255401,verified
+Trinkbrunnen,drinking_fountain,,48.2319080178,16.3765943163,verified,vienna:2255402,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1321843389,16.4201264092,verified,vienna:2255404,verified
+Trinkbrunnen,drinking_fountain,,48.230713754,16.3633089184,verified,vienna:2255406,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1309101979,16.3138545013,verified,vienna:2255407,verified
+Trinkbrunnen,drinking_fountain,,48.1512763886,16.2698820823,verified,vienna:2255408,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1481554693,16.2920205749,verified,vienna:2255409,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2127566084,16.3210690918,verified,vienna:2255410,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2337206447,16.2915306123,verified,vienna:2255411,verified
+Trinkbrunnen,drinking_fountain,,48.2077341882,16.2447718154,verified,vienna:2255412,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2177838193,16.364424841,verified,vienna:2255413,verified
+Trinkbrunnen,drinking_fountain,,48.2067070893,16.3146897296,verified,vienna:2255414,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1678796481,16.3840039705,verified,vienna:2254994,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1748157851,16.3541563029,verified,vienna:2254995,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1745483393,16.3686611976,verified,vienna:2254996,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1746842132,16.3686391143,verified,vienna:2254997,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1756361208,16.3547320096,verified,vienna:2254998,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1648468053,16.4029990476,verified,vienna:2254999,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2040234361,16.3323626692,verified,vienna:2255000,verified
+Trinkbrunnen,drinking_fountain,,48.2035023133,16.3320103411,verified,vienna:2255001,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2270541465,16.3580086597,verified,vienna:2255002,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1978802678,16.3518487699,verified,vienna:2255003,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1979105264,16.3532411043,verified,vienna:2255004,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1979706143,16.3523762584,verified,vienna:2255005,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2098953822,16.3271987831,verified,vienna:2255006,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1753549711,16.3681194398,verified,vienna:2255008,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2383126897,16.3847382143,verified,vienna:2255009,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2448934973,16.3387423092,verified,vienna:2255010,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2448648933,16.3377260939,verified,vienna:2255011,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2538365551,16.3571442188,verified,vienna:2255012,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2526070404,16.3581443956,verified,vienna:2255013,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.252010736,16.3575300746,verified,vienna:2255014,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2522983743,16.3618675608,verified,vienna:2255015,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.167942504,16.416750172,verified,vienna:2255016,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1675075012,16.4163200055,verified,vienna:2255017,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1690130534,16.4186190492,verified,vienna:2255018,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1569747902,16.4248274419,verified,vienna:2255019,verified
+Trinkbrunnen,drinking_fountain,,48.1735852732,16.4110183662,verified,vienna:2255020,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1680658021,16.4305284564,verified,vienna:2255022,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1539554491,16.4602081984,verified,vienna:2255023,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.153318404,16.4616104834,verified,vienna:2255024,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2685945245,16.3829817636,verified,vienna:2255025,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2731404634,16.3940123195,verified,vienna:2255026,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.172210453,16.3592447755,verified,vienna:2255027,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2721599961,16.4479246151,verified,vienna:2255028,verified
+Trinkbrunnen,drinking_fountain,,48.271840567,16.4490692235,verified,vienna:2255029,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1547238379,16.4697926976,verified,vienna:2255030,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.154573943,16.4693719756,verified,vienna:2255031,verified
+Trinkbrunnen,drinking_fountain,,48.2488473178,16.3780538705,verified,vienna:2255032,verified
+Trinkbrunnen,drinking_fountain,,48.1708398335,16.3683094564,verified,vienna:2255034,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.258231947,16.4430998391,verified,vienna:2255036,verified
+Trinkbrunnen,drinking_fountain,,48.2585887019,16.4437556002,verified,vienna:2255037,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1813784228,16.3662693895,verified,vienna:2255039,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.180310032,16.3653785777,verified,vienna:2255040,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2202553918,16.4806405492,verified,vienna:2255041,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2073687428,16.337986701,verified,vienna:2255042,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2342495388,16.3299536854,verified,vienna:2255043,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2345849396,16.3375897472,verified,vienna:2255044,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1878727447,16.3109746641,verified,vienna:2255046,verified
+Trinkbrunnen,drinking_fountain,,48.2020312996,16.2516314556,verified,vienna:2255047,verified
+Trinkbrunnen,drinking_fountain,,48.1897687495,16.3544786847,verified,vienna:2255048,verified
+Trinkbrunnen,drinking_fountain,,48.2516042313,16.3996786172,verified,vienna:2255049,verified
+Trinkbrunnen,drinking_fountain,,48.2563649063,16.3899152861,verified,vienna:2255050,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2526699208,16.3950282776,verified,vienna:2255051,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2526870085,16.4151422899,verified,vienna:2255053,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2644242588,16.3983691507,verified,vienna:2255054,verified
+Trinkbrunnen,drinking_fountain,,48.2698889987,16.3838817512,verified,vienna:2255056,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2549593344,16.3998036465,verified,vienna:2255058,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2729402446,16.3936981661,verified,vienna:2255059,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1812426908,16.3480754334,verified,vienna:2255060,verified
+Trinkbrunnen,drinking_fountain,,48.1817008961,16.347002342,verified,vienna:2255061,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1818694725,16.3458312405,verified,vienna:2255062,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1815086009,16.3330891269,verified,vienna:2255063,verified
+Trinkbrunnen,drinking_fountain,,48.1649293731,16.3061188227,verified,vienna:2255064,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.186671119,16.3370760245,verified,vienna:2255065,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.17585124,16.3312367807,verified,vienna:2255067,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1812864881,16.33917136,verified,vienna:2255068,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1814869897,16.3395734329,verified,vienna:2255069,verified
+Trinkbrunnen,drinking_fountain,,48.1730435416,16.328629795,verified,vienna:2255070,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1823099159,16.3273785972,verified,vienna:2255071,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1822484237,16.3278041032,verified,vienna:2255072,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1789036502,16.3346685973,verified,vienna:2255074,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1592445131,16.3268656903,verified,vienna:2255075,verified
+Trinkbrunnen,drinking_fountain,,48.160755844,16.3240599964,verified,vienna:2255076,verified
+Trinkbrunnen,drinking_fountain,,48.1603030653,16.323577135,verified,vienna:2255077,verified
+Trinkbrunnen,drinking_fountain,,48.1805754908,16.328355282,verified,vienna:2255078,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1709204437,16.320757119,verified,vienna:2255079,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1823672232,16.3473282917,verified,vienna:2255080,verified
+Trinkbrunnen,drinking_fountain,,48.1782171603,16.3394124158,verified,vienna:2255081,verified
+Trinkbrunnen,drinking_fountain,,48.1787195657,16.3386609308,verified,vienna:2255082,verified
+Trinkbrunnen,drinking_fountain,,48.1657331865,16.2809912449,verified,vienna:2255083,verified
+Trinkbrunnen,drinking_fountain,,48.1645079513,16.2727532971,verified,vienna:2255085,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1936426401,16.2600958522,verified,vienna:2255086,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.192422534,16.2613078055,verified,vienna:2255087,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1855355007,16.2871541496,verified,vienna:2255088,verified
+Trinkbrunnen,drinking_fountain,,48.1684277453,16.2821405743,verified,vienna:2255089,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1812153181,16.2743655182,verified,vienna:2255090,verified
+Trinkbrunnen,drinking_fountain,,48.1903502797,16.2716736619,verified,vienna:2255092,verified
+Trinkbrunnen,drinking_fountain,,48.1737417929,16.2759250984,verified,vienna:2255093,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1398336521,16.3149564102,verified,vienna:2255095,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1402440451,16.3152044745,verified,vienna:2255096,verified
+Trinkbrunnen,drinking_fountain,,48.139429376,16.2800623117,verified,vienna:2255097,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1517213926,16.3447990451,verified,vienna:2255098,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1506044727,16.3409795123,verified,vienna:2255099,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.145262625,16.2822260684,verified,vienna:2255100,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1523346504,16.3054480002,verified,vienna:2255101,verified
+Trinkbrunnen,drinking_fountain,,48.147732402,16.3530198597,verified,vienna:2255102,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1375568793,16.2747607037,verified,vienna:2255103,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1488689898,16.3133003308,verified,vienna:2255104,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1480468343,16.3131278173,verified,vienna:2255105,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1500635945,16.3330403483,verified,vienna:2255106,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1494229409,16.3037811499,verified,vienna:2255107,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1492552982,16.2672385524,verified,vienna:2255108,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.140496692,16.2882743658,verified,vienna:2255109,verified
+Trinkbrunnen,drinking_fountain,,48.1304464434,16.3125593875,verified,vienna:2255110,verified
+Trinkbrunnen,drinking_fountain,,48.1960839731,16.3111537593,verified,vienna:2255111,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2305994573,16.4351775217,verified,vienna:2255112,verified
+Trinkbrunnen,drinking_fountain,,48.2317446922,16.4390477061,verified,vienna:2255113,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2318175295,16.4180201391,verified,vienna:2255114,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2317278722,16.4189152405,verified,vienna:2255115,verified
+Trinkbrunnen,drinking_fountain,,48.2311630096,16.4172188425,verified,vienna:2255116,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2317512904,16.4498593472,verified,vienna:2255117,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2368024822,16.4494447731,verified,vienna:2255118,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2387606077,16.4440689751,verified,vienna:2255119,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2408193474,16.4412103773,verified,vienna:2255120,verified
+Trinkbrunnen,drinking_fountain,,48.2490040636,16.39982887,verified,vienna:2255122,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2407797584,16.4053199825,verified,vienna:2255123,verified
+Trinkbrunnen,drinking_fountain,,48.238408903,16.4052632242,verified,vienna:2255124,verified
+Trinkbrunnen,drinking_fountain,,48.2368374154,16.410491555,verified,vienna:2255125,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2390070147,16.4192562704,verified,vienna:2255127,verified
+Trinkbrunnen,drinking_fountain,,48.2413714077,16.4160504808,verified,vienna:2255128,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2216841783,16.3691809975,verified,vienna:2255130,verified
+Trinkbrunnen,drinking_fountain,,48.2247197861,16.3878484973,verified,vienna:2255131,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.218076833,16.3725661271,verified,vienna:2255132,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.220283297,16.4003631197,verified,vienna:2255134,verified
+Trinkbrunnen,drinking_fountain,,48.215122445,16.3823171053,verified,vienna:2255135,verified
+Trinkbrunnen,drinking_fountain,,48.2168092392,16.4051808623,verified,vienna:2255136,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2171870217,16.3860719654,verified,vienna:2255137,verified
+Trinkbrunnen,drinking_fountain,,48.2132399989,16.3849123086,verified,vienna:2255138,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2242848673,16.4045308532,verified,vienna:2255139,verified
+Trinkbrunnen,drinking_fountain,,48.1991864572,16.4172188394,verified,vienna:2255140,verified
+Trinkbrunnen,drinking_fountain,,48.2264342543,16.4031653,verified,vienna:2255141,verified
+Trinkbrunnen,drinking_fountain,,48.2256893121,16.4023975723,verified,vienna:2255142,verified
+Trinkbrunnen,drinking_fountain,,48.1774063391,16.4176685747,verified,vienna:2255144,verified
+Trinkbrunnen,drinking_fountain,,48.2164020526,16.3945592157,verified,vienna:2255146,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2048132454,16.4083630223,verified,vienna:2255147,verified
+Trinkbrunnen,drinking_fountain,,48.2039166642,16.4065578459,verified,vienna:2255148,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2142690821,16.3781779817,verified,vienna:2255149,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1987919745,16.2838079643,verified,vienna:2255150,verified
+Trinkbrunnen,drinking_fountain,,48.1988328048,16.2827595437,verified,vienna:2255151,verified
+Trinkbrunnen,drinking_fountain,,48.2537340101,16.4773675221,verified,vienna:2255152,verified
+Trinkbrunnen,drinking_fountain,,48.2750691708,16.4131120011,verified,vienna:2255153,verified
+Trinkbrunnen,drinking_fountain,,48.2145950905,16.3677259564,verified,vienna:2255154,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2144087087,16.371538423,verified,vienna:2255155,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2074177551,16.3561787674,verified,vienna:2255156,verified
+Trinkbrunnen,drinking_fountain,,48.2808885387,16.483676304,verified,vienna:2255157,verified
+Trinkbrunnen,drinking_fountain,,48.2384078765,16.4391647382,verified,vienna:2255158,verified
+Trinkbrunnen,drinking_fountain,,48.2172665066,16.3306863715,verified,vienna:2255159,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2687922007,16.3833179779,verified,vienna:2255160,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2146669327,16.3259196546,verified,vienna:2255161,verified
+Trinkbrunnen,drinking_fountain,,48.2250499121,16.3144139961,verified,vienna:2255162,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2232100021,16.3303637955,verified,vienna:2255163,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2320878484,16.3150931943,verified,vienna:2255164,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2290345232,16.3045440276,verified,vienna:2255165,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2189079713,16.3348836198,verified,vienna:2255166,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.224575641,16.3239952326,verified,vienna:2255167,verified
+Trinkbrunnen,drinking_fountain,,48.223489115,16.3145800256,verified,vienna:2255168,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2086900115,16.5185152735,verified,vienna:2255169,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2471166192,16.4321095257,verified,vienna:2255170,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2486512544,16.4483111523,verified,vienna:2255171,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2452289046,16.4415298644,verified,vienna:2255172,verified
+Trinkbrunnen,drinking_fountain,,48.236794752,16.3340819607,verified,vienna:2255173,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1897547639,16.3269241449,verified,vienna:2255174,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2255392564,16.3247884668,verified,vienna:2255175,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2521693514,16.4335113622,verified,vienna:2255176,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2544716385,16.4336268332,verified,vienna:2255177,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2092446801,16.3083871345,verified,vienna:2255178,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2010739895,16.3072857619,verified,vienna:2255179,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2012848783,16.3075530157,verified,vienna:2255180,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1802089423,16.3446486789,verified,vienna:2255181,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2087201481,16.3044684994,verified,vienna:2255182,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1719777987,16.4088003854,verified,vienna:2255183,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2258167173,16.3389635083,verified,vienna:2255184,verified
+Trinkbrunnen,drinking_fountain,,48.2265818092,16.3390472105,verified,vienna:2255185,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2324113797,16.3498055097,verified,vienna:2255186,verified
+Trinkbrunnen,drinking_fountain,,48.2219468303,16.3082138612,verified,vienna:2255187,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2227389499,16.3109624709,verified,vienna:2255188,verified
+Trinkbrunnen,drinking_fountain,,48.2021539609,16.3355617801,verified,vienna:2255189,verified
+Trinkbrunnen,drinking_fountain,,48.201906555,16.3356908933,verified,vienna:2255190,verified
+Trinkbrunnen,drinking_fountain,,48.1672500328,16.3008110006,verified,vienna:2255191,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1987501107,16.3613379924,verified,vienna:2255192,verified
+Trinkbrunnen,drinking_fountain,,48.2211480068,16.3537002544,verified,vienna:2255193,verified
+Trinkbrunnen,drinking_fountain,,48.2475215404,16.4383641374,verified,vienna:2255194,verified
+Trinkbrunnen,drinking_fountain,,48.2471534402,16.4384383184,verified,vienna:2255195,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1712124511,16.4141859516,verified,vienna:2255196,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1704855116,16.4148823109,verified,vienna:2255197,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2154013667,16.3728513182,verified,vienna:2255198,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.189881657,16.3289733845,verified,vienna:2255199,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1899621577,16.3286258354,verified,vienna:2255200,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1765213123,16.3800685345,verified,vienna:2255201,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1903114806,16.3211430822,verified,vienna:2255202,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1966594472,16.319288811,verified,vienna:2255203,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1964611601,16.3190834252,verified,vienna:2255204,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.181450928,16.3557372297,verified,vienna:2255205,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1859575386,16.3499326214,verified,vienna:2255206,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1871373179,16.3474442987,verified,vienna:2255207,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2404405508,16.3344800003,verified,vienna:2255208,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1965247454,16.2679983059,verified,vienna:2255209,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1802819736,16.3504980115,verified,vienna:2255210,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1572451268,16.4627134412,verified,vienna:2255211,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1554190695,16.4628728743,verified,vienna:2255213,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1480942159,16.3090247433,verified,vienna:2255214,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1829468421,16.3509546629,verified,vienna:2255215,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2445352453,16.3803115219,verified,vienna:2255217,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2265754459,16.3349439786,verified,vienna:2255218,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.196217941,16.3025859289,verified,vienna:2255219,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1961578603,16.3034585999,verified,vienna:2255220,verified
+Trinkbrunnen,drinking_fountain,,48.1649231135,16.32654636,verified,vienna:2255221,verified
+Trinkbrunnen,drinking_fountain,,48.1648803116,16.3274854399,verified,vienna:2255222,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2122330797,16.342492514,verified,vienna:2255223,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2270753607,16.3971246405,verified,vienna:2255224,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1667195575,16.3777397718,verified,vienna:2255226,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2260272748,16.3979940392,verified,vienna:2255227,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2263358474,16.3965257633,verified,vienna:2255228,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2253283939,16.3971358905,verified,vienna:2255229,verified
+Trinkbrunnen,drinking_fountain,,48.179281157,16.3783118099,verified,vienna:2255230,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1894217038,16.3331285188,verified,vienna:2255231,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2340916947,16.3872619847,verified,vienna:2255232,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.194115497,16.3189185009,verified,vienna:2255234,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1869557111,16.343258637,verified,vienna:2255235,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.187859911,16.355340386,verified,vienna:2255236,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1878443965,16.3628084335,verified,vienna:2255237,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1897056624,16.3608267479,verified,vienna:2255238,verified
+Trinkbrunnen,drinking_fountain,,48.2031499902,16.3811185068,verified,vienna:2255239,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1982864265,16.3909675811,verified,vienna:2255241,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1984583149,16.3923145846,verified,vienna:2255242,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1976048338,16.4010844386,verified,vienna:2255243,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1976501306,16.4013218425,verified,vienna:2255244,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.186604745,16.3867873372,verified,vienna:2255245,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.18498993,16.3849339728,verified,vienna:2255247,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2389835204,16.3338868784,verified,vienna:2255248,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1985145663,16.3306304485,verified,vienna:2255249,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.198407511,16.3310655648,verified,vienna:2255250,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1980001389,16.3309011733,verified,vienna:2255251,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2056629912,16.3563791909,verified,vienna:2255252,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2064245808,16.35543617,verified,vienna:2255253,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1981971966,16.3619063132,verified,vienna:2255255,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1972612331,16.3524213457,verified,vienna:2255256,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1975914664,16.3526305484,verified,vienna:2255257,verified
+Trinkbrunnen,drinking_fountain,,48.1924453787,16.3470567772,verified,vienna:2255259,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2121947414,16.351178145,verified,vienna:2255260,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2112942137,16.3448340733,verified,vienna:2255261,verified
+Trinkbrunnen,drinking_fountain,,48.2112503048,16.3455799164,verified,vienna:2255262,verified
+Trinkbrunnen,drinking_fountain,,48.2215561198,16.3090593773,verified,vienna:2255263,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2263804023,16.3583624854,verified,vienna:2255264,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2264139744,16.3583505455,verified,vienna:2255265,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1733447392,16.3716471515,verified,vienna:2255267,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2235162765,16.3368466796,verified,vienna:2255268,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2767513115,16.4559341195,verified,vienna:2255270,verified
+Trinkbrunnen,drinking_fountain,,48.2133464004,16.522268186,verified,vienna:2255272,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2251062832,16.4973797366,verified,vienna:2255273,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2270314471,16.5004059628,verified,vienna:2255275,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2270226977,16.5047280599,verified,vienna:2255276,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2263183398,16.5062623552,verified,vienna:2255277,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2256384209,16.5089679135,verified,vienna:2255278,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2226870139,16.4989730437,verified,vienna:2255279,verified
+Trinkbrunnen,drinking_fountain,,48.2234095229,16.5021624562,verified,vienna:2255280,verified
+Trinkbrunnen,drinking_fountain,,48.2239389576,16.5006870425,verified,vienna:2255282,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.206370731,16.2790437319,verified,vienna:2255283,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2496363005,16.3945496775,verified,vienna:2255284,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1902041587,16.3322315096,verified,vienna:2255287,verified
+Trinkbrunnen,drinking_fountain,,48.1895367409,16.3393995418,verified,vienna:2255288,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1995734042,16.3730094934,verified,vienna:2255290,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1708087845,16.3783206026,verified,vienna:2255291,verified
+Trinkbrunnen,drinking_fountain,,48.1670832096,16.3846761943,verified,vienna:2255292,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.194763536,16.34856492,verified,vienna:2255293,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1946666414,16.348784216,verified,vienna:2255294,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1911505876,16.3987811046,verified,vienna:2255295,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1873482517,16.3861605338,verified,vienna:2255296,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2080194651,16.3961620675,verified,vienna:2255297,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2049347329,16.3968352169,verified,vienna:2255298,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1992292073,16.4079413578,verified,vienna:2255299,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2205409889,16.4001684055,verified,vienna:2255300,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2214576455,16.3539908439,verified,vienna:2255303,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2462075533,16.4790663023,verified,vienna:2255304,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1916630747,16.3653681763,verified,vienna:2255305,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1899908732,16.3615497077,verified,vienna:2255306,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1812992327,16.355271182,verified,vienna:2255307,verified
+Trinkbrunnen,drinking_fountain,,48.1846466847,16.3628553884,verified,vienna:2255308,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1877343398,16.3351665776,verified,vienna:2255309,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1864742745,16.333622291,verified,vienna:2255310,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1878857341,16.3423735437,verified,vienna:2255311,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1807000527,16.3489196688,verified,vienna:2255312,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2060978498,16.3546822691,verified,vienna:2255313,verified
+Trinkbrunnen,drinking_fountain,,48.203704915,16.3557309798,verified,vienna:2255314,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.189270701,16.332717455,verified,vienna:2255315,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1719663046,16.410472385,verified,vienna:2255316,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1571623608,16.462224693,verified,vienna:2255317,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1819999739,16.4129309714,verified,vienna:2255318,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1812987145,16.4107888123,verified,vienna:2255319,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2338940724,16.3870367641,verified,vienna:2255321,verified
+Trinkbrunnen,drinking_fountain,,48.1611841825,16.4432097035,verified,vienna:2255322,verified
+Trinkbrunnen,drinking_fountain,,48.161396656,16.4420501019,verified,vienna:2255323,verified
+Trinkbrunnen,drinking_fountain,,48.1800876593,16.2894442076,verified,vienna:2255324,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1814732605,16.4129331283,verified,vienna:2255326,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2101162225,16.3274722567,verified,vienna:2255327,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1997207034,16.382649884,verified,vienna:2255328,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2060529812,16.3875124015,verified,vienna:2255329,verified
+Trinkbrunnen,drinking_fountain,,48.2045313109,16.3907272515,verified,vienna:2255330,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2017667449,16.3932482421,verified,vienna:2255331,verified
+Trinkbrunnen,drinking_fountain,,48.1942323145,16.3990412236,verified,vienna:2255332,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1930227289,16.3678946733,verified,vienna:2255333,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1936691445,16.3689131228,verified,vienna:2255334,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.2028452972,16.2486337627,verified,vienna:2255335,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1862099157,16.3679135214,verified,vienna:2255336,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1869874992,16.3677021285,verified,vienna:2255337,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1896951976,16.3632960258,verified,vienna:2255338,verified
+Trinkbrunnen,drinking_fountain,,48.2522220267,16.3620327366,verified,vienna:2255339,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.202495971,16.2561473394,verified,vienna:2255340,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1745944207,16.3611733453,verified,vienna:2255341,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1990599757,16.370460415,verified,vienna:2255342,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1879422429,16.3445749556,verified,vienna:2255343,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1865807825,16.3601357858,verified,vienna:2255344,verified
+Trinkbrunnen,drinking_fountain,,48.1936963887,16.3436974235,verified,vienna:2255345,verified
+Trinkbrunnen,drinking_fountain,,48.193823918,16.3439305962,verified,vienna:2255346,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1934736887,16.3420976824,verified,vienna:2255347,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1941108728,16.3423966185,verified,vienna:2255348,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1717340636,16.3941537399,verified,vienna:2255350,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1674436696,16.4178093524,verified,vienna:2255351,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.192425063,16.3022801102,verified,vienna:2255352,verified
+Trinkbrunnen,drinking_fountain,,48.1721438007,16.3863879799,verified,vienna:2255353,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1759373177,16.3844127691,verified,vienna:2255354,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1766314432,16.3794734472,verified,vienna:2255355,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1784511869,16.3753564739,verified,vienna:2255356,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1804773814,16.4171788936,verified,vienna:2255357,verified
+Trinkbrunnen,drinking_fountain,,48.1810281779,16.4152742585,verified,vienna:2255358,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1739856957,16.3776800494,verified,vienna:2255359,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1737478872,16.3790372262,verified,vienna:2255360,verified
+Trinkbrunnen,drinking_fountain,,48.1643201349,16.3817032343,verified,vienna:2255362,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1656320553,16.3795915132,verified,vienna:2255363,verified
+Trinkbrunnen,drinking_fountain,,48.1768307884,16.3601828195,verified,vienna:2255364,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1601457574,16.471808586,verified,vienna:2255366,verified
+Trinkbrunnen,drinking_fountain,,48.1656045451,16.351694947,verified,vienna:2255367,verified
+Trinkbrunnen,drinking_fountain,,48.1658443779,16.3519792013,verified,vienna:2255368,verified
+Trinkbrunnen,drinking_fountain,,48.1700955099,16.3734152926,verified,vienna:2255369,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1664382122,16.3676001244,verified,vienna:2255370,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1781046615,16.3687244704,verified,vienna:2255371,verified
+Trinkbrunnen mit Tränke,drinking_fountain_with_trough,,48.1533690325,16.3516386923,verified,vienna:2255372,verified
+Trinkbrunnen,drinking_fountain,,48.1620391305,16.5123768584,verified,vienna:2254401,verified
+Trinkbrunnen,drinking_fountain,,48.1649448564,16.5060786685,verified,vienna:2254402,verified
+Trinkbrunnen,drinking_fountain,,48.1895025905,16.4662340555,verified,vienna:2254403,verified
+Trinkbrunnen,drinking_fountain,,48.1918336813,16.4643070509,verified,vienna:2254404,verified
+Trinkbrunnen,drinking_fountain,,48.2133175537,16.4326154272,verified,vienna:2254405,verified
+Trinkbrunnen,drinking_fountain,,48.219760074,16.4212300488,verified,vienna:2254406,verified
+Trinkbrunnen,drinking_fountain,,48.2282219068,16.409347259,verified,vienna:2254407,verified
+Trinkbrunnen,drinking_fountain,,48.2338546886,16.4022128543,verified,vienna:2254408,verified
+Trinkbrunnen,drinking_fountain,,48.2382904624,16.3972558346,verified,vienna:2254409,verified
+Trinkbrunnen,drinking_fountain,,48.2400436164,16.394527116,verified,vienna:2254410,verified
+Trinkbrunnen,drinking_fountain,,48.2413534473,16.3934168877,verified,vienna:2254411,verified
+Trinkbrunnen,drinking_fountain,,48.247263586,16.3883223891,verified,vienna:2254412,verified
+Trinkbrunnen,drinking_fountain,,48.2472621932,16.3895923761,verified,vienna:2254413,verified
+Trinkbrunnen,drinking_fountain,,48.2432404842,16.3910487187,verified,vienna:2254414,verified
+Trinkbrunnen,drinking_fountain,,48.2432219465,16.3931223585,verified,vienna:2254415,verified
+Trinkbrunnen,drinking_fountain,,48.2452711315,16.3912443173,verified,vienna:2254416,verified
+Trinkbrunnen,drinking_fountain,,48.2498678853,16.3865738688,verified,vienna:2254417,verified
+Trinkbrunnen,drinking_fountain,,48.2519535501,16.3829621265,verified,vienna:2254418,verified
+Trinkbrunnen,drinking_fountain,,48.297745489,16.3471319686,verified,vienna:2254419,verified
+Trinkbrunnen,drinking_fountain,,48.2254090269,16.418675921,verified,vienna:2254420,verified
+Trinkbrunnen,drinking_fountain,,48.2001281206,16.4564087787,verified,vienna:2254421,verified
+Trinkbrunnen,drinking_fountain,,48.1667036104,16.5084238626,verified,vienna:2254422,verified
+Trinkbrunnen,drinking_fountain,,48.2025612506,16.4528150234,verified,vienna:2254423,verified
+Trinkbrunnen,drinking_fountain,,48.2055099425,16.448398934,verified,vienna:2254424,verified
+Trinkbrunnen,drinking_fountain,,48.1688517921,16.5048734116,verified,vienna:2254425,verified
+Trinkbrunnen,drinking_fountain,,48.1723849191,16.4991193988,verified,vienna:2254426,verified
+Trinkbrunnen,drinking_fountain,,48.1757625943,16.4937491349,verified,vienna:2254427,verified
+Trinkbrunnen,drinking_fountain,,48.1774939117,16.4908142281,verified,vienna:2254428,verified
+Trinkbrunnen,drinking_fountain,,48.1830085874,16.4822980967,verified,vienna:2254429,verified
+Trinkbrunnen,drinking_fountain,,48.1885208767,16.4738403069,verified,vienna:2254430,verified
+Trinkbrunnen,drinking_fountain,,48.1909689093,16.4701199824,verified,vienna:2254431,verified
+Trinkbrunnen,drinking_fountain,,48.1955996787,16.4630760725,verified,vienna:2254432,verified
+Trinkbrunnen,drinking_fountain,,48.2118340183,16.4388033273,verified,vienna:2254433,verified
+Trinkbrunnen,drinking_fountain,,48.2231348625,16.4221890954,verified,vienna:2254434,verified
+Trinkbrunnen,drinking_fountain,,48.2341505759,16.4077602345,verified,vienna:2254435,verified
+Trinkbrunnen,drinking_fountain,,48.2390377088,16.4024593236,verified,vienna:2254436,verified
+Trinkbrunnen,drinking_fountain,,48.2367992644,16.4044777582,verified,vienna:2254437,verified
+Trinkbrunnen,drinking_fountain,,48.2416111846,16.3986849642,verified,vienna:2254438,verified
+Trinkbrunnen,drinking_fountain,,48.2454832477,16.3957265845,verified,vienna:2254439,verified
+Trinkbrunnen,drinking_fountain,,48.247016449,16.3937960375,verified,vienna:2254440,verified
+Trinkbrunnen,drinking_fountain,,48.2677795729,16.3754574155,verified,vienna:2254441,verified
+JKU Campus Trinkbrunnen,drinking_fountain,,48.338028,14.319583,verified,jku:1,verified
