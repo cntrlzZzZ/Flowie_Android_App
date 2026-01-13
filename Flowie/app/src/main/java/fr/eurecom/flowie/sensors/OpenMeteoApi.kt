@@ -3,7 +3,7 @@ package fr.eurecom.flowie.sensors
 import android.util.Log
 import io.ktor.client.*
 import io.ktor.client.call.*
-import io.ktor.client.engine.cio.*
+import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
 import io.ktor.serialization.kotlinx.json.json
@@ -16,7 +16,7 @@ import kotlinx.serialization.json.Json
 object OpenMeteoApi {
 
     private const val TAG = "OpenMeteo"
-    private val client = HttpClient(CIO) {
+    private val client = HttpClient(OkHttp) {
         install(ContentNegotiation) {
             json(
                 Json {
