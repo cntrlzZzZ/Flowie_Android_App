@@ -41,6 +41,7 @@ class WeatherViewModel : ViewModel() {
                 )
 
             } catch (e: Exception) {
+                Log.e("WeatherViewModel", "Failed to load weather", e)
                 Log.e(TAG, "Weather error", e)
                 _uiState.value = WeatherUiState(
                     temperature = "N/A",
