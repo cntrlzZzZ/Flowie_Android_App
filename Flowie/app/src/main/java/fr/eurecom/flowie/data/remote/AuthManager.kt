@@ -2,6 +2,7 @@ package fr.eurecom.flowie.data.remote
 
 import io.github.jan.supabase.gotrue.SessionStatus
 import io.github.jan.supabase.gotrue.auth
+import io.github.jan.supabase.gotrue.OtpType
 import io.github.jan.supabase.gotrue.providers.builtin.OTP
 import kotlinx.coroutines.flow.StateFlow
 
@@ -16,16 +17,9 @@ object AuthManager {
     }
 
     /**
-     * Sends an email OTP / magic link depending on your Supabase Auth email template.
-     *
-     * IMPORTANT:
-     * - Supabase Kotlin uses redirectUrl,
-     * - If redirectUrl is null, Supabase will use your project SITE_URL / platform defaults.
+     * Sends an email OTP (your Supabase email template decides whether it looks like a link or a code).
      */
-    suspend fun sendMagicLink(
-        email: String,
-        redirectUrl: String? = null
-    ) {
+    suspend fun sendEmailOtp(email: String, redirectUrl: String? = null) {
         val cleanEmail = email.trim()
 
         SupabaseProvider.client.auth.signInWith(
@@ -33,9 +27,18 @@ object AuthManager {
             redirectUrl = redirectUrl?.takeIf { it.isNotBlank() }
         ) {
             this.email = cleanEmail
-            // Optional: if you want to prevent auto-signup:
-            // createUser = false
         }
+    }
+
+    /**
+     * Verifies the OTP code that the user received by email ({{ .Token }} in your template).
+     */
+    suspend fun verifyEmailOtp(email: String, code: String) {
+        SupabaseProvider.client.auth.verifyEmailOtp(
+            type = OtpType.Email.EMAIL,
+            email = email.trim(),
+            token = code.trim()
+        )
     }
 
     suspend fun signOut() {

@@ -36,7 +36,7 @@ fun NavGraph() {
         Screen.Profile.route
     )
 
-    // If auth completes while we're on login/loading -> jump into the app
+    // If auth completes while we're on login/loading/otp -> jump into the app
     LaunchedEffect(isLoggedIn, guestMode) {
         if (isLoggedIn || guestMode) {
             navController.navigate(Screen.Explore.route) {
@@ -58,7 +58,28 @@ fun NavGraph() {
             composable("login") {
                 LoginScreen(
                     onContinueAsGuest = { guestMode = true },
-                    onLoginStarted = { navController.navigate("loading") }
+                    onCodeSent = { email ->
+                        // store email for the next screen without putting it in the route
+                        navController.currentBackStackEntry
+                            ?.savedStateHandle
+                            ?.set("login_email", email)
+
+                        navController.navigate("otp")
+                    }
+                )
+            }
+
+            composable("otp") {
+                val email =
+                    navController.previousBackStackEntry
+                        ?.savedStateHandle
+                        ?.get<String>("login_email")
+                        .orEmpty()
+
+                OtpScreen(
+                    email = email,
+                    onBack = { navController.popBackStack() },
+                    onVerified = { navController.navigate("loading") }
                 )
             }
 
@@ -70,7 +91,12 @@ fun NavGraph() {
             composable(Screen.Explore.route) { ExploreScreen() }
             composable(Screen.Saved.route) { SavedScreen() }
             composable(Screen.Contribute.route) { ContributeScreen() }
-            composable(Screen.Profile.route) { ProfileScreen(navController = navController) }
+            composable(Screen.Profile.route) {
+                ProfileScreen(
+                    navController = navController,
+                    onResetGuestMode = { guestMode = false }
+                )
+            }
             composable("settings") { SettingsScreen(navController = navController) }
         }
     }

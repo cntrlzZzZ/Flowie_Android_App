@@ -16,9 +16,10 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(
-    onContinueAsGuest: () -> Unit,
-    onCodeSent: (email: String) -> Unit
+fun OtpScreen(
+    email: String,
+    onBack: () -> Unit,
+    onVerified: () -> Unit
 ) {
     val backgroundColor = Color(0xFF0B0B0F)
     val surfaceColor = Color(0xFF12121A)
@@ -27,8 +28,9 @@ fun LoginScreen(
     val textPrimary = Color.White
     val textSecondary = Color(0xFFB3B3C2)
 
-    var email by remember { mutableStateOf("") }
-    var isSending by remember { mutableStateOf(false) }
+    var code by remember { mutableStateOf("") }
+    var isVerifying by remember { mutableStateOf(false) }
+    var isResending by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
 
     val scope = rememberCoroutineScope()
@@ -44,26 +46,36 @@ fun LoginScreen(
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "Login",
+                text = "Enter code",
                 color = textPrimary,
                 style = MaterialTheme.typography.headlineLarge
             )
             Spacer(Modifier.height(6.dp))
             Text(
-                text = "We’ll send a one-time code to your email.",
+                text = "We sent a one-time code to:",
                 color = textSecondary,
+                style = MaterialTheme.typography.bodyMedium
+            )
+            Text(
+                text = email,
+                color = textPrimary,
                 style = MaterialTheme.typography.bodyMedium
             )
 
             Spacer(Modifier.height(18.dp))
 
             OutlinedTextField(
-                value = email,
-                onValueChange = { email = it; error = null },
-                label = { Text("Email", color = textSecondary) },
+                value = code,
+                onValueChange = {
+                    // keep it simple: digits only, max 8
+                    val filtered = it.filter { ch -> ch.isDigit() }.take(8)
+                    code = filtered
+                    error = null
+                },
+                label = { Text("6-digit code", color = textSecondary) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(
-                    keyboardType = KeyboardType.Email,
+                    keyboardType = KeyboardType.NumberPassword,
                     imeAction = ImeAction.Done
                 ),
                 modifier = Modifier.fillMaxWidth(),
@@ -92,26 +104,29 @@ fun LoginScreen(
 
             Button(
                 onClick = {
-                    val trimmed = email.trim()
-                    if (!trimmed.contains("@") || !trimmed.contains(".")) {
-                        error = "Please enter a valid email."
+                    if (email.isBlank()) {
+                        error = "Missing email. Go back and try again."
+                        return@Button
+                    }
+                    if (code.length !in setOf(6, 8)) {
+                        error = "Please enter the code from the email."
                         return@Button
                     }
 
                     scope.launch {
-                        isSending = true
+                        isVerifying = true
                         error = null
                         try {
-                            AuthManager.sendEmailOtp(trimmed)
-                            onCodeSent(trimmed)
+                            AuthManager.verifyEmailOtp(email = email, code = code)
+                            onVerified()
                         } catch (e: Exception) {
-                            error = e.message ?: "Failed to send code."
+                            error = e.message ?: "Invalid code."
                         } finally {
-                            isSending = false
+                            isVerifying = false
                         }
                     }
                 },
-                enabled = !isSending,
+                enabled = !isVerifying,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(54.dp),
@@ -123,13 +138,30 @@ fun LoginScreen(
                     disabledContentColor = textSecondary
                 )
             ) {
-                Text(if (isSending) "Sending…" else "Send code")
+                Text(if (isVerifying) "Verifying…" else "Verify code")
             }
 
-            Spacer(Modifier.height(14.dp))
+            Spacer(Modifier.height(12.dp))
 
             OutlinedButton(
-                onClick = onContinueAsGuest,
+                onClick = {
+                    if (email.isBlank()) {
+                        error = "Missing email. Go back and try again."
+                        return@OutlinedButton
+                    }
+                    scope.launch {
+                        isResending = true
+                        error = null
+                        try {
+                            AuthManager.sendEmailOtp(email)
+                        } catch (e: Exception) {
+                            error = e.message ?: "Failed to resend code."
+                        } finally {
+                            isResending = false
+                        }
+                    }
+                },
+                enabled = !isResending && !isVerifying,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(54.dp),
@@ -137,7 +169,13 @@ fun LoginScreen(
                 border = BorderStroke(1.dp, borderColor),
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = textPrimary)
             ) {
-                Text("Continue without login")
+                Text(if (isResending) "Resending…" else "Resend code")
+            }
+
+            Spacer(Modifier.height(12.dp))
+
+            TextButton(onClick = onBack) {
+                Text("Back", color = textSecondary)
             }
         }
     }

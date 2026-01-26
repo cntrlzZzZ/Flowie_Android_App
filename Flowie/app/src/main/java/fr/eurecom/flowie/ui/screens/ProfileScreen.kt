@@ -37,6 +37,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import com.google.android.gms.location.LocationServices
 import fr.eurecom.flowie.R
+import fr.eurecom.flowie.data.remote.AuthManager
 import fr.eurecom.flowie.ui.weather.WeatherViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.max
@@ -48,7 +49,10 @@ import kotlin.math.min
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen(navController: NavController) {
+fun ProfileScreen(
+    navController: NavController,
+    onResetGuestMode: () -> Unit
+) {
     val context = LocalContext.current
     val weatherViewModel = androidx.lifecycle.viewmodel.compose.viewModel<WeatherViewModel>()
     val weatherState by weatherViewModel.uiState.collectAsState()
@@ -107,6 +111,9 @@ fun ProfileScreen(navController: NavController) {
 
     // Dialog state for changing goal
     var showGoalDialog by remember { mutableStateOf(false) }
+
+    // Logout state
+    var isLoggingOut by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
@@ -249,13 +256,33 @@ fun ProfileScreen(navController: NavController) {
 
         // --- Logout ---
         ProfileButton(
-            text = "Logout",
+            text = if (isLoggingOut) "Logging out…" else "Logout",
             icon = null,
             surfaceColor = elevatedSurfaceColor,
             borderColor = borderColor,
             textPrimary = textPrimary,
             accentBlue = accentBlue
-        ) { /* logout later */ }
+        ) {
+            if (isLoggingOut) return@ProfileButton
+
+            // Important: stop guest mode so NavGraph doesn't bounce back into Explore
+            onResetGuestMode()
+
+            scope.launch {
+                isLoggingOut = true
+                try {
+                    AuthManager.signOut()
+
+                    // Clear stack and return to login
+                    navController.navigate("login") {
+                        popUpTo(navController.graph.startDestinationId) { inclusive = true }
+                        launchSingleTop = true
+                    }
+                } finally {
+                    isLoggingOut = false
+                }
+            }
+        }
 
         Spacer(modifier = Modifier.height(10.dp))
     }
