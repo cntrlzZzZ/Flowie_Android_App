@@ -72,7 +72,7 @@ fun OtpScreen(
                     code = filtered
                     error = null
                 },
-                label = { Text("6-digit code", color = textSecondary) },
+                label = { Text("8-digit code", color = textSecondary) },
                 singleLine = true,
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.NumberPassword,

@@ -28,7 +28,9 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
 import coil.compose.AsyncImage
 import com.mapbox.mapboxsdk.geometry.LatLng
+import fr.eurecom.flowie.data.remote.AuthManager
 import fr.eurecom.flowie.ui.components.MapTilerMap
+import io.github.jan.supabase.gotrue.SessionStatus
 import java.io.File
 
 /*
@@ -39,7 +41,9 @@ import java.io.File
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContributeScreen() {
+fun ContributeScreen(
+    onLoginRequested: () -> Unit
+) {
     // Dark theme colours
     val backgroundColor = Color(0xFF0B0B0F)
     val surfaceColor = Color(0xFF12121A)
@@ -49,7 +53,53 @@ fun ContributeScreen() {
     val textPrimary = Color(0xFFFFFFFF)
     val textSecondary = Color(0xFFB3B3C2)
 
-    // ✅ START EMPTY (remove fake contributed spot)
+    // Auth gate: only logged-in users can contribute
+    val sessionStatus by AuthManager.sessionStatus.collectAsState()
+    val isLoggedIn = sessionStatus is SessionStatus.Authenticated
+
+    if (!isLoggedIn) {
+        // No contribute UI, no form, no buttons.
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(backgroundColor)
+                .padding(20.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = "Contribute",
+                color = textPrimary,
+                style = MaterialTheme.typography.headlineSmall
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = "You can’t contribute unless you log in.",
+                color = textSecondary,
+                style = MaterialTheme.typography.bodyLarge
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            OutlinedButton(
+                onClick = onLoginRequested,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(54.dp),
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, borderColor),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = textPrimary)
+            ) {
+                Text("Register / login to contribute")
+            }
+        }
+
+        return
+    }
+
+    // START EMPTY (remove fake contributed spot)
     val contributedSpots = remember { mutableStateListOf<ContributedSpot>() }
 
     // Toggle between list view and form view
@@ -303,7 +353,7 @@ fun ContributeScreen() {
             .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        // ✅ Header with cross instead of Cancel text
+        // Header with cross instead of Cancel text
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
