@@ -1,6 +1,7 @@
 package fr.eurecom.flowie.ui.screens
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -13,11 +14,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.foundation.LocalIndication
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import fr.eurecom.flowie.data.model.SpotDto
-import fr.eurecom.flowie.data.remote.SourcesRepository
 import fr.eurecom.flowie.ui.components.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -28,17 +27,13 @@ fun SavedScreen() {
     val elevatedSurfaceColor = Color(0xFF1A1A24)
     val borderColor = Color(0xFF2A2A35)
     val accentBlue = Color(0xFF3B82F6)
-    val textPrimary = Color(0xFFFFFFFF)
+    val textPrimary = Color(0xFFFAFAFF)
 
     val context = LocalContext.current
-    val repo = remember { SourcesRepository() }
 
-    // Saved ids (local)
+    // Saved ids + spots are now purely local
     var savedIds by remember { mutableStateOf(SavedSpotsStore.getIds(context)) }
-
-    // Loaded saved spots
-    var spots by remember { mutableStateOf<List<SpotDto>>(emptyList()) }
-    var isLoading by remember { mutableStateOf(false) }
+    var spots by remember { mutableStateOf(SavedSpotsStore.getAll(context)) }
 
     // Filters
     var filterState by remember { mutableStateOf(SpotFilterState()) }
@@ -46,15 +41,9 @@ fun SavedScreen() {
     // Sheet spot
     var selectedSpot by remember { mutableStateOf<SpotDto?>(null) }
 
-    // Reload from server whenever savedIds change
+    // Reload local spots whenever savedIds changes
     LaunchedEffect(savedIds) {
-        isLoading = true
-        spots = try {
-            repo.fetchByIds(savedIds.toList())
-        } catch (_: Exception) {
-            emptyList()
-        }
-        isLoading = false
+        spots = SavedSpotsStore.getAll(context)
     }
 
     val filteredSpots by remember(spots, filterState) {
@@ -81,11 +70,6 @@ fun SavedScreen() {
 
             Spacer(Modifier.height(16.dp))
 
-            if (isLoading) {
-                Text("Loading saved spots…", color = textPrimary)
-                return@Column
-            }
-
             if (filteredSpots.isEmpty()) {
                 Text("No saved spots yet.", color = textPrimary)
                 return@Column
@@ -110,7 +94,7 @@ fun SavedScreen() {
                 spot = spot,
                 isSaved = savedIds.contains(spot.id),
                 onToggleSave = {
-                    val newIds = SavedSpotsStore.toggle(context, spot.id)
+                    val newIds = SavedSpotsStore.toggle(context, spot)
                     savedIds = newIds
                     if (!newIds.contains(spot.id)) selectedSpot = null // if you unsave, close
                 },
