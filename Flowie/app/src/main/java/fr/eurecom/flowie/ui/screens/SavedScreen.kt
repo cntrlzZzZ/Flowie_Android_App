@@ -3,6 +3,7 @@ package fr.eurecom.flowie.ui.screens
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -12,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import fr.eurecom.flowie.data.model.SpotDto
@@ -126,6 +128,9 @@ private fun SavedSpotCard(
     textPrimary: Color,
     onClick: () -> Unit
 ) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val indication = LocalIndication.current
+
     Surface(
         shape = RoundedCornerShape(18.dp),
         color = surfaceColor,
@@ -133,7 +138,10 @@ private fun SavedSpotCard(
         modifier = Modifier
             .fillMaxWidth()
             .height(90.dp)
-            .clickable { onClick() }
+            .clickable(
+                interactionSource = interactionSource,
+                indication = indication
+            ) { onClick() }
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(

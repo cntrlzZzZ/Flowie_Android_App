@@ -90,7 +90,19 @@ fun NavGraph() {
             // --- MAIN APP ---
             composable(Screen.Explore.route) { ExploreScreen() }
             composable(Screen.Saved.route) { SavedScreen() }
-            composable(Screen.Contribute.route) { ContributeScreen() }
+
+            composable(Screen.Contribute.route) {
+                ContributeScreen(
+                    onLoginRequested = {
+                        guestMode = false
+                        navController.navigate("login") {
+                            popUpTo("login") { inclusive = false }
+                            launchSingleTop = true
+                        }
+                    }
+                )
+            }
+
             composable(Screen.Profile.route) {
                 ProfileScreen(
                     navController = navController,
