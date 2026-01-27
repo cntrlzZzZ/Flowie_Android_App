@@ -197,7 +197,7 @@ fun ExploreScreen() {
                 spot = spot,
                 isSaved = savedIds.contains(spot.id),
                 onToggleSave = {
-                    savedIds = SavedSpotsStore.toggle(context, spot.id)
+                    savedIds = SavedSpotsStore.toggle(context, spot)
                 },
                 onDismiss = { selectedSpot = null }
             )
