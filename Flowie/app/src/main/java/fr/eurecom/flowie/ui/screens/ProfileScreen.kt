@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.util.Log
 import android.Manifest
+import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
@@ -42,6 +43,9 @@ import fr.eurecom.flowie.ui.weather.WeatherViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.max
 import kotlin.math.min
+import fr.eurecom.flowie.model.StepRepository
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import fr.eurecom.flowie.ui.components.HydrationNotificationHelper
 
 /*
  * User profile screen displaying personal information,
@@ -54,6 +58,12 @@ fun ProfileScreen(
     onResetGuestMode: () -> Unit
 ) {
     val context = LocalContext.current
+    val fusedLocationClient = remember {
+        LocationServices.getFusedLocationProviderClient(context)
+    }
+
+    var weatherLocation by remember { mutableStateOf<android.location.Location?>(null) }
+
     val weatherViewModel = androidx.lifecycle.viewmodel.compose.viewModel<WeatherViewModel>()
     val weatherState by weatherViewModel.uiState.collectAsState()
 
@@ -68,31 +78,104 @@ fun ProfileScreen(
     val textPrimary = Color(0xFFFFFFFF)
     val textSecondary = Color(0xFFB3B3C2)
 
-    // For now: use Vienna coordinates
+    val notificationPermissionLauncher =
+        rememberLauncherForActivityResult(
+            contract = ActivityResultContracts.RequestPermission()
+        ) { granted ->
+            Log.d("ProfileScreen", "Notification permission granted: $granted")
+        }
+
+    val stepsToday by StepRepository.steps.collectAsStateWithLifecycle()
+
+
     @SuppressLint("MissingPermission")
-    fun fetchLocationAndUpdateWeather() {
-        weatherViewModel.loadWeather(lat = 48.21, lon = 16.37)
+    fun fetchUserLocation() {
+        fusedLocationClient.lastLocation
+            .addOnSuccessListener { location ->
+                if (location != null) {
+                    weatherLocation = location
+                } else {
+                    Log.w("ProfileScreen", "Location is null")
+                }
+            }
+            .addOnFailureListener {
+                Log.e("ProfileScreen", "Failed to get location", it)
+            }
     }
+
 
     val locationPermissionLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.RequestPermission()
-    ) { isGranted: Boolean ->
+    ) { isGranted ->
         if (isGranted) {
-            fetchLocationAndUpdateWeather()
+            fetchUserLocation()
         } else {
             Log.d("ProfileScreen", "Location permission denied.")
         }
     }
 
+
     LaunchedEffect(Unit) {
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) ==
-            PackageManager.PERMISSION_GRANTED
+        if (
+            ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
         ) {
-            fetchLocationAndUpdateWeather()
+            fetchUserLocation()
         } else {
             locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (
+                ContextCompat.checkSelfPermission(
+                    context,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                notificationPermissionLauncher.launch(
+                    Manifest.permission.POST_NOTIFICATIONS
+                )
+            }
+        }
     }
+
+    LaunchedEffect(weatherLocation) {
+        val loc = weatherLocation ?: return@LaunchedEffect
+
+        while (true) {
+            weatherViewModel.loadWeather(
+                lat = loc.latitude,
+                lon = loc.longitude
+            )
+            kotlinx.coroutines.delay(10_000)
+        }
+    }
+
+    var hydrationNotified by remember { mutableStateOf(false) }
+    LaunchedEffect(stepsToday, weatherState.temperature) {
+
+        val stepsThreshold = 50
+        val tempValue = weatherState.temperature
+            .replace("°C", "")
+            .toFloatOrNull()
+
+        if (
+            stepsToday >= stepsThreshold &&
+            tempValue != null &&
+            tempValue >= 1f &&
+            !hydrationNotified
+        ) {
+            HydrationNotificationHelper.showHydrationReminder(
+                context = context,
+                steps = stepsToday,
+                temperature = weatherState.temperature
+            )
+            hydrationNotified = true
+        }
+    }
+
 
     // Hydration state (dummy for now)
     var dailyGoalLitres by remember { mutableStateOf(2.2f) }
@@ -204,18 +287,17 @@ fun ProfileScreen(
                 textSecondary = textSecondary
             )
 
-            StatCard(
-                number = "12",
-                label = "Contributed",
+            ToggleStatCard(
+                contributed = 12,
+                saved = 8,
                 surfaceColor = elevatedSurfaceColor,
                 borderColor = borderColor,
                 textPrimary = textPrimary,
                 textSecondary = textSecondary
             )
 
-            StatCard(
-                number = "8",
-                label = "Saved",
+            StepsCard(
+                steps = stepsToday,
                 surfaceColor = elevatedSurfaceColor,
                 borderColor = borderColor,
                 textPrimary = textPrimary,
@@ -796,6 +878,80 @@ fun WeatherCard(
             Text(icon, fontSize = MaterialTheme.typography.headlineMedium.fontSize)
             Spacer(modifier = Modifier.height(4.dp))
             Text(temperature, color = textSecondary)
+        }
+    }
+}
+
+@Composable
+fun ToggleStatCard(
+    contributed: Int,
+    saved: Int,
+    surfaceColor: Color,
+    borderColor: Color,
+    textPrimary: Color,
+    textSecondary: Color
+) {
+    var showContributed by remember { mutableStateOf(true) }
+
+    Surface(
+        onClick = { showContributed = !showContributed },
+        shape = RoundedCornerShape(16.dp),
+        color = surfaceColor,
+        border = BorderStroke(1.dp, borderColor),
+        modifier = Modifier.size(86.dp)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = if (showContributed) contributed.toString() else saved.toString(),
+                style = MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.Bold,
+                color = textPrimary
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                text = if (showContributed) "Contributed" else "Saved",
+                color = textSecondary,
+                style = MaterialTheme.typography.bodySmall
+            )
+        }
+    }
+}
+
+@Composable
+fun StepsCard(
+    steps: Int,
+    surfaceColor: Color,
+    borderColor: Color,
+    textPrimary: Color,
+    textSecondary: Color
+) {
+    Surface(
+        shape = RoundedCornerShape(16.dp),
+        color = surfaceColor,
+        border = BorderStroke(1.dp, borderColor),
+        modifier = Modifier.size(86.dp)
+    ) {
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = steps.toString(),
+                style = MaterialTheme.typography.headlineMedium,
+                fontWeight = FontWeight.Bold,
+                color = textPrimary
+            )
+            Spacer(Modifier.height(4.dp))
+            Text(
+                text = "Steps",
+                color = textSecondary,
+                style = MaterialTheme.typography.bodySmall
+            )
         }
     }
 }
