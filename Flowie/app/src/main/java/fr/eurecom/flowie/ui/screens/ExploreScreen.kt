@@ -1,9 +1,6 @@
 package fr.eurecom.flowie.ui.screens
 
-import android.content.pm.PackageManager
 import android.util.Log
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -17,7 +14,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat
 import com.mapbox.mapboxsdk.annotations.Marker
 import com.mapbox.mapboxsdk.annotations.MarkerOptions
 import com.mapbox.mapboxsdk.geometry.LatLng
@@ -26,7 +22,17 @@ import fr.eurecom.flowie.data.model.SpotDto
 import fr.eurecom.flowie.data.remote.SourcesRepository
 import fr.eurecom.flowie.ui.components.*
 import fr.eurecom.flowie.ui.weather.WeatherViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+
+private data class Bbox(
+    val minLat: Double,
+    val minLng: Double,
+    val maxLat: Double,
+    val maxLng: Double
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,12 +44,17 @@ fun ExploreScreen() {
     val textPrimary = Color(0xFFFFFFFF)
     val textSecondary = Color(0xFFB3B3C2)
 
-    val vienna = LatLng(48.2082, 16.3738)
+    val defaultCentre = LatLng(48.2082, 16.3738) // Vienna fallback
 
     var mapboxMap by remember { mutableStateOf<com.mapbox.mapboxsdk.maps.MapboxMap?>(null) }
     val repo = remember { SourcesRepository() }
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
+
+    // Debounce + anti-race jobs
+    var pendingBboxJob by remember { mutableStateOf<Job?>(null) }
+    var fetchJob by remember { mutableStateOf<Job?>(null) }
+    var lastBbox by remember { mutableStateOf<Bbox?>(null) }
 
     // Filters
     var filterState by remember { mutableStateOf(SpotFilterState()) }
@@ -63,36 +74,26 @@ fun ExploreScreen() {
     val markers = remember { mutableStateListOf<Marker>() }
     val markerSpotMap = remember { mutableStateMapOf<Long, SpotDto>() }
 
+    // Weather
     val weatherViewModel = androidx.lifecycle.viewmodel.compose.viewModel<WeatherViewModel>()
     val weatherState by weatherViewModel.uiState.collectAsState()
-    val fusedLocationClient = remember {
-        com.google.android.gms.location.LocationServices
-            .getFusedLocationProviderClient(context)
-    }
     var weatherLocation by remember { mutableStateOf<LatLng?>(null) }
 
+    // Once map exists, grab last known location for weather (if available)
     LaunchedEffect(mapboxMap) {
         val map = mapboxMap ?: return@LaunchedEffect
-
         val loc = map.locationComponent.lastKnownLocation
-        if (loc != null) {
-            weatherLocation = LatLng(loc.latitude, loc.longitude)
-        }
+        if (loc != null) weatherLocation = LatLng(loc.latitude, loc.longitude)
     }
 
+    // Poll weather
     LaunchedEffect(weatherLocation) {
         val loc = weatherLocation ?: return@LaunchedEffect
-
-        while (true) {
-            weatherViewModel.loadWeather(
-                lat = loc.latitude,
-                lon = loc.longitude
-            )
-            kotlinx.coroutines.delay(10_000)
+        while (isActive) {
+            weatherViewModel.loadWeather(lat = loc.latitude, lon = loc.longitude)
+            delay(10_000)
         }
     }
-
-
 
     fun renderMarkers(newSpots: List<SpotDto>) {
         val map = mapboxMap ?: return
@@ -115,24 +116,50 @@ fun ExploreScreen() {
         }
     }
 
-    fun loadViennaSpots() {
-        scope.launch {
+    fun currentBbox(map: com.mapbox.mapboxsdk.maps.MapboxMap): Bbox {
+        val bounds = map.projection.visibleRegion.latLngBounds
+        val ne = bounds.northEast
+        val sw = bounds.southWest
+        return Bbox(
+            minLat = sw.latitude,
+            minLng = sw.longitude,
+            maxLat = ne.latitude,
+            maxLng = ne.longitude
+        )
+    }
+
+    fun maxRowsForZoom(zoom: Double): Long {
+        return when {
+            zoom >= 16.0 -> 2000
+            zoom >= 14.0 -> 1500
+            zoom >= 12.0 -> 800
+            zoom >= 10.0 -> 400
+            else -> 200
+        }
+    }
+
+    fun loadSpotsForVisibleRegion(map: com.mapbox.mapboxsdk.maps.MapboxMap) {
+        // Cancel any in-flight fetch so older results can't overwrite newer ones
+        fetchJob?.cancel()
+        fetchJob = scope.launch {
             try {
                 isLoading = true
                 errorText = null
 
+                val bbox = currentBbox(map)
+                val zoomNow = map.cameraPosition?.zoom ?: 14.0
+
                 val result = repo.fetchInBbox(
-                    minLat = 48.1304464434,
-                    minLng = 16.2778988626,
-                    maxLat = 48.338028,
-                    maxLng = 16.5347851295,
-                    maxRows = 2000
+                    minLat = bbox.minLat,
+                    minLng = bbox.minLng,
+                    maxLat = bbox.maxLat,
+                    maxLng = bbox.maxLng,
+                    maxRows = maxRowsForZoom(zoomNow)
                 )
 
-                Log.d("ExploreScreen", "Loaded spots: ${result.size}")
                 spots = result
             } catch (e: Exception) {
-                Log.e("ExploreScreen", "Failed loading spots", e)
+                Log.e("ExploreScreen", "Failed loading bbox spots", e)
                 errorText = e.message ?: "Unknown error"
             } finally {
                 isLoading = false
@@ -140,16 +167,47 @@ fun ExploreScreen() {
         }
     }
 
-    // Set marker click + load data when map is ready
-    LaunchedEffect(mapboxMap) {
-        val map = mapboxMap ?: return@LaunchedEffect
+    // Attach listeners once the map is ready, and clean up properly
+    DisposableEffect(mapboxMap) {
+        val map = mapboxMap ?: return@DisposableEffect onDispose { }
 
         map.setOnMarkerClickListener { marker ->
             markerSpotMap[marker.id]?.let { selectedSpot = it }
             true
         }
 
-        loadViennaSpots()
+        val onIdle = com.mapbox.mapboxsdk.maps.MapboxMap.OnCameraIdleListener {
+            pendingBboxJob?.cancel()
+            pendingBboxJob = scope.launch {
+                delay(300)
+
+                val bbox = currentBbox(map)
+                val prev = lastBbox
+
+                val changedEnough =
+                    prev == null ||
+                            kotlin.math.abs(prev.minLat - bbox.minLat) > 0.0005 ||
+                            kotlin.math.abs(prev.minLng - bbox.minLng) > 0.0005 ||
+                            kotlin.math.abs(prev.maxLat - bbox.maxLat) > 0.0005 ||
+                            kotlin.math.abs(prev.maxLng - bbox.maxLng) > 0.0005
+
+                if (changedEnough) {
+                    lastBbox = bbox
+                    loadSpotsForVisibleRegion(map)
+                }
+            }
+        }
+
+        map.addOnCameraIdleListener(onIdle)
+
+        // Initial load
+        loadSpotsForVisibleRegion(map)
+
+        onDispose {
+            pendingBboxJob?.cancel()
+            fetchJob?.cancel()
+            map.removeOnCameraIdleListener(onIdle)
+        }
     }
 
     val filteredSpots by remember(spots, filterState) {
@@ -163,7 +221,7 @@ fun ExploreScreen() {
     Box(modifier = Modifier.fillMaxSize()) {
         MapTilerMap(
             modifier = Modifier.fillMaxSize(),
-            center = vienna,
+            center = defaultCentre,
             zoom = 14.0,
             onMapReady = { map -> mapboxMap = map }
         )
@@ -185,16 +243,32 @@ fun ExploreScreen() {
             )
 
             Spacer(Modifier.height(12.dp))
-            // Weather overlay (same card as ProfileScreen)
+
             WeatherCard(
                 icon = weatherState.icon,
                 temperature = weatherState.temperature,
                 surfaceColor = elevatedSurfaceColor,
                 borderColor = borderColor,
                 textPrimary = textPrimary,
-                textSecondary = textSecondary,
+                textSecondary = textSecondary
             )
 
+            // Optional: show loading/error without being annoying
+            if (isLoading) {
+                Spacer(Modifier.height(8.dp))
+                LinearProgressIndicator(
+                    modifier = Modifier.fillMaxWidth(),
+                    color = accentBlue,
+                    trackColor = surfaceColor
+                )
+            } else if (errorText != null) {
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    text = errorText ?: "",
+                    color = textSecondary,
+                    style = MaterialTheme.typography.bodySmall
+                )
+            }
         }
 
         FloatingActionButton(
@@ -223,14 +297,11 @@ fun ExploreScreen() {
             )
         }
 
-        // Bottom sheet
         selectedSpot?.let { spot ->
             SpotDetailsBottomSheet(
                 spot = spot,
                 isSaved = savedIds.contains(spot.id),
-                onToggleSave = {
-                    savedIds = SavedSpotsStore.toggle(context, spot)
-                },
+                onToggleSave = { savedIds = SavedSpotsStore.toggle(context, spot) },
                 onDismiss = { selectedSpot = null }
             )
         }
@@ -264,4 +335,3 @@ fun WeatherCard(
         }
     }
 }
-
