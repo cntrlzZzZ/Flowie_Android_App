@@ -4,7 +4,6 @@ import android.content.Context
 import android.location.Address
 import android.location.Geocoder
 import android.net.Uri
-import android.os.Build
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -37,6 +36,8 @@ import fr.eurecom.flowie.data.model.SpotDto
 import fr.eurecom.flowie.data.remote.AuthManager
 import fr.eurecom.flowie.data.remote.SourcesRepository
 import fr.eurecom.flowie.ui.components.MapTilerMap
+import fr.eurecom.flowie.ui.components.SavedSpotsStore
+import fr.eurecom.flowie.ui.components.SpotDetailsBottomSheet
 import io.github.jan.supabase.gotrue.SessionStatus
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -68,8 +69,7 @@ private val LatLngStateSaver: Saver<MutableState<LatLng>, List<Double>> = Saver(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContributeScreen(
-    onLoginRequested: () -> Unit,
-    onSpotSelected: (spotId: String) -> Unit = {} // ✅ clickable cards without forcing NavGraph changes yet
+    onLoginRequested: () -> Unit
 ) {
     // Dark theme colours
     val backgroundColor = Color(0xFF0B0B0F)
@@ -121,8 +121,18 @@ fun ContributeScreen(
     val scope = rememberCoroutineScope()
     val repo = remember { SourcesRepository() }
 
-    // This list is populated from Supabase (and also updated locally after submit)
+    // Saved ids (for the bottom sheet Save button)
+    var savedIds by remember { mutableStateOf(SavedSpotsStore.getIds(context)) }
+
+    // Keep BOTH:
+    // - the DTOs (for bottom sheet)
+    // - the UI list (for your card rendering)
+    var mySpotDtos by remember { mutableStateOf<List<SpotDto>>(emptyList()) }
     val contributedSpots = remember { mutableStateListOf<ContributedSpot>() }
+
+    // Bottom sheet state
+    var selectedSpot by remember { mutableStateOf<SpotDto?>(null) }
+    var isOpeningSpot by remember { mutableStateOf(false) }
 
     // ✅ IMPORTANT: save this across camera activity recreation
     var showForm by rememberSaveable { mutableStateOf(false) }
@@ -142,8 +152,9 @@ fun ContributeScreen(
             isLoadingMyContrib = true
             myContribError = null
             try {
-                // NOTE: assumes you added this in SourcesRepository (as discussed)
                 val spots = repo.fetchMyCommunitySources(uid)
+                mySpotDtos = spots
+
                 contributedSpots.clear()
                 contributedSpots.addAll(spots.map { it.toContributedSpot() })
             } catch (e: Exception) {
@@ -167,6 +178,34 @@ fun ContributeScreen(
     var filterInactive by remember { mutableStateOf(false) }
     var filterWheelchair by remember { mutableStateOf(false) }
     var filterDogBowl by remember { mutableStateOf(false) }
+
+    suspend fun openSpotBottomSheet(spotId: String) {
+        // 1) try cache
+        val cached = mySpotDtos.firstOrNull { it.id == spotId }
+        if (cached != null) {
+            selectedSpot = cached
+            return
+        }
+
+        // 2) fallback fetch
+        isOpeningSpot = true
+        try {
+            val fetched = repo.fetchById(spotId)
+            if (fetched != null) {
+                selectedSpot = fetched
+            } else {
+                Toast.makeText(context, "Couldn’t load this spot.", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            Toast.makeText(
+                context,
+                "Couldn’t open spot: ${e.message ?: "Unknown error"}",
+                Toast.LENGTH_LONG
+            ).show()
+        } finally {
+            isOpeningSpot = false
+        }
+    }
 
     // ---------------------------
     // LIST VIEW
@@ -218,191 +257,223 @@ fun ContributeScreen(
                 .toList()
         }
 
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(backgroundColor)
-                .padding(16.dp)
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
             ) {
-                Text(
-                    "My contributions",
-                    color = textPrimary,
-                    style = MaterialTheme.typography.headlineSmall,
-                    modifier = Modifier.weight(1f)
-                )
-
-                TextButton(
-                    onClick = { refreshMyContributions() },
-                    enabled = !isLoadingMyContrib
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text("Refresh", color = accentBlue)
-                }
-            }
+                    Text(
+                        "My contributions",
+                        color = textPrimary,
+                        style = MaterialTheme.typography.headlineSmall,
+                        modifier = Modifier.weight(1f)
+                    )
 
-            Spacer(modifier = Modifier.height(12.dp))
-
-            OutlinedTextField(
-                value = searchQuery,
-                onValueChange = { searchQuery = it },
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(18.dp),
-                colors = tfColors,
-                placeholder = { Text("Search your contributed spots", color = textSecondary) }
-            )
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            // ✅ Community is implicit (always on). ✅ Verified chip removed.
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .horizontalScroll(rememberScrollState()),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                FilterChip(
-                    selected = filterActive,
-                    onClick = { filterActive = !filterActive },
-                    label = { Text("Active") },
-                    colors = chipColors,
-                    border = chipBorder
-                )
-                FilterChip(
-                    selected = filterInactive,
-                    onClick = { filterInactive = !filterInactive },
-                    label = { Text("Inactive") },
-                    colors = chipColors,
-                    border = chipBorder
-                )
-                FilterChip(
-                    selected = filterWheelchair,
-                    onClick = { filterWheelchair = !filterWheelchair },
-                    label = { Text("Wheelchair") },
-                    colors = chipColors,
-                    border = chipBorder
-                )
-                FilterChip(
-                    selected = filterDogBowl,
-                    onClick = { filterDogBowl = !filterDogBowl },
-                    label = { Text("Dog Bowl") },
-                    colors = chipColors,
-                    border = chipBorder
-                )
-            }
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            Surface(
-                color = surfaceColor,
-                shape = RoundedCornerShape(20.dp),
-                border = BorderStroke(1.dp, borderColor),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-            ) {
-                when {
-                    isLoadingMyContrib -> {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(18.dp),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            CircularProgressIndicator(color = accentBlue)
-                        }
+                    TextButton(
+                        onClick = { refreshMyContributions() },
+                        enabled = !isLoadingMyContrib
+                    ) {
+                        Text("Refresh", color = accentBlue)
                     }
+                }
 
-                    myContribError != null -> {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(18.dp),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Spacer(modifier = Modifier.height(12.dp))
+
+                OutlinedTextField(
+                    value = searchQuery,
+                    onValueChange = { searchQuery = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(18.dp),
+                    colors = tfColors,
+                    placeholder = { Text("Search your contributed spots", color = textSecondary) }
+                )
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // ✅ Community is implicit (always on). ✅ Verified chip removed.
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .horizontalScroll(rememberScrollState()),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    FilterChip(
+                        selected = filterActive,
+                        onClick = { filterActive = !filterActive },
+                        label = { Text("Active") },
+                        colors = chipColors,
+                        border = chipBorder
+                    )
+                    FilterChip(
+                        selected = filterInactive,
+                        onClick = { filterInactive = !filterInactive },
+                        label = { Text("Inactive") },
+                        colors = chipColors,
+                        border = chipBorder
+                    )
+                    FilterChip(
+                        selected = filterWheelchair,
+                        onClick = { filterWheelchair = !filterWheelchair },
+                        label = { Text("Wheelchair") },
+                        colors = chipColors,
+                        border = chipBorder
+                    )
+                    FilterChip(
+                        selected = filterDogBowl,
+                        onClick = { filterDogBowl = !filterDogBowl },
+                        label = { Text("Dog Bowl") },
+                        colors = chipColors,
+                        border = chipBorder
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Surface(
+                    color = surfaceColor,
+                    shape = RoundedCornerShape(20.dp),
+                    border = BorderStroke(1.dp, borderColor),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f)
+                ) {
+                    when {
+                        isLoadingMyContrib -> {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(18.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                CircularProgressIndicator(color = accentBlue)
+                            }
+                        }
+
+                        myContribError != null -> {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(18.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                    Text(
+                                        text = "Couldn’t load contributions:\n${myContribError!!}",
+                                        color = textSecondary,
+                                        style = MaterialTheme.typography.bodyLarge
+                                    )
+                                    Spacer(Modifier.height(12.dp))
+                                    OutlinedButton(
+                                        onClick = { refreshMyContributions() },
+                                        border = BorderStroke(1.dp, borderColor),
+                                        colors = ButtonDefaults.outlinedButtonColors(contentColor = textPrimary)
+                                    ) {
+                                        Text("Try again")
+                                    }
+                                }
+                            }
+                        }
+
+                        contributedSpots.isEmpty() -> {
+                            EmptyContributeState(
+                                textPrimary = textPrimary,
+                                textSecondary = textSecondary,
+                                accentBlue = accentBlue,
+                                onContribute = { showForm = true }
+                            )
+                        }
+
+                        filteredSpots.isEmpty() -> {
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(18.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
                                 Text(
-                                    text = "Couldn’t load contributions:\n${myContribError!!}",
+                                    text = "No spots match your search/filters",
                                     color = textSecondary,
                                     style = MaterialTheme.typography.bodyLarge
                                 )
-                                Spacer(Modifier.height(12.dp))
-                                OutlinedButton(
-                                    onClick = { refreshMyContributions() },
-                                    border = BorderStroke(1.dp, borderColor),
-                                    colors = ButtonDefaults.outlinedButtonColors(contentColor = textPrimary)
-                                ) {
-                                    Text("Try again")
+                            }
+                        }
+
+                        else -> {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .verticalScroll(rememberScrollState())
+                                    .padding(12.dp),
+                                verticalArrangement = Arrangement.spacedBy(12.dp)
+                            ) {
+                                filteredSpots.forEach { spot ->
+                                    ContributedSpotCard(
+                                        spot = spot,
+                                        elevatedSurfaceColor = elevatedSurfaceColor,
+                                        borderColor = borderColor,
+                                        textPrimary = textPrimary,
+                                        textSecondary = textSecondary,
+                                        onClick = {
+                                            scope.launch { openSpotBottomSheet(spot.id) }
+                                        }
+                                    )
                                 }
                             }
                         }
                     }
+                }
 
-                    contributedSpots.isEmpty() -> {
-                        EmptyContributeState(
-                            textPrimary = textPrimary,
-                            textSecondary = textSecondary,
-                            accentBlue = accentBlue,
-                            onContribute = { showForm = true }
-                        )
-                    }
+                Spacer(modifier = Modifier.height(14.dp))
 
-                    filteredSpots.isEmpty() -> {
-                        Box(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(18.dp),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Text(
-                                text = "No spots match your search/filters",
-                                color = textSecondary,
-                                style = MaterialTheme.typography.bodyLarge
-                            )
-                        }
-                    }
-
-                    else -> {
-                        Column(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .verticalScroll(rememberScrollState())
-                                .padding(12.dp),
-                            verticalArrangement = Arrangement.spacedBy(12.dp)
-                        ) {
-                            filteredSpots.forEach { spot ->
-                                ContributedSpotCard(
-                                    spot = spot,
-                                    elevatedSurfaceColor = elevatedSurfaceColor,
-                                    borderColor = borderColor,
-                                    textPrimary = textPrimary,
-                                    textSecondary = textSecondary,
-                                    onClick = { onSpotSelected(spot.id) } // ✅ clickable to navigate
-                                )
-                            }
-                        }
-                    }
+                Button(
+                    onClick = { showForm = true },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(56.dp),
+                    shape = RoundedCornerShape(18.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = accentBlue,
+                        contentColor = textPrimary
+                    )
+                ) {
+                    Text("Contribute a spot")
                 }
             }
 
-            Spacer(modifier = Modifier.height(14.dp))
+            // Optional tiny loading overlay while fetching a spot by id
+            if (isOpeningSpot) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black.copy(alpha = 0.35f)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator(color = accentBlue)
+                }
+            }
 
-            Button(
-                onClick = { showForm = true },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp),
-                shape = RoundedCornerShape(18.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = accentBlue,
-                    contentColor = textPrimary
+            // ✅ Option A: same bottom sheet, inside Contribute screen
+            selectedSpot?.let { spot ->
+                SpotDetailsBottomSheet(
+                    spot = spot,
+                    isSaved = savedIds.contains(spot.id),
+                    onToggleSave = {
+                        savedIds = SavedSpotsStore.toggle(context, spot)
+                    },
+                    onDismiss = { selectedSpot = null }
                 )
-            ) {
-                Text("Contribute a spot")
             }
         }
+
         return
     }
 
@@ -776,6 +847,8 @@ fun ContributeScreen(
                         )
 
                         // Keep list feeling instant (and also refresh after closing the form)
+                        // Also keep DTO cache in sync (for bottom sheet)
+                        mySpotDtos = listOf(inserted) + mySpotDtos
                         contributedSpots.add(0, inserted.toContributedSpot())
 
                         Toast.makeText(context, "Submitted ✅", Toast.LENGTH_SHORT).show()
@@ -936,7 +1009,7 @@ private fun ContributedSpotCard(
     onClick: () -> Unit
 ) {
     Surface(
-        onClick = onClick, // ✅ clickable card
+        onClick = onClick,
         color = elevatedSurfaceColor,
         shape = RoundedCornerShape(18.dp),
         border = BorderStroke(1.dp, borderColor),
