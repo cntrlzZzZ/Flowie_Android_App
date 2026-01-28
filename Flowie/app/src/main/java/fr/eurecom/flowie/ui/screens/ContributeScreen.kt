@@ -1,12 +1,14 @@
 package fr.eurecom.flowie.ui.screens
 
 import android.content.Context
+import android.location.Address
+import android.location.Geocoder
 import android.net.Uri
+import android.os.Build
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
@@ -16,33 +18,58 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Place
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.Saver
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
 import coil.compose.AsyncImage
 import com.mapbox.mapboxsdk.geometry.LatLng
+import fr.eurecom.flowie.BuildConfig
+import fr.eurecom.flowie.data.model.SpotDto
 import fr.eurecom.flowie.data.remote.AuthManager
+import fr.eurecom.flowie.data.remote.SourcesRepository
 import fr.eurecom.flowie.ui.components.MapTilerMap
 import io.github.jan.supabase.gotrue.SessionStatus
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.File
+import java.util.Locale
 
-/*
- * Contribute screen:
- * - List view: search bar + filter chips + cards
- * - Empty state: message + button to open form
- * - Form view: existing contribute form
+private enum class SpotType(val dbValue: String, val label: String) {
+    Outdoor("outdoor_water_fountain", "Outdoor water fountain"),
+    Indoor("indoor_water_fountain", "Indoor water fountain")
+}
+
+private enum class SpotStatus(val dbValue: String, val label: String) {
+    Active("active", "Active"),
+    Inactive("inactive", "Inactive")
+}
+
+/**
+ * ✅ Fix: save/restore a MutableState<LatLng> so `var mapCenter by ...` works.
+ * `by` delegation works for State<T>, not for raw LatLng.
  */
+private val LatLngStateSaver: Saver<MutableState<LatLng>, List<Double>> = Saver(
+    save = { state -> listOf(state.value.latitude, state.value.longitude) },
+    restore = { list -> mutableStateOf(LatLng(list[0], list[1])) }
+)
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContributeScreen(
-    onLoginRequested: () -> Unit
+    onLoginRequested: () -> Unit,
+    onSpotSelected: (spotId: String) -> Unit = {} // ✅ clickable cards without forcing NavGraph changes yet
 ) {
     // Dark theme colours
     val backgroundColor = Color(0xFF0B0B0F)
@@ -53,12 +80,12 @@ fun ContributeScreen(
     val textPrimary = Color(0xFFFFFFFF)
     val textSecondary = Color(0xFFB3B3C2)
 
-    // Auth gate: only logged-in users can contribute
+    // Auth gate
     val sessionStatus by AuthManager.sessionStatus.collectAsState()
     val isLoggedIn = sessionStatus is SessionStatus.Authenticated
+    val userId = remember(sessionStatus) { AuthManager.currentUserIdOrNull() }
 
     if (!isLoggedIn) {
-        // No contribute UI, no form, no buttons.
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -67,22 +94,14 @@ fun ContributeScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "Contribute",
-                color = textPrimary,
-                style = MaterialTheme.typography.headlineSmall
-            )
-
+            Text("Contribute", color = textPrimary, style = MaterialTheme.typography.headlineSmall)
             Spacer(modifier = Modifier.height(10.dp))
-
             Text(
                 text = "You can’t contribute unless you log in.",
                 color = textSecondary,
                 style = MaterialTheme.typography.bodyLarge
             )
-
             Spacer(modifier = Modifier.height(16.dp))
-
             OutlinedButton(
                 onClick = onLoginRequested,
                 modifier = Modifier
@@ -95,25 +114,62 @@ fun ContributeScreen(
                 Text("Register / login to contribute")
             }
         }
-
         return
     }
 
-    // START EMPTY (remove fake contributed spot)
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val repo = remember { SourcesRepository() }
+
+    // This list is populated from Supabase (and also updated locally after submit)
     val contributedSpots = remember { mutableStateListOf<ContributedSpot>() }
 
-    // Toggle between list view and form view
-    var showForm by remember { mutableStateOf(false) }
+    // ✅ IMPORTANT: save this across camera activity recreation
+    var showForm by rememberSaveable { mutableStateOf(false) }
+
+    // Fetch state for "My contributions"
+    var isLoadingMyContrib by remember { mutableStateOf(false) }
+    var myContribError by remember { mutableStateOf<String?>(null) }
+
+    fun refreshMyContributions() {
+        val uid = userId
+        if (uid.isNullOrBlank()) {
+            myContribError = "Missing user id (not logged in properly)."
+            return
+        }
+
+        scope.launch {
+            isLoadingMyContrib = true
+            myContribError = null
+            try {
+                // NOTE: assumes you added this in SourcesRepository (as discussed)
+                val spots = repo.fetchMyCommunitySources(uid)
+                contributedSpots.clear()
+                contributedSpots.addAll(spots.map { it.toContributedSpot() })
+            } catch (e: Exception) {
+                myContribError = e.message ?: "Unknown error"
+            } finally {
+                isLoadingMyContrib = false
+            }
+        }
+    }
+
+    // ✅ Fetch when we land on the list view (and when coming back from the form)
+    LaunchedEffect(userId, showForm) {
+        if (!showForm && userId != null) {
+            refreshMyContributions()
+        }
+    }
 
     // List view state
     var searchQuery by remember { mutableStateOf("") }
-    var filterCommunity by remember { mutableStateOf(false) }
-    var filterVerified by remember { mutableStateOf(false) }
+    var filterActive by remember { mutableStateOf(false) }
+    var filterInactive by remember { mutableStateOf(false) }
     var filterWheelchair by remember { mutableStateOf(false) }
     var filterDogBowl by remember { mutableStateOf(false) }
 
     // ---------------------------
-    // LIST VIEW (default)
+    // LIST VIEW
     // ---------------------------
     if (!showForm) {
         val tfColors = TextFieldDefaults.colors(
@@ -139,8 +195,8 @@ fun ContributeScreen(
         val filteredSpots = remember(
             contributedSpots,
             searchQuery,
-            filterCommunity,
-            filterVerified,
+            filterActive,
+            filterInactive,
             filterWheelchair,
             filterDogBowl
         ) {
@@ -150,8 +206,13 @@ fun ContributeScreen(
                     if (searchQuery.isBlank()) true
                     else spot.name.contains(searchQuery, ignoreCase = true)
                 }
-                .filter { spot -> !filterCommunity || spot.community }
-                .filter { spot -> !filterVerified || spot.verified }
+                // ✅ Active/Inactive chips
+                .filter { spot ->
+                    val anyStatusFilter = filterActive || filterInactive
+                    if (!anyStatusFilter) return@filter true
+                    if (filterActive && filterInactive) return@filter true
+                    if (filterActive) spot.status == "active" else spot.status == "inactive"
+                }
                 .filter { spot -> !filterWheelchair || spot.wheelchair }
                 .filter { spot -> !filterDogBowl || spot.dogBowl }
                 .toList()
@@ -163,11 +224,24 @@ fun ContributeScreen(
                 .background(backgroundColor)
                 .padding(16.dp)
         ) {
-            Text(
-                text = "Contributed spots",
-                color = textPrimary,
-                style = MaterialTheme.typography.headlineSmall
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    "My contributions",
+                    color = textPrimary,
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.weight(1f)
+                )
+
+                TextButton(
+                    onClick = { refreshMyContributions() },
+                    enabled = !isLoadingMyContrib
+                ) {
+                    Text("Refresh", color = accentBlue)
+                }
+            }
 
             Spacer(modifier = Modifier.height(12.dp))
 
@@ -182,6 +256,7 @@ fun ContributeScreen(
 
             Spacer(modifier = Modifier.height(12.dp))
 
+            // ✅ Community is implicit (always on). ✅ Verified chip removed.
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -189,16 +264,16 @@ fun ContributeScreen(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 FilterChip(
-                    selected = filterCommunity,
-                    onClick = { filterCommunity = !filterCommunity },
-                    label = { Text("Community") },
+                    selected = filterActive,
+                    onClick = { filterActive = !filterActive },
+                    label = { Text("Active") },
                     colors = chipColors,
                     border = chipBorder
                 )
                 FilterChip(
-                    selected = filterVerified,
-                    onClick = { filterVerified = !filterVerified },
-                    label = { Text("Verified") },
+                    selected = filterInactive,
+                    onClick = { filterInactive = !filterInactive },
+                    label = { Text("Inactive") },
                     colors = chipColors,
                     border = chipBorder
                 )
@@ -229,6 +304,42 @@ fun ContributeScreen(
                     .weight(1f)
             ) {
                 when {
+                    isLoadingMyContrib -> {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(18.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            CircularProgressIndicator(color = accentBlue)
+                        }
+                    }
+
+                    myContribError != null -> {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(18.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                                Text(
+                                    text = "Couldn’t load contributions:\n${myContribError!!}",
+                                    color = textSecondary,
+                                    style = MaterialTheme.typography.bodyLarge
+                                )
+                                Spacer(Modifier.height(12.dp))
+                                OutlinedButton(
+                                    onClick = { refreshMyContributions() },
+                                    border = BorderStroke(1.dp, borderColor),
+                                    colors = ButtonDefaults.outlinedButtonColors(contentColor = textPrimary)
+                                ) {
+                                    Text("Try again")
+                                }
+                            }
+                        }
+                    }
+
                     contributedSpots.isEmpty() -> {
                         EmptyContributeState(
                             textPrimary = textPrimary,
@@ -267,7 +378,8 @@ fun ContributeScreen(
                                     elevatedSurfaceColor = elevatedSurfaceColor,
                                     borderColor = borderColor,
                                     textPrimary = textPrimary,
-                                    textSecondary = textSecondary
+                                    textSecondary = textSecondary,
+                                    onClick = { onSpotSelected(spot.id) } // ✅ clickable to navigate
                                 )
                             }
                         }
@@ -291,7 +403,6 @@ fun ContributeScreen(
                 Text("Contribute a spot")
             }
         }
-
         return
     }
 
@@ -299,52 +410,79 @@ fun ContributeScreen(
     // FORM VIEW
     // ---------------------------
 
-    var markerPosition by remember { mutableStateOf(LatLng(48.2082, 16.3738)) }
+    var mapCenter by rememberSaveable(saver = LatLngStateSaver) {
+        mutableStateOf(LatLng(48.2082, 16.3738))
+    }
 
-    // --- Form States ---
-    var spotName by remember { mutableStateOf("") }
-    var selectedType by remember { mutableStateOf("Water Fountain") }
-    var expanded by remember { mutableStateOf(false) }
+    var address by rememberSaveable { mutableStateOf("") }
+    var addressEditedByUser by rememberSaveable { mutableStateOf(false) }
 
-    var isWheelchairAccessible by remember { mutableStateOf(false) }
-    var hasDogBowl by remember { mutableStateOf(false) }
+    var isGeocoding by remember { mutableStateOf(false) }
+    var lastGeocodedCenter by remember { mutableStateOf<LatLng?>(null) }
+    var pendingGeocodeJob by remember { mutableStateOf<Job?>(null) }
+    var lastPinAddress by remember { mutableStateOf<String?>(null) }
 
-    var description by remember { mutableStateOf("") }
-    var imageUri by remember { mutableStateOf<Uri?>(null) }
+    var selectedType by rememberSaveable { mutableStateOf(SpotType.Outdoor) }
+    var typeExpanded by remember { mutableStateOf(false) }
+
+    var selectedStatus by rememberSaveable { mutableStateOf(SpotStatus.Active) }
+    var statusExpanded by remember { mutableStateOf(false) }
+
+    var isWheelchairAccessible by rememberSaveable { mutableStateOf(false) }
+    var hasDogBowl by rememberSaveable { mutableStateOf(false) }
+
+    var imageUriString by rememberSaveable { mutableStateOf<String?>(null) }
+    var cameraImageUriString by rememberSaveable { mutableStateOf<String?>(null) }
+
+    val imageUri: Uri? = imageUriString?.let { Uri.parse(it) }
+    @Suppress("UNUSED_VARIABLE")
+    val cameraImageUri: Uri? = cameraImageUriString?.let { Uri.parse(it) }
+
     var showImagePicker by remember { mutableStateOf(false) }
-    var cameraImageUri by remember { mutableStateOf<Uri?>(null) }
 
-    val canSubmit = spotName.trim().isNotEmpty() &&
-            description.trim().isNotEmpty() &&
-            imageUri != null
+    var isSubmitting by remember { mutableStateOf(false) }
+    val canSubmit = !isSubmitting && address.trim().isNotEmpty()
 
-    val context = LocalContext.current
+    fun requestReverseGeocode(center: LatLng) {
+        val last = lastGeocodedCenter
+        val movedTinyAmount =
+            last != null && kotlin.math.abs(last.latitude - center.latitude) < 0.00005 &&
+                    kotlin.math.abs(last.longitude - center.longitude) < 0.00005
+        if (movedTinyAmount) return
 
-    val galleryLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.GetContent()
-    ) { uri: Uri? ->
-        imageUri = uri
-        showImagePicker = false
-    }
+        pendingGeocodeJob?.cancel()
+        pendingGeocodeJob = scope.launch {
+            delay(350)
 
-    val cameraLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.TakePicture()
-    ) { success ->
-        if (success) imageUri = cameraImageUri
-        showImagePicker = false
-    }
+            isGeocoding = true
+            val result = reverseGeocodeToSingleLine(context, center)
+            isGeocoding = false
 
-    val cameraPermissionLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.RequestPermission()
-    ) { isGranted ->
-        if (isGranted) {
-            val newImageUri = createImageUri(context)
-            cameraImageUri = newImageUri
-            cameraLauncher.launch(newImageUri)
-        } else {
-            Toast.makeText(context, "Camera permission denied", Toast.LENGTH_SHORT).show()
+            lastGeocodedCenter = center
+            lastPinAddress = result
+
+            if (!addressEditedByUser || address.isBlank()) {
+                if (!result.isNullOrBlank()) {
+                    address = result
+                    addressEditedByUser = false
+                }
+            }
         }
     }
+
+    LaunchedEffect(Unit) { requestReverseGeocode(mapCenter) }
+
+    val tfColors = TextFieldDefaults.colors(
+        unfocusedContainerColor = surfaceColor,
+        focusedContainerColor = surfaceColor,
+        unfocusedTextColor = textPrimary,
+        focusedTextColor = textPrimary,
+        unfocusedPlaceholderColor = textSecondary,
+        focusedPlaceholderColor = textSecondary,
+        unfocusedIndicatorColor = borderColor,
+        focusedIndicatorColor = accentBlue,
+        cursorColor = accentBlue
+    )
 
     Column(
         modifier = Modifier
@@ -353,7 +491,6 @@ fun ContributeScreen(
             .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        // Header with cross instead of Cancel text
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
@@ -366,7 +503,7 @@ fun ContributeScreen(
             )
 
             FilledIconButton(
-                onClick = { showForm = false },
+                onClick = { if (!isSubmitting) showForm = false },
                 modifier = Modifier.size(42.dp),
                 colors = IconButtonDefaults.filledIconButtonColors(
                     containerColor = elevatedSurfaceColor,
@@ -388,69 +525,98 @@ fun ContributeScreen(
         ) {
             MapTilerMap(
                 modifier = Modifier.matchParentSize(),
-                center = markerPosition,
+                center = mapCenter,
                 zoom = 15.0,
-                onMapReady = { /* no-op */ }
+                followUserLocation = false,
+                onCameraIdle = { centre ->
+                    mapCenter = centre
+                    requestReverseGeocode(centre)
+                }
             )
+
+            Column(
+                modifier = Modifier.align(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.Place,
+                    contentDescription = "Centre pin",
+                    tint = accentBlue,
+                    modifier = Modifier.size(42.dp)
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    text = if (isGeocoding) "Finding address…" else "Move map to set address",
+                    color = textPrimary.copy(alpha = 0.85f),
+                    style = MaterialTheme.typography.labelSmall
+                )
+            }
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
-
-        val tfColors = TextFieldDefaults.colors(
-            unfocusedContainerColor = surfaceColor,
-            focusedContainerColor = surfaceColor,
-            unfocusedTextColor = textPrimary,
-            focusedTextColor = textPrimary,
-            unfocusedPlaceholderColor = textSecondary,
-            focusedPlaceholderColor = textSecondary,
-            unfocusedIndicatorColor = borderColor,
-            focusedIndicatorColor = accentBlue,
-            cursorColor = accentBlue
-        )
+        Spacer(modifier = Modifier.height(16.dp))
 
         OutlinedTextField(
-            value = spotName,
-            onValueChange = { spotName = it },
-            label = { Text("Enter address", color = textSecondary) },
-            placeholder = { Text("Enter address", color = textSecondary) },
+            value = address,
+            onValueChange = {
+                address = it
+                addressEditedByUser = true
+            },
+            label = { Text("Address", color = textSecondary) },
+            placeholder = { Text("Use the map pin or type it", color = textSecondary) },
             modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(14.dp),
-            colors = tfColors
+            colors = tfColors,
+            enabled = !isSubmitting
         )
+
+        val pinAddr = lastPinAddress
+        if (addressEditedByUser && !pinAddr.isNullOrBlank()) {
+            Spacer(Modifier.height(8.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.End
+            ) {
+                TextButton(
+                    onClick = {
+                        address = pinAddr
+                        addressEditedByUser = false
+                    },
+                    enabled = !isSubmitting
+                ) {
+                    Text("Use pin address", color = accentBlue)
+                }
+            }
+        }
 
         Spacer(modifier = Modifier.height(14.dp))
 
         Box {
             OutlinedTextField(
-                value = selectedType,
+                value = selectedType.label,
                 onValueChange = {},
                 label = { Text("Type", color = textSecondary) },
                 readOnly = true,
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(14.dp),
                 colors = tfColors,
+                enabled = !isSubmitting,
                 trailingIcon = {
-                    IconButton(onClick = { expanded = true }) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowDropDown,
-                            contentDescription = null,
-                            tint = textPrimary
-                        )
+                    IconButton(onClick = { typeExpanded = true }, enabled = !isSubmitting) {
+                        Icon(Icons.Filled.ArrowDropDown, contentDescription = null, tint = textPrimary)
                     }
                 }
             )
 
             DropdownMenu(
-                expanded = expanded,
-                onDismissRequest = { expanded = false }
+                expanded = typeExpanded,
+                onDismissRequest = { typeExpanded = false }
             ) {
-                val types = listOf("Water Fountain", "Paid Tap", "Public Restroom")
-                types.forEach { type ->
+                SpotType.entries.forEach { type ->
                     DropdownMenuItem(
-                        text = { Text(type) },
+                        text = { Text(type.label) },
                         onClick = {
                             selectedType = type
-                            expanded = false
+                            typeExpanded = false
                         }
                     )
                 }
@@ -459,12 +625,42 @@ fun ContributeScreen(
 
         Spacer(modifier = Modifier.height(14.dp))
 
-        Text(
-            text = "Options",
-            color = textPrimary,
-            style = MaterialTheme.typography.titleMedium
-        )
+        Box {
+            OutlinedTextField(
+                value = selectedStatus.label,
+                onValueChange = {},
+                label = { Text("Status", color = textSecondary) },
+                readOnly = true,
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(14.dp),
+                colors = tfColors,
+                enabled = !isSubmitting,
+                trailingIcon = {
+                    IconButton(onClick = { statusExpanded = true }, enabled = !isSubmitting) {
+                        Icon(Icons.Filled.ArrowDropDown, contentDescription = null, tint = textPrimary)
+                    }
+                }
+            )
 
+            DropdownMenu(
+                expanded = statusExpanded,
+                onDismissRequest = { statusExpanded = false }
+            ) {
+                SpotStatus.entries.forEach { st ->
+                    DropdownMenuItem(
+                        text = { Text(st.label) },
+                        onClick = {
+                            selectedStatus = st
+                            statusExpanded = false
+                        }
+                    )
+                }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(14.dp))
+
+        Text("Options", color = textPrimary, style = MaterialTheme.typography.titleMedium)
         Spacer(modifier = Modifier.height(8.dp))
 
         Surface(
@@ -474,7 +670,6 @@ fun ContributeScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Column(modifier = Modifier.padding(12.dp)) {
-
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically
@@ -482,6 +677,7 @@ fun ContributeScreen(
                     Checkbox(
                         checked = isWheelchairAccessible,
                         onCheckedChange = { isWheelchairAccessible = it },
+                        enabled = !isSubmitting,
                         colors = CheckboxDefaults.colors(
                             checkedColor = accentBlue,
                             uncheckedColor = textSecondary,
@@ -499,6 +695,7 @@ fun ContributeScreen(
                     Checkbox(
                         checked = hasDogBowl,
                         onCheckedChange = { hasDogBowl = it },
+                        enabled = !isSubmitting,
                         colors = CheckboxDefaults.colors(
                             checkedColor = accentBlue,
                             uncheckedColor = textSecondary,
@@ -511,33 +708,23 @@ fun ContributeScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(14.dp))
-
-        OutlinedTextField(
-            value = description,
-            onValueChange = { description = it },
-            label = { Text("Description", color = textSecondary) },
-            modifier = Modifier
-                .fillMaxWidth()
-                .heightIn(min = 120.dp),
-            shape = RoundedCornerShape(14.dp),
-            colors = tfColors
-        )
-
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(
             onClick = { showImagePicker = true },
+            enabled = !isSubmitting,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(55.dp),
             shape = RoundedCornerShape(16.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = accentBlue,
-                contentColor = textPrimary
+                containerColor = Color(0xFF000000),
+                contentColor = textPrimary,
+                disabledContainerColor = Color(0xFF2A2A35),
+                disabledContentColor = Color(0xFFB3B3C2)
             )
         ) {
-            Text("Add Image")
+            Text(if (imageUri == null) "Add Image (optional)" else "Change Image")
         }
 
         Spacer(Modifier.height(12.dp))
@@ -551,34 +738,76 @@ fun ContributeScreen(
                     .height(200.dp)
                     .clip(RoundedCornerShape(16.dp))
             )
+
+            Spacer(Modifier.height(10.dp))
+
+            OutlinedButton(
+                onClick = {
+                    imageUriString = null
+                    cameraImageUriString = null
+                },
+                enabled = !isSubmitting,
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(16.dp),
+                border = BorderStroke(1.dp, borderColor),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = textPrimary)
+            ) {
+                Text("Remove image")
+            }
         }
 
         Spacer(modifier = Modifier.height(12.dp))
 
         Button(
             onClick = {
-                contributedSpots.add(
-                    ContributedSpot(
-                        name = spotName.trim(),
-                        type = selectedType,
-                        community = true,     // contributions are basically “community”
-                        verified = false,
-                        wheelchair = isWheelchairAccessible,
-                        dogBowl = hasDogBowl,
-                        imageResId = null
-                    )
-                )
+                scope.launch {
+                    isSubmitting = true
+                    try {
+                        val inserted = repo.createCommunitySource(
+                            context = context,
+                            address = address.trim(),
+                            lat = mapCenter.latitude,
+                            lng = mapCenter.longitude,
+                            typeLabel = selectedType.dbValue,
+                            status = selectedStatus.dbValue,
+                            wheelchairAccess = if (isWheelchairAccessible) true else null,
+                            dogBowl = if (hasDogBowl) true else null,
+                            imageUri = imageUri
+                        )
 
-                spotName = ""
-                selectedType = "Water Fountain"
-                expanded = false
-                isWheelchairAccessible = false
-                hasDogBowl = false
-                description = ""
-                imageUri = null
-                cameraImageUri = null
+                        // Keep list feeling instant (and also refresh after closing the form)
+                        contributedSpots.add(0, inserted.toContributedSpot())
 
-                showForm = false
+                        Toast.makeText(context, "Submitted ✅", Toast.LENGTH_SHORT).show()
+
+                        address = ""
+                        addressEditedByUser = false
+                        lastPinAddress = null
+                        lastGeocodedCenter = null
+
+                        selectedType = SpotType.Outdoor
+                        typeExpanded = false
+
+                        selectedStatus = SpotStatus.Active
+                        statusExpanded = false
+
+                        isWheelchairAccessible = false
+                        hasDogBowl = false
+
+                        imageUriString = null
+                        cameraImageUriString = null
+
+                        showForm = false
+                    } catch (e: Exception) {
+                        Toast.makeText(
+                            context,
+                            "Submit failed: ${e.message ?: "Unknown error"}",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    } finally {
+                        isSubmitting = false
+                    }
+                }
             },
             enabled = canSubmit,
             modifier = Modifier
@@ -592,10 +821,52 @@ fun ContributeScreen(
                 disabledContentColor = Color(0xFFB3B3C2)
             )
         ) {
-            Text("Submit spot")
+            if (isSubmitting) {
+                CircularProgressIndicator(
+                    strokeWidth = 2.dp,
+                    modifier = Modifier.size(18.dp),
+                    color = textPrimary
+                )
+                Spacer(Modifier.width(10.dp))
+                Text("Submitting…")
+            } else {
+                Text("Submit spot")
+            }
         }
 
         Spacer(modifier = Modifier.height(10.dp))
+    }
+
+    // Launchers
+    val galleryLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        imageUriString = uri?.toString()
+        showImagePicker = false
+    }
+
+    val cameraLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.TakePicture()
+    ) { success ->
+        if (success) {
+            imageUriString = cameraImageUriString
+        } else {
+            cameraImageUriString = null
+            Toast.makeText(context, "Could not capture photo", Toast.LENGTH_SHORT).show()
+        }
+        showImagePicker = false
+    }
+
+    val cameraPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            val newUri = createImageUri(context)
+            cameraImageUriString = newUri.toString()
+            cameraLauncher.launch(newUri)
+        } else {
+            Toast.makeText(context, "Camera permission denied", Toast.LENGTH_SHORT).show()
+        }
     }
 
     if (showImagePicker) {
@@ -661,18 +932,20 @@ private fun ContributedSpotCard(
     elevatedSurfaceColor: Color,
     borderColor: Color,
     textPrimary: Color,
-    textSecondary: Color
+    textSecondary: Color,
+    onClick: () -> Unit
 ) {
     Surface(
+        onClick = onClick, // ✅ clickable card
         color = elevatedSurfaceColor,
         shape = RoundedCornerShape(18.dp),
         border = BorderStroke(1.dp, borderColor),
         modifier = Modifier.fillMaxWidth()
     ) {
         Column(modifier = Modifier.padding(14.dp)) {
-            spot.imageResId?.let { resId ->
-                Image(
-                    painter = painterResource(id = resId),
+            spot.imageUrl?.let { url ->
+                AsyncImage(
+                    model = url,
                     contentDescription = "Spot photo",
                     modifier = Modifier
                         .fillMaxWidth()
@@ -686,27 +959,19 @@ private fun ContributedSpotCard(
             Spacer(Modifier.height(4.dp))
             Text(text = spot.type, color = textSecondary, style = MaterialTheme.typography.bodyMedium)
 
-            Spacer(Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                if (spot.community) AssistChip(
+                AssistChip(
                     onClick = {},
-                    label = { Text("Community") },
+                    label = { Text(if (spot.status == "inactive") "Inactive" else "Active") },
                     colors = AssistChipDefaults.assistChipColors(
                         containerColor = Color(0xFF0F0F16),
                         labelColor = textPrimary
                     ),
                     border = BorderStroke(1.dp, borderColor)
                 )
-                if (spot.verified) AssistChip(
-                    onClick = {},
-                    label = { Text("Verified") },
-                    colors = AssistChipDefaults.assistChipColors(
-                        containerColor = Color(0xFF0F0F16),
-                        labelColor = textPrimary
-                    ),
-                    border = BorderStroke(1.dp, borderColor)
-                )
+
                 if (spot.wheelchair) AssistChip(
                     onClick = {},
                     label = { Text("Wheelchair") },
@@ -730,22 +995,16 @@ private fun ContributedSpotCard(
     }
 }
 
-/*
- * Local UI model for now
- */
 data class ContributedSpot(
+    val id: String,
     val name: String,
     val type: String,
-    val community: Boolean,
-    val verified: Boolean,
+    val status: String,
     val wheelchair: Boolean,
     val dogBowl: Boolean,
-    val imageResId: Int? = null
+    val imageUrl: String? = null
 )
 
-/*
- * Creates a temporary image URI used to store a photo taken by the camera.
- */
 fun createImageUri(context: Context): Uri {
     val imagesDir = File(context.cacheDir, "images")
     imagesDir.mkdirs()
@@ -755,5 +1014,52 @@ fun createImageUri(context: Context): Uri {
         context,
         "${context.packageName}.provider",
         imageFile
+    )
+}
+
+private suspend fun reverseGeocodeToSingleLine(
+    context: Context,
+    latLng: LatLng
+): String? = withContext(Dispatchers.IO) {
+    try {
+        val geocoder = Geocoder(context, Locale.getDefault())
+
+        val list: List<Address> =
+            @Suppress("DEPRECATION")
+            geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1) ?: emptyList()
+
+        val a = list.firstOrNull() ?: return@withContext null
+
+        val line0 = a.getAddressLine(0)
+        if (!line0.isNullOrBlank()) return@withContext line0.trim()
+
+        listOfNotNull(a.thoroughfare, a.subThoroughfare, a.locality)
+            .joinToString(" ")
+            .trim()
+            .ifBlank { null }
+    } catch (_: Exception) {
+        null
+    }
+}
+
+private fun SpotDto.toContributedSpot(): ContributedSpot {
+    val typePretty = when (typeLabel) {
+        "outdoor_water_fountain" -> "Outdoor water fountain"
+        "indoor_water_fountain" -> "Indoor water fountain"
+        else -> typeLabel
+    }
+
+    val publicImageUrl = imagePath?.let { path ->
+        "${BuildConfig.SUPABASE_URL}/storage/v1/object/public/spots-images/$path"
+    }
+
+    return ContributedSpot(
+        id = id,
+        name = address ?: "Unknown address",
+        type = typePretty,
+        status = status,
+        wheelchair = wheelchairAccess == true,
+        dogBowl = dogBowl == true,
+        imageUrl = publicImageUrl
     )
 }

@@ -36,9 +36,11 @@ fun NavGraph() {
         Screen.Profile.route
     )
 
-    // If auth completes while we're on login/loading/otp -> jump into the app
-    LaunchedEffect(isLoggedIn, guestMode) {
-        if (isLoggedIn || guestMode) {
+    val authRoutes = setOf("login", "otp", "loading")
+
+    LaunchedEffect(isLoggedIn, guestMode, currentRoute) {
+        val inAuthFlow = currentRoute == null || currentRoute in authRoutes
+        if ((isLoggedIn || guestMode) && inAuthFlow) {
             navController.navigate(Screen.Explore.route) {
                 popUpTo("login") { inclusive = true }
                 launchSingleTop = true

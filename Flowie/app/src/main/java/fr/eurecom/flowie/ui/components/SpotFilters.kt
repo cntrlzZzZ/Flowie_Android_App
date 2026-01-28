@@ -26,13 +26,17 @@ data class SpotFilterState(
     val community: Boolean = false,
     val wheelchair: Boolean = false,
     val dogBowl: Boolean = false,
+    val active: Boolean = false,
+    val inactive: Boolean = false,
 )
 
 fun applySpotFilters(spots: List<SpotDto>, state: SpotFilterState): List<SpotDto> {
-    val q = state.searchText.trim().lowercase(Locale.getDefault())
+    val locale = Locale.getDefault()
+    val q = state.searchText.trim().lowercase(locale)
 
     return spots
         .asSequence()
+        // Search
         .filter { s ->
             if (q.isEmpty()) true
             else {
@@ -40,10 +44,11 @@ fun applySpotFilters(spots: List<SpotDto>, state: SpotFilterState): List<SpotDto
                     append(s.address ?: "")
                     append(" ")
                     append(s.typeLabel)
-                }.lowercase(Locale.getDefault())
+                }.lowercase(locale)
                 hay.contains(q)
             }
         }
+        // Origin
         .filter { s ->
             val anyOriginFilter = state.verified || state.community
             if (!anyOriginFilter) return@filter true
@@ -51,12 +56,18 @@ fun applySpotFilters(spots: List<SpotDto>, state: SpotFilterState): List<SpotDto
 
             if (state.verified) s.origin == "verified" else s.origin == "community"
         }
+        // Status
         .filter { s ->
-            if (!state.wheelchair) true else (s.wheelchairAccess == true)
+            val anyStatusFilter = state.active || state.inactive
+            if (!anyStatusFilter) return@filter true
+            if (state.active && state.inactive) return@filter true
+
+            val st = s.status.lowercase(locale)
+            if (state.active) st == "active" else st == "inactive"
         }
-        .filter { s ->
-            if (!state.dogBowl) true else (s.dogBowl == true)
-        }
+        // Other flags
+        .filter { s -> !state.wheelchair || (s.wheelchairAccess == true) }
+        .filter { s -> !state.dogBowl || (s.dogBowl == true) }
         .toList()
 }
 
@@ -104,6 +115,22 @@ fun SpotFilterBar(
             selectedLabelColor = textPrimary
         )
         val chipBorder = BorderStroke(1.dp, borderColor)
+
+        FilterChip(
+            selected = state.active,
+            onClick = { onStateChange(state.copy(active = !state.active)) },
+            label = { Text("Active", color = textPrimary) },
+            colors = chipColors,
+            border = chipBorder
+        )
+
+        FilterChip(
+            selected = state.inactive,
+            onClick = { onStateChange(state.copy(inactive = !state.inactive)) },
+            label = { Text("Inactive", color = textPrimary) },
+            colors = chipColors,
+            border = chipBorder
+        )
 
         FilterChip(
             selected = state.verified,
