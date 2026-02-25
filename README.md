@@ -13,6 +13,8 @@ The current app focuses on Vienna and combines map exploration, community contri
 ██╔══╝  ██║     ██║   ██║██║███╗██║██║██╔══╝  
 ██║     ███████╗╚██████╔╝╚███╔███╔╝██║███████╗
 ╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝ ╚═╝╚══════╝
+
+
 <img width="112" height="112" alt="Group 1" src="https://github.com/user-attachments/assets/9e365d61-3cbc-44e9-997e-49c0aa53f1f3" />
 
 ## Highlights
