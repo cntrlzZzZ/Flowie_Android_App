@@ -5,7 +5,7 @@ Flowie is an Android app that helps people discover nearby public drinking water
 The current app focuses on Vienna and combines map exploration, community contributions, weather context, and hydration-focused profile features.
 
 > **University project:** Flowie was developed as a group project for the course **Mobile Computing** at **Johannes Kepler University Linz**.  
-> **FOCUS THEME (WS 2025): _Mitigating Impacts of Climate Change_** — we chose to interpret this theme through **urban tech**, aiming to make it easier for people to refill water (and reduce bottled water usage).
+> **FOCUS THEME (WS 2025): _Mitigating Impacts of Climate Change_**. We chose to interpret this theme through **urban tech**, aiming to make it easier for people to refill water (and reduce bottled water usage).
 
 ## Highlights
 
