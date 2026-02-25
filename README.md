@@ -206,12 +206,9 @@ Flowie demonstrates end-to-end mobile product engineering:
 
 ## Suggested Next Milestones
 
-- Add CSV db from Supabase.
+- Implement rating system for water spots.
 - Add deterministic tests for repositories, filters, and key UI flows.
 - Introduce CI (lint, unit tests, static checks).
-- Add architecture docs and screenshots/GIF walkthrough.
-- Improve offline behaviour (cache + sync strategy).
-- Harden contribution moderation/reporting workflows.
 
 ## License
 
