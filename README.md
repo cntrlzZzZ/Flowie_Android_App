@@ -1,10 +1,11 @@
 # Flowie
 
-Flowie is an Android app that helps people discover nearby public drinking water spots, save favourites, and contribute new locations.
+Flowie is an Android app that helps people discover nearby public drinking water spots, save favorites, and contribute new locations.
 
-> **University project:** Developed for the course **Mobile Computing** at **Johannes Kepler University Linz**.  
-> Focus theme (WS 2025): **Mitigating Impacts of Climate Change**.  
-> Our urban-tech approach encourages public water refill use to reduce reliance on bottled water.
+The current app focuses on Vienna and combines map exploration, community contributions, weather context, and hydration-focused profile features.
+
+> **University project:** Flowie was developed as a group project for the course **Mobile Computing** at **Johannes Kepler University Linz**.  
+> **FOCUS THEME (WS 2025): _Mitigating Impacts of Climate Change_** — we chose to interpret this theme through **urban tech**, aiming to make it easier for people to refill water (and reduce bottled water usage).
 
 ## Highlights
 
@@ -40,7 +41,6 @@ Flowie is an Android app that helps people discover nearby public drinking water
 │   │   └── navigation/         # App routes and NavHost
 │   └── gradle/                 # Wrapper + versions catalog
 └── flowie_data/                # Data assets + notebooks used for source preparation
-```
 
 ## Implemented Product Flow
 
