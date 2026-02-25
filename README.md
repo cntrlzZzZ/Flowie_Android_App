@@ -41,6 +41,7 @@ The current app focuses on Vienna and combines map exploration, community contri
 │   │   └── navigation/         # App routes and NavHost
 │   └── gradle/                 # Wrapper + versions catalog
 └── flowie_data/                # Data assets + notebooks used for source preparation
+```
 
 ## Implemented Product Flow
 
