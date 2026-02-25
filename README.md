@@ -80,39 +80,86 @@ SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ## Launching the App (Android Studio)
 
-1. Open Android Studio and select the `Flowie/` directory.
-2. Ensure `Flowie/local.properties` contains `MAPTILER_API_KEY`, `SUPABASE_URL`, and `SUPABASE_ANON_KEY`.
-3. Let Gradle sync complete.
-4. Select an emulator or connected device.
-5. Run the `app` configuration.
+1. Clone the repository.  
+   The database snapshot CSV is already included in Git under `flowie_data/data/` and is cloned together with the code.
+2. Open the `Flowie/` folder in Android Studio.
+3. Create/update `Flowie/local.properties` with your own keys:
+   - `SUPABASE_URL`
+   - `SUPABASE_ANON_KEY`
+   - `MAPTILER_API_KEY`
+4. In your own Supabase project, create the required schema (table + storage bucket) and import the CSV snapshot (see section below).
+5. Sync Gradle and run the `app` configuration on an emulator or device.
 
 ## Database (Supabase)
 
-Supabase is used for:
+Flowie uses Supabase for:
 - **Auth:** Email OTP login.
-- **Database:** Postgres accessed via PostgREST.
-- **Storage:** Image uploads for community contributions.
+- **Database:** Postgres (queried via PostgREST).
+- **Storage:** Contribution images.
 
-Core table:
-- `public.sources` with key fields:
-  - `lat`, `lng`, `address`, `type_label`, `status`, `origin`, `created_by`, `created_at`, `image_path`
+### Data origin
 
-Storage bucket:
-- `spots-images` (public) for contribution photos.
+Flowie’s dataset combines:
+- **Verified seed data:** initial water points imported from Vienna open government data.  
+  Source: dataset obtained on **Wed Dec 10 18:05:07 2025** from  
+  https://www.data.gv.at/katalog/dataset/stadt-wien_trinkbrunnenstandortewien
+- **Community data:** user-submitted spots created in-app after authentication.
 
-Access control:
-- RLS policies must allow read access and authenticated inserts/uploads for contributions.
+Seed data provides immediate baseline coverage; community data expands and updates coverage over time.
 
-### Exporting `sources` to CSV and committing it
+### CSV snapshot in repo and import workflow
 
-1. Supabase Dashboard → **Table Editor** → `sources` → **Export** → **CSV**.
-2. Save the file as `flowie_data/sources.csv`.
-3. Commit and push:
-   - `git add flowie_data/sources.csv`
-   - `git commit -m "Add sources CSV snapshot"`
-   - `git push`
+- A CSV database snapshot is stored in the repository under `flowie_data/data/` for reproducible demos.
+- After cloning:
+  1. Open your Supabase project.
+  2. Create table `public.sources` (matching columns below).
+  3. Import the CSV from `flowie_data/data/` into `public.sources`.
+  4. Create storage bucket `spots-images` (public read).
+  5. Add your Supabase + MapTiler keys in `Flowie/local.properties`.
 
-The team may include a CSV snapshot in the repository for reproducible demos.
+### Table: `public.sources` (core schema)
+
+Key columns and usage:
+- `id` (uuid/text): unique spot identifier used across map, details, and saved state.
+- `origin` (text): `verified` (seed/imported) or `community` (user-created).
+- `type_label` (text): normalised category, e.g. `outdoor_water_fountain`, `indoor_water_fountain`.
+- `status` (text): `active` or `inactive`.
+- `lat`, `lng` (double): WGS84 coordinates used for marker placement and bbox queries.
+- `address` (text, nullable): human-readable location.
+- `wheelchair_access` (bool, nullable): accessibility flag (`null` = unknown).
+- `dog_bowl` (bool, nullable): amenity flag (`null` = unknown).
+- `image_path` (text, nullable): storage path such as `community/<uuid>.jpg`.
+- `created_by` (uuid/text, nullable): Supabase user id of contributor.
+- `created_at` (timestamp, nullable): creation time (e.g., for newest-first ordering).
+- Optional import-tracking fields (e.g. `external_id`) may be present for upstream mapping.
+
+### Storage: `spots-images`
+
+- Public bucket used for contribution photos.
+- Database stores `image_path`, not full URLs.
+- App resolves image URLs using:  
+  `SUPABASE_URL/storage/v1/object/public/spots-images/<image_path>`
+
+### Runtime data flow
+
+- **Explore:** map viewport is converted to bbox (`minLat/minLng/maxLat/maxLng`), then queried from `public.sources`; UI filters are applied client-side.
+- **Saved:** favourites are local-only (SharedPreferences/JSON), no server write for save/unsave.
+- **Contribute:** optional image upload to `spots-images`, then insert into `public.sources` with `origin='community'`, contributor id, coordinates, address, metadata, and optional `image_path`.
+
+### Security model
+
+Flowie relies on Supabase Auth + Row Level Security (RLS):
+- **Auth:** Email OTP sessions identify users (`auth.uid()`).
+- **RLS on `public.sources`:**
+  - allow `SELECT` per your policy (public or authenticated-only),
+  - allow `INSERT` only for authenticated users creating community rows,
+  - enforce `created_by = auth.uid()` (policy and/or DB default/trigger),
+  - block client edits/deletes of verified seed data.
+- **Storage policies (`spots-images`):**
+  - public read for display,
+  - uploads restricted to authenticated users,
+  - optional path constraints (e.g. uploads only under `community/`).
+- **Data minimisation:** contributor identity stored as UUID (`created_by`), optional attributes nullable, and only storage paths persisted.
 
 ## Build and Test
 
