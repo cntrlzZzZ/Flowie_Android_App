@@ -50,6 +50,8 @@ The current app focuses on Vienna and combines map exploration, community contri
 3. User can save spots locally from details sheet.
 4. Authenticated user can add community spots (with optional image).
 5. Profile screen shows weather, steps, and hydration widgets.
+<img width="920" height="468" alt="App_Map_Product_Flow" src="https://github.com/user-attachments/assets/ff26ad25-b08c-4154-b146-2f00030c1720" />
+
 
 ## Prerequisites
 
