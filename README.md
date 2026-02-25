@@ -1,4 +1,11 @@
-# Flowie
+```text
+███████╗██╗      ██████╗ ██╗    ██╗██╗███████╗ 
+██╔════╝██║     ██╔═══██╗██║    ██║██║██╔════╝
+█████╗  ██║     ██║   ██║██║ █╗ ██║██║█████╗  
+██╔══╝  ██║     ██║   ██║██║███╗██║██║██╔══╝  
+██║     ███████╗╚██████╔╝╚███╔███╔╝██║███████╗
+╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝ ╚═╝╚══════╝
+```
 
 Flowie is an Android app that helps people discover nearby public drinking water spots, save favorites, and contribute new locations.
 
@@ -7,15 +14,7 @@ The current app focuses on Vienna and combines map exploration, community contri
 > **University project:** Flowie was developed as a group project for the course **Mobile Computing** at **Johannes Kepler University Linz**.  
 > **FOCUS THEME (WS 2025): _Mitigating Impacts of Climate Change_**. We chose to interpret this theme through **urban tech**, aiming to make it easier for people to refill water (and reduce bottled water usage).
 
-███████╗██╗      ██████╗ ██╗    ██╗██╗███████╗
-██╔════╝██║     ██╔═══██╗██║    ██║██║██╔════╝ 
-█████╗  ██║     ██║   ██║██║ █╗ ██║██║█████╗  
-██╔══╝  ██║     ██║   ██║██║███╗██║██║██╔══╝  
-██║     ███████╗╚██████╔╝╚███╔███╔╝██║███████╗
-╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝ ╚═╝╚══════╝
-
-
-<img width="112" height="112" alt="Group 1" src="https://github.com/user-attachments/assets/9e365d61-3cbc-44e9-997e-49c0aa53f1f3" />
+<img width="212" height="212" alt="Group 1" src="https://github.com/user-attachments/assets/9e365d61-3cbc-44e9-997e-49c0aa53f1f3" />
 
 ## Highlights
 
